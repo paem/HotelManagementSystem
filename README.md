@@ -1,2 +1,2 @@
 # HotelManagementSystem
-School Project
+School Team Project
