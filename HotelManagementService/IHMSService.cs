@@ -26,6 +26,8 @@ namespace HotelManagementService
         [OperationContract]
         void CreateBooking(Booking bookingObject);
 
+        [OperationContract]
+        ICollection<CustomerDetails> GetCustomerDetails();
 
     }
 }

@@ -1,33 +1,7 @@
-﻿@model HotelManagement.ViewModels.RoomViewModel
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-@foreach (var item in Model.Rooms.OrderByDescending(Model => Model.RoomId))
-{
-    <div class="row" id="myTable">
-        <div class="col-md-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-            <div class="thumbnail">
-                <div class="caption">
-                    <p>Room number: @item.RoomId Door number: @item.RoomDoorNumber</p>
-                    @if (@item.RoomStatus == true)
-                    {
-                        <h4>Room is available</h4>
-                    }
-                    else if (item.RoomStatus == false)
-                    {
-                        <h4>Room is busy</h4>
-                    }
-                    else
-                    {
-                        <h4>Room is unavailable</h4>
-                    }
-                    <h4>A room for: @item.RoomCount people</h4>
-                </div>
-
-            </div>
-        </div>
-    </div>
-}

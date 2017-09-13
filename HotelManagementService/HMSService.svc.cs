@@ -16,9 +16,8 @@ namespace HotelManagementService
     public class HMSService : IHMSService
     {
         private readonly RoomRepository _roomRepository = new RoomRepository();
-        private readonly CustomerRepository _customerRepository = new CustomerRepository();
-        private readonly HotelRepository _hotelRepository = new HotelRepository();
         private readonly BookingRepository _bookingRepository = new BookingRepository();
+        private readonly CustomerRepository _customerRepository = new CustomerRepository();
 
         public ICollection<Room> GetRooms()
         {
@@ -38,17 +37,6 @@ namespace HotelManagementService
             return customerDetails;
         }
 
-        public ICollection<Hotel> GetHotels()
-        {
-            var hotels = _hotelRepository.GetHotels();
-
-            return hotels;
-        }
-
-        public void CreateHotel(Hotel hotelObject)
-        {
-            _hotelRepository.CreateHotel(hotelObject);
-        }
         //Kanske borde ha detta i en form för att mer välja vilka object som ska skapas.
         public void CreateBooking(Booking bookingObject)
         {
