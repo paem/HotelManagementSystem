@@ -52,5 +52,16 @@ namespace HotelManagementService
             return bookingStatus;
         }
 
+        public ICollection<Hotel> GetHotels()
+        {
+            var hotels = _hotelRepository.GetHotels();
+
+            return hotels;
+        }
+
+        public void CreateHotel(Hotel hotelObject)
+        {
+            _hotelRepository.CreateHotel(hotelObject);
+        }
     }
 }
