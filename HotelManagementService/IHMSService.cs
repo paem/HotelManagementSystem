@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using HMS.Model;
+using HMS.Models;
 
 namespace HotelManagementService
 {
