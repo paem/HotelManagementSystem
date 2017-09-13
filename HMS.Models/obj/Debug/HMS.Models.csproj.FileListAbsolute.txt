@@ -3,3 +3,7 @@ C:\Users\Patrik\Source\Repos\HotelManagement\HMS.Models\bin\Debug\HMS.Models.pdb
 C:\Users\Patrik\Source\Repos\HotelManagement\HMS.Models\obj\Debug\HMS.Models.csproj.CoreCompileInputs.cache
 C:\Users\Patrik\Source\Repos\HotelManagement\HMS.Models\obj\Debug\HMS.Models.dll
 C:\Users\Patrik\Source\Repos\HotelManagement\HMS.Models\obj\Debug\HMS.Models.pdb
+C:\Users\vijo0018\Source\Repos\HotelManagementSystem\HMS.Models\bin\Debug\HMS.Models.dll
+C:\Users\vijo0018\Source\Repos\HotelManagementSystem\HMS.Models\bin\Debug\HMS.Models.pdb
+C:\Users\vijo0018\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.dll
+C:\Users\vijo0018\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.pdb

@@ -12,7 +12,7 @@ namespace HMS.Data
         // If you wish to target a different database and/or database provider, modify the 'HotelManagementModel' 
         // connection string in the application configuration file.
         public HMSDbContext()
-            : base(@"Data Source = PATRIKDATA\SQLEXPRESS; Initial Catalog = HotelManagementDb;  Persist Security Info=True;User ID=PAVI; Password=APR400")
+            : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelManagementDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
         }
 

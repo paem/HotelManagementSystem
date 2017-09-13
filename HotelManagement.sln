@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement", "HotelManagement\HotelManagement.csproj", "{1EA48C09-EE0E-40B3-A647-39F45733A433}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Data", "HMS.Data\HMS.Data.csproj", "{8B38C374-DCC9-4D5F-8967-DF4D76F3CE92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Models", "HMS.Models\HMS.Models.csproj", "{199BD01E-CEF4-49C4-A40B-C2B93D7A3694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagementService", "HotelManagementService\HotelManagementService.csproj", "{41DDB0F7-B496-43B0-8AEF-DEA682FC4574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{199BD01E-CEF4-49C4-A40B-C2B93D7A3694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{199BD01E-CEF4-49C4-A40B-C2B93D7A3694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{199BD01E-CEF4-49C4-A40B-C2B93D7A3694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DDB0F7-B496-43B0-8AEF-DEA682FC4574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DDB0F7-B496-43B0-8AEF-DEA682FC4574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DDB0F7-B496-43B0-8AEF-DEA682FC4574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DDB0F7-B496-43B0-8AEF-DEA682FC4574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
