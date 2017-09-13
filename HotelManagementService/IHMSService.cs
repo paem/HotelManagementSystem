@@ -23,6 +23,12 @@ namespace HotelManagementService
         [OperationContract]
         ICollection<CustomerDetails> GetCustomerDetails();
 
+        [OperationContract]
+        ICollection<Hotel> GetHotels();
+
+        [OperationContract]
+        void CreateHotel(Hotel hotelObject);
+
     }
 
 

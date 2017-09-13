@@ -17,6 +17,8 @@ namespace HotelManagementService
     {
         private readonly RoomRepository _roomRepository = new RoomRepository();
         private readonly CustomerRepository _customerRepository = new CustomerRepository();
+        private readonly HotelRepository _hotelRepository = new HotelRepository();
+
         public ICollection<Room> GetRooms()
         {
             var rooms = _roomRepository.GetRooms();
@@ -33,6 +35,18 @@ namespace HotelManagementService
         {
             var customerDetails = _customerRepository.GetCustomerDetails();
             return customerDetails;
+        }
+
+        public ICollection<Hotel> GetHotels()
+        {
+            var hotels = _hotelRepository.GetHotels();
+
+            return hotels;
+        }
+
+        public void CreateHotel(Hotel hotelObject)
+        {
+            _hotelRepository.CreateHotel(hotelObject);
         }
 
     }
