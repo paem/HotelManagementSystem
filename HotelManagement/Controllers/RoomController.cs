@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 using System.Web.Mvc;
 using HotelManagement.ViewModels;
-
-
+using HMS.Data.Repositories;
+using HMS.Models;
+using HotelManagement.RoomServiceReference;
 
 namespace HotelManagement.Controllers
 {
     public class RoomController : Controller
     {
-       // private readonly RoomRepository _eventRepository = new RoomRepository();
+      
+
+        private readonly HMSServiceClient _roomWCFClient = new HMSServiceClient();
 
         public ActionResult Index()
         {
@@ -25,7 +25,7 @@ namespace HotelManagement.Controllers
 
        
         [HttpPost]
-        public ActionResult CreateEvent(RoomViewModel viewModel)
+        public ActionResult CreateRoom(RoomViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
@@ -34,30 +34,14 @@ namespace HotelManagement.Controllers
                 viewModel.RoomCount = 5;
                 viewModel.RoomStatus = false;
 
-                /*var eventObject = new Event
+                var roomObject = new Room
                 {
-                    Id = viewModel.Id,
-                    SectionId = viewModel.SectionId,
-                    Title = viewModel.Title,
-                    Description = viewModel.Description,
-                    StartDate = viewModel.StartDate,
-                    EndDate = viewModel.EndDate,
-                    SaleStop = viewModel.SaleStop,
-                    BasePrice = viewModel.BasePrice,
-                    MemberPrice = viewModel.MemberPrice,
-                    EventTypeId = viewModel.EventTypeId,
-                    ZipCode = viewModel.ZipCode,
-                    Adress = viewModel.Adress,
-                    MaxEmployees = viewModel.MaxEmployees,
-                    MaxTickets = viewModel.MaxTickets,
-                    ImageURL = viewModel.ImageURL,
-                    EventOwner = viewModel.EventOwner,
-                    CreatedBy = viewModel.EventOwner,
-                    CreatedAt = DateTime.Now,
+                    RoomId = viewModel.RoomId,
+                    
                 };
-                _eventWCFclient.CreateEvent(eventObject);
+                _roomWCFClient.CreateRoom(roomObject);
 
-    */
+    
                 return RedirectToAction("Index", "EventList");
             }
 

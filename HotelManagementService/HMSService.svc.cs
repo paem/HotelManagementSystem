@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using HMS.Models;
+using HMS.Data.Repositories;
+using HMS.Data;
 
 namespace HotelManagementService
 {
@@ -12,22 +15,20 @@ namespace HotelManagementService
     // NOTE: In order to launch WCF Test Client for testing this service, please select HMSService.svc or HMSService.svc.cs at the Solution Explorer and start debugging.
     public class HMSService : IHMSService
     {
-        public string GetData(int value)
+        private readonly RoomRepository _roomRepository = new RoomRepository();
+
+        public ICollection<Room> GetRooms()
         {
-            return string.Format("You entered: {0}", value);
+            var rooms = _roomRepository.GetRooms();
+
+            return rooms;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public void CreateRoom(Room roomObject)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            _roomRepository.CreateRoom(roomObject);
         }
+
+
     }
 }

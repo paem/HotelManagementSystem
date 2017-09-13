@@ -7,7 +7,7 @@ using HMS.Models;
 
 namespace HMS.Data.Repositories
 {
-    class RoomRepository
+    public class RoomRepository
     {
         public void CreateRoom(Room roomObj)
         {
@@ -22,11 +22,23 @@ namespace HMS.Data.Repositories
                 else
                 {
                     // Edit
-                    var rooomInDb = context.Rooms.SingleOrDefault(p => p.RoomId == roomObj.RoomId);
+                    var roomInDb = context.Rooms.SingleOrDefault(p => p.RoomId == roomObj.RoomId);
 
-                   
+                    roomInDb.RoomDoorNumber = roomObj.RoomDoorNumber;
+                    roomInDb.RoomCount = roomObj.RoomCount;
+                    roomInDb.RoomStatus = roomObj.RoomStatus;
+                    roomInDb.RoomCategoryId = roomObj.RoomCategoryId;
+
                 }
                 context.SaveChanges();
+            }
+        }
+
+        public ICollection<Room> GetRooms()
+        {
+            using (var context = new HMSDbContext())
+            {
+                return context.Rooms.AsNoTracking().ToList();
             }
         }
 

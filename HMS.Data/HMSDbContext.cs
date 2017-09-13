@@ -11,8 +11,11 @@ namespace HMS.Data
         // 
         // If you wish to target a different database and/or database provider, modify the 'HotelManagementModel' 
         // connection string in the application configuration file.
+
+        //Skolans LOKALA Datorer = Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelManagementDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+        //Patriks Dator = Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True
         public HMSDbContext()
-            : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelManagementDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+            : base(@"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True")
         {
         }
 
