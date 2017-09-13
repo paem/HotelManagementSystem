@@ -13,17 +13,20 @@ namespace HotelManagement.Controllers
 
         private readonly HMSServiceClient _roomWCFClient = new HMSServiceClient();
 
+
         public ActionResult Index()
         {
-           
-        
-            return View("Index");
-        
+            var rooms = _roomWCFClient.GetRooms();
+            var viewModel = new RoomViewModel
+            {
+                Rooms = rooms
+            };
 
+            return View(viewModel);    
         }
 
 
-       
+       /*
         [HttpPost]
         public ActionResult CreateRoom(RoomViewModel viewModel)
         {
@@ -54,7 +57,7 @@ namespace HotelManagement.Controllers
         }
 
 
-
+    */
 
     }
 }

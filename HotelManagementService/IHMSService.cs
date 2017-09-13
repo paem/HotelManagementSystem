@@ -30,8 +30,4 @@ namespace HotelManagementService
         void CreateHotel(Hotel hotelObject);
 
     }
-
-
-  
-    
 }

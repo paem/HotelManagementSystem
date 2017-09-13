@@ -11,21 +11,14 @@ namespace HotelManagement.ViewModels
 
         public ICollection<Room> Rooms { get; set; }
 
-
         public int RoomId { get; set; }
-
         
         public int RoomDoorNumber { get; set; }
-
         
         public int RoomCategoryId { get; set; }
-
        
         public int RoomCount { get; set; }
-
        
         public bool RoomStatus { get; set; }
-
-
     }
 }
