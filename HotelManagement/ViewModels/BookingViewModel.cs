@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,8 @@ namespace HotelManagement.ViewModels
 {
     public class BookingViewModel
     {
+        public ICollection<Booking> Book { get; set; }
+
         public int BookingId { get; set; }
 
         public DateTime BookingDate { get; set; }

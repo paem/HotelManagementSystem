@@ -5,7 +5,7 @@
 
 <h2>Index</h2>
 
-@foreach(var item in Model.Rooms.OrderByDescending(Model => Model.RoomId))
+@foreach (var item in Model.Rooms.OrderByDescending(Model => Model.RoomId))
 {
     <div class="row" id="myTable">
         <div class="col-md-8 col-sm-offset-2 col-md-8 col-md-offset-2">
@@ -26,7 +26,7 @@
                     }
                     <h4>A room for: @item.RoomCount people</h4>
                 </div>
-                
+
             </div>
         </div>
     </div>

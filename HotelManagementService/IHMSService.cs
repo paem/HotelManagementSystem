@@ -21,13 +21,11 @@ namespace HotelManagementService
         void CreateRoom(Room roomObject);
 
         [OperationContract]
-        ICollection<CustomerDetails> GetCustomerDetails();
+        ICollection<Booking> GetBookingStatus();
 
         [OperationContract]
-        ICollection<Hotel> GetHotels();
+        void CreateBooking(Booking bookingObject);
 
-        [OperationContract]
-        void CreateHotel(Hotel hotelObject);
 
     }
 }
