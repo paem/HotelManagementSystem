@@ -18,6 +18,8 @@ namespace HotelManagementService
         private readonly RoomRepository _roomRepository = new RoomRepository();
         private readonly BookingRepository _bookingRepository = new BookingRepository();
         private readonly CustomerRepository _customerRepository = new CustomerRepository();
+        private readonly HotelRepository _hotelRepository = new HotelRepository();
+
 
         public ICollection<Room> GetRooms()
         {

@@ -9,7 +9,6 @@ namespace HotelManagement.Controllers
 {
     public class RoomController : Controller
     {
-      
 
         private readonly HMSServiceClient _roomWCFClient = new HMSServiceClient();
 

@@ -27,7 +27,7 @@ namespace HMS.Data.Repositories
                     hotelInDb.HotelName = hotelObj.HotelName;
                     hotelInDb.HotelTotalFloors = hotelObj.HotelTotalFloors;
                     hotelInDb.HotelTotalRooms = hotelObj.HotelTotalRooms;
-                    hotelInDb.HotelDescription = hotelObj.HotelDescription;  
+                    hotelInDb.HotelDescription = hotelObj.HotelDescription;
 
                 }
                 context.SaveChanges();
