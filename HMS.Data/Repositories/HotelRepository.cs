@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HMS.Data.Repositories
 {
-    class HotelRepository
+    public class HotelRepository
     {
     }
 }

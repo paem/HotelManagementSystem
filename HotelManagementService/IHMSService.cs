@@ -20,6 +20,8 @@ namespace HotelManagementService
         [OperationContract]
         void CreateRoom(Room roomObject);
 
+        [OperationContract]
+        ICollection<CustomerDetails> GetCustomerDetails();
 
     }
 

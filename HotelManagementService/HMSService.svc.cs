@@ -16,7 +16,7 @@ namespace HotelManagementService
     public class HMSService : IHMSService
     {
         private readonly RoomRepository _roomRepository = new RoomRepository();
-
+        private readonly CustomerRepository _customerRepository = new CustomerRepository();
         public ICollection<Room> GetRooms()
         {
             var rooms = _roomRepository.GetRooms();
@@ -29,6 +29,11 @@ namespace HotelManagementService
             _roomRepository.CreateRoom(roomObject);
         }
 
+        public ICollection<CustomerDetails> GetCustomerDetails()
+        {
+            var customerDetails = _customerRepository.GetCustomerDetails();
+            return customerDetails;
+        }
 
     }
 }
