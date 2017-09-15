@@ -3,14 +3,14 @@ using System.Web.Mvc;
 using HotelManagement.ViewModels;
 using HMS.Data.Repositories;
 using HMS.Models;
-using HotelManagement.RoomServiceReference;
+using HotelManagementService;
 
 namespace HotelManagement.Controllers
 {
     public class RoomController : Controller
     {
 
-        private readonly HMSServiceClient _roomWCFClient = new HMSServiceClient();
+        private readonly HMSService _roomWCFClient = new HMSService();
 
 
         public ActionResult Index()

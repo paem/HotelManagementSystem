@@ -155,6 +155,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,11 +221,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Customer\CustomerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -247,6 +248,10 @@
     <ProjectReference Include="..\HMS.Models\HMS.Models.csproj">
       <Project>{199bd01e-cef4-49c4-a40b-c2b93d7a3694}</Project>
       <Name>HMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagementService\HotelManagementService.csproj">
+      <Project>{41ddb0f7-b496-43b0-8aef-dea682fc4574}</Project>
+      <Name>HotelManagementService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
