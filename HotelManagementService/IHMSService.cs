@@ -38,5 +38,8 @@ namespace HotelManagementService
         [OperationContract]
         void CreateUser(Customer customerObject);
 
+        [OperationContract]
+        void DeleteRoomById(int roomId);
+
     }
 }
