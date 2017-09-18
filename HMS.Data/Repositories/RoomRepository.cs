@@ -41,8 +41,6 @@ namespace HMS.Data.Repositories
                 return context.Rooms.AsNoTracking().ToList();
             }
         } 
-        
-
 
         public void DeleteRoomById(int roomId)
         {
