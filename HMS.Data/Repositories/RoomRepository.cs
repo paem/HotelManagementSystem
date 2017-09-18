@@ -42,6 +42,15 @@ namespace HMS.Data.Repositories
             }
         }
 
-
+        public void DeleteRoomById(int roomId)
+        {
+            using (var context = new HMSDbContext())
+            {
+                // Get event by id
+                var roomInDb = context.Rooms.SingleOrDefault(e => e.RoomId == roomId);
+                context.Rooms.Remove(roomInDb);
+                context.SaveChanges();
+            }
+        }
     }
 }

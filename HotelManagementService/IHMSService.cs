@@ -34,5 +34,9 @@ namespace HotelManagementService
 
         [OperationContract]
         void CreateHotel(Hotel hotelObject);
+
+        [OperationContract]
+        void CreateUser(Customer customerObject);
+
     }
 }

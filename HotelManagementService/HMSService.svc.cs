@@ -63,5 +63,15 @@ namespace HotelManagementService
         {
             _hotelRepository.CreateHotel(hotelObject);
         }
+
+        public void CreateUser(Customer customerObject)
+        {
+            _customerRepository.CreateUser(customerObject);
+        }
+
+        public void DeleteRoomById(int roomId)
+        {
+            _roomRepository.DeleteRoomById(roomId);
+        }
     }
 }
