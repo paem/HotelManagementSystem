@@ -19,3 +19,9 @@ C:\Users\Användaren\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS
 C:\Users\Användaren\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.csproj.CoreCompileInputs.cache
 C:\Users\Användaren\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.dll
 C:\Users\Användaren\Source\Repos\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.pdb
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\bin\Debug\HMS.Models.dll
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\bin\Debug\HMS.Models.pdb
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.csprojResolveAssemblyReference.cache
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.dll
+C:\Users\Användaren\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.pdb

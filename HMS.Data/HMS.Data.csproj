@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201709181403470_update.Designer.cs">
       <DependentUpon>201709181403470_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709181436184_addedPrice.cs" />
+    <Compile Include="Migrations\201709181436184_addedPrice.Designer.cs">
+      <DependentUpon>201709181436184_addedPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BookingRepository.cs" />
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709181403470_update.resx">
       <DependentUpon>201709181403470_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709181436184_addedPrice.resx">
+      <DependentUpon>201709181436184_addedPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -37,8 +37,7 @@ namespace HMS.Models
         public string RoomCategoryBeds { get; set; }
 
         [DataMember]
-        public string RoomPriceName { get; set; }
-
+        public double RoomPrice { get; set; }
 
     }
 }
