@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement", "HotelManagement\HotelManagement.csproj", "{1EA48C09-EE0E-40B3-A647-39F45733A433}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.MVC.User", "HotelManagement\HotelManagement.MVC.User.csproj", "{1EA48C09-EE0E-40B3-A647-39F45733A433}"
 	ProjectSection(ProjectDependencies) = postProject
 		{41DDB0F7-B496-43B0-8AEF-DEA682FC4574} = {41DDB0F7-B496-43B0-8AEF-DEA682FC4574}
 	EndProjectSection
