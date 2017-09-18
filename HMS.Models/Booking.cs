@@ -31,7 +31,7 @@ namespace HMS.Models
         public bool BookingStatus { get; set; }
 
         [DataMember]
-        public int BookingTotalNights { get; set; }
+        public TimeSpan BookingTotalNights { get; set; }
 
         [DataMember]
         public int BookingTotalRooms { get; set; }

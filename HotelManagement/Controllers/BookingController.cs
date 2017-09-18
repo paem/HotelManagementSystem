@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System;
 using HotelManagement.ViewModels;
 using HMS.Data.Repositories;
 using HMS.Models;
@@ -29,16 +30,30 @@ namespace HotelManagement.Controllers
          {
              if (ModelState.IsValid)
              {
-             
-                 var bookingObject = new Booking
-                 {
-                     BookingId = viewModel.BookingId,
+               
 
+
+                var bookingObject = new Booking
+                {
+                    BookingId = viewModel.BookingId,
+                    BookingCustomerId = viewModel.BookingCustomerId,
+                    BookingDate = DateTime.Now,
+                    BookingRoomId = viewModel.BookingRoomId,
+                    BookingRoomCategoryId = viewModel.BookingRoomCategoryId,
+                    BookingArrivalDate = viewModel.BookingArrivalDate,
+                    BookingDepartureDate = viewModel.BookingDepartureDate,
+                    BookingStatus = viewModel.BookingStatus,
+                    BookingTotalAdults = viewModel.BookingTotalAdults,
+                    BookingTotalChilds = viewModel.BookingTotalChilds,
+                    BookingTotalCost = viewModel.BookingTotalCost,
+                    BookingTotalNights = viewModel.BookingTotalNights,
+                    BookingTotalRooms = viewModel.BookingTotalRooms
+                    
                  };
                  _bookingWCFClient.CreateBooking(bookingObject);
 
 
-                 return RedirectToAction("Index", "EventList");
+                 return RedirectToAction("Index", "Booking");
              }
 
 
