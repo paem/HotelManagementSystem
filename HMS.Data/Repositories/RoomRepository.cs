@@ -9,36 +9,6 @@ namespace HMS.Data.Repositories
 {
     public class RoomRepository
     {
-        public void CreateRoomCategory(RoomCategory categoryObj)
-        {
-            using (var context = new HMSDbContext())
-            {
-                if (categoryObj.RoomCapacityId == 0)
-                {
-                    context.RoomCategory.Add(categoryObj);
-                }
-            }
-        }
-        public void CreateRoomCapacity(RoomCapacity capacityObj)
-        {
-            using (var context = new HMSDbContext())
-            {
-                if (capacityObj.RoomCapacityId == 0)
-                {
-                    context.RoomCapacity.Add(capacityObj);
-                }
-            }
-        }
-        public void CreateRoomPrice(RoomPrice priceObj)
-        {
-            using (var context = new HMSDbContext())
-            {
-                if(priceObj.RoomPriceId == 0)
-                {
-                    context.RoomPrice.Add(priceObj);
-                }
-            }
-        }
         public void CreateRoom(Room roomObj)
         {
             using (var context = new HMSDbContext())
@@ -72,6 +42,7 @@ namespace HMS.Data.Repositories
             }
         } 
         
+
 
         public void DeleteRoomById(int roomId)
         {
