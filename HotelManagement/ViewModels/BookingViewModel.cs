@@ -26,7 +26,7 @@ namespace HotelManagement.ViewModels
 
         public bool BookingStatus { get; set; }
 
-        public TimeSpan BookingTotalNights { get; set; }
+        public int BookingTotalNights { get; set; }
 
         public int BookingTotalRooms { get; set; }
 

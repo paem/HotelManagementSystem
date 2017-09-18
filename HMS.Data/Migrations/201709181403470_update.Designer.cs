@@ -7,13 +7,13 @@ namespace HMS.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedRoomtoone : IMigrationMetadata
+    public sealed partial class update : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRoomtoone));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(update));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709181336390_Added Room to one"; }
+            get { return "201709181403470_update"; }
         }
         
         string IMigrationMetadata.Source

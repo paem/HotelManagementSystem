@@ -27,7 +27,6 @@ namespace HMS.Data.Repositories
                     roomInDb.RoomDoorNumber = roomObj.RoomDoorNumber;
                     roomInDb.RoomCount = roomObj.RoomCount;
                     roomInDb.RoomStatus = roomObj.RoomStatus;
-                    roomInDb.RoomCategoryId = roomObj.RoomCategoryId;
 
                 }
                 context.SaveChanges();

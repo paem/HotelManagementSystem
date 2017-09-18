@@ -18,24 +18,13 @@ namespace HotelManagement.ViewModels
        
         public bool RoomStatus { get; set; }
 
-        //RoomPrice
-        public int RoomPriceId { get; set; }
-
         public string RoomPriceName { get; set; }
-
-        public float RoomPrices { get; set; }
-        
-        //RoomCategory
-        public int RoomCategoryId { get; set; }
 
         public string RoomCategoryName { get; set; }
 
         public string RoomCategoryDescription { get; set; }
 
         public string RoomCategoryBeds { get; set; }
-
-        //RoomCapacity
-        public int RoomCapacityId { get; set; }
 
         public string RoomCapacityName { get; set; }
 

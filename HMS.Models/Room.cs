@@ -18,10 +18,6 @@ namespace HMS.Models
         [DataMember]
         public bool RoomStatus { get; set; }
 
-        //RoomCapacity
-        [DataMember]
-        public int RoomCapacityId { get; set; }
-
         [DataMember]
         public string RoomCapacityName { get; set; }
 
@@ -30,10 +26,6 @@ namespace HMS.Models
 
         [DataMember]
         public int RoomCapacityChilds { get; set; }
-
-        //RoomCategory
-        [DataMember]
-        public int RoomCategoryId { get; set; }
 
         [DataMember]
         public string RoomCategoryName { get; set; }
@@ -44,15 +36,9 @@ namespace HMS.Models
         [DataMember]
         public string RoomCategoryBeds { get; set; }
 
-        //RoomPrice
-        [DataMember]
-        public int RoomPriceId { get; set; }
-
         [DataMember]
         public string RoomPriceName { get; set; }
 
-        [DataMember]
-        public float RoomPrices { get; set; }
 
     }
 }
