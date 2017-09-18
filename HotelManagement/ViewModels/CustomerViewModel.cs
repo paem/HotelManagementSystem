@@ -16,5 +16,6 @@ namespace HotelManagement.ViewModels
         public int CustomerId { get; set; }
 
         public bool CheckedIn { get; set; }
+
     }
 }

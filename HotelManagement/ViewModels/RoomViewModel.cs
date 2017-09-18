@@ -8,7 +8,6 @@ namespace HotelManagement.ViewModels
 {
     public class RoomViewModel
     {
-
         public ICollection<Room> Rooms { get; set; }
 
         public int RoomId { get; set; }
@@ -20,5 +19,6 @@ namespace HotelManagement.ViewModels
         public int RoomCount { get; set; }
        
         public bool RoomStatus { get; set; }
+
     }
 }
