@@ -16,5 +16,32 @@ namespace HMS.Data.Repositories
                 return context.CustomerDetails.AsNoTracking().ToList();
             }
         }
+
+        public void CreateUser(Customer customerObj)
+        {
+            using (var context = new HMSDbContext())
+            {
+                if (customerObj.CustomerId == 0)
+                {
+                    // Create
+                    context.Customers.Add(customerObj);
+
+                }
+                else
+                {
+                    // Edit
+                    var customerInDb = context.Customers.SingleOrDefault(p => p.CustomerId == customerObj.CustomerId);
+
+                    customerInDb.CustomerEmail = customerObj.CustomerEmail;
+                    customerInDb.CustomerPhoneNo = customerObj.CustomerPhoneNo;
+                    customerInDb.CustomerAddress = customerObj.CustomerAddress;
+                    customerInDb.CustomerCity = customerObj.CustomerCity;
+
+                }
+                context.SaveChanges();
+            }
+        }
+
+
     }
 }
