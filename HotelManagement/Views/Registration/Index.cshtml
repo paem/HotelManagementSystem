@@ -8,7 +8,6 @@
     ViewBag.Title = "CreateUser";
 }
 
-
 <div class="row content">
     <div class="col-sm-12 col-md-8 col-md-offset-2">
 
@@ -93,10 +92,8 @@
 
 
                     <div class="form-group">
-                        @Html.HiddenFor(model => model.CustomerId, new { id = "hiddenId" })
-                 
-                            <input type="submit" value="Create Account" class="btn btn-primary create-save-btn" />
-            
+                        @Html.HiddenFor(model => model.CustomerId, new { id = "hiddenId" })                   
+                            <input type="submit" value="Create Account" class="btn btn-primary create-save-btn" />       
                     </div>
 
                 }
@@ -108,3 +105,14 @@
         </div>
     </div>
 </div>
+
+@section scripts {
+
+
+<script>
+
+  
+
+</script>
+
+}

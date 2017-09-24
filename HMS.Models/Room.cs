@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace HMS.Models
@@ -6,6 +7,7 @@ namespace HMS.Models
     [DataContract]
     public class Room
     {
+        [Required]
         [DataMember]
         public int RoomId { get; set; }
 

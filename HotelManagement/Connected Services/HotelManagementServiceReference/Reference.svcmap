@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="70dcc10b-3dd4-48f8-b526-0fda3bb63a34" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c27f72ba-8ec7-4b9d-aa26-beccb17c18e4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:52028/HMSService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HMSService.xsd" MetadataType="Schema" ID="8929c1a6-3fef-4df1-a0f2-7ebfe3377d69" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="HMSService.disco" MetadataType="Disco" ID="361f50f5-e80f-49f6-aba0-4b4ddebf82e4" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?disco" />
-    <MetadataFile FileName="HMSService1.xsd" MetadataType="Schema" ID="e8187157-1524-49f9-a643-63c27a4c883a" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd1" />
-    <MetadataFile FileName="HMSService.wsdl" MetadataType="Wsdl" ID="fa6d057a-9bcf-4074-b033-1c310c5e6320" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?wsdl" />
-    <MetadataFile FileName="HMSService2.xsd" MetadataType="Schema" ID="6f87ba71-8ba4-4a7c-905c-6100c40dc899" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HMSService.xsd" MetadataType="Schema" ID="fa4188da-6dec-498f-81a8-d5c30e099f22" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HMSService.disco" MetadataType="Disco" ID="b2d8a6ae-4fd5-4ef1-9ac5-2ebf0084a999" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?disco" />
+    <MetadataFile FileName="HMSService1.xsd" MetadataType="Schema" ID="9f468985-2535-4087-aefb-f42658ee088a" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HMSService.wsdl" MetadataType="Wsdl" ID="dfad4c26-5d72-4764-8e79-f80e8b8a9152" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?wsdl" />
+    <MetadataFile FileName="HMSService2.xsd" MetadataType="Schema" ID="4c952e94-3e14-4f4f-99c1-88604089aa9d" SourceId="1" SourceUrl="http://localhost:52028/HMSService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

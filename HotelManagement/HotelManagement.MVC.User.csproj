@@ -150,7 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\RoomServiceReference\Reference.cs">
+    <Compile Include="Connected Services\HotelManagementServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -170,10 +170,10 @@
     <Compile Include="ViewModels\RoomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RoomServiceReference\HMSService.disco" />
-    <None Include="Connected Services\RoomServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\RoomServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\RoomServiceReference\Reference.svcmap">
+    <None Include="Connected Services\HotelManagementServiceReference\HMSService.disco" />
+    <None Include="Connected Services\HotelManagementServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\HotelManagementServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\HotelManagementServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -189,16 +189,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Properties\DataSources\HMS.Models.Room.datasource" />
-    <None Include="Connected Services\RoomServiceReference\HMSService.wsdl" />
-    <None Include="Connected Services\RoomServiceReference\HMSService.xsd">
+    <None Include="Connected Services\HotelManagementServiceReference\HMSService.wsdl" />
+    <None Include="Connected Services\HotelManagementServiceReference\HMSService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RoomServiceReference\HMSService1.xsd">
+    <None Include="Connected Services\HotelManagementServiceReference\HMSService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RoomServiceReference\HMSService2.xsd">
+    <None Include="Connected Services\HotelManagementServiceReference\HMSService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\DataSources\HMS.Models.Booking.datasource" />
+    <Content Include="Properties\DataSources\HMS.Models.Customer.datasource" />
+    <Content Include="Properties\DataSources\HMS.Models.CustomerDetails.datasource" />
+    <Content Include="Properties\DataSources\HMS.Models.Hotel.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -262,7 +266,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\RoomServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\HotelManagementServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,15 +9,15 @@ namespace HotelManagement.ViewModels
     public class CustomerViewModel
     {
 
-        public ICollection<CustomerDetails> CustomerDetails { get; set; }
 
+        public ICollection<CustomerDetails> CustomerDetails {get; set;}
         public ICollection<Customer> Customers { get; set; }
 
         public int CustomerDetailsId { get; set; }
 
-        public int CustomerId { get; set; }
-
         public bool CheckedIn { get; set; }
+
+        public int CustomerId { get; set; }
 
         public string CustomerFName { get; set; }
 
@@ -35,6 +35,7 @@ namespace HotelManagement.ViewModels
 
         public string CustomerEmail { get; set; }
 
+        public bool IsEdit { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace HMS.Models
@@ -7,6 +8,7 @@ namespace HMS.Models
     [DataContract]
     public class Customer
     {
+        [Required]
         [DataMember]
         public int CustomerId { get; set; }
 

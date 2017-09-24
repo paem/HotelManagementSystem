@@ -2,8 +2,9 @@
 using HotelManagement.ViewModels;
 using HMS.Data.Repositories;
 using HMS.Models;
-using HotelManagementService;
 using System.Web.Mvc;
+using HotelManagement.HotelManagementServiceReference;
+
 
 namespace HotelManagement.Controllers
 {
@@ -11,13 +12,13 @@ namespace HotelManagement.Controllers
     {
 
 
-        private readonly HMSService _customerWCFClient = new HMSService();
+        private readonly HMSServiceClient _customerWCFClient = new HMSServiceClient();
 
 
         // GET: Registration
         public ActionResult Index()
         {
-            return View();
+            return View(new CustomerViewModel());
         }
 
         [ValidateAntiForgeryToken]
@@ -37,6 +38,7 @@ namespace HotelManagement.Controllers
                     CustomerAddress = viewModel.CustomerAddress,
                     CustomerPhoneNo = viewModel.CustomerPhoneNo,
                     CustomerEmail = viewModel.CustomerEmail,
+               
                 };
                 _customerWCFClient.CreateUser(customerObject);
 

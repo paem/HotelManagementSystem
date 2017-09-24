@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HMS.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HMS.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Room" nillable="true" type="tns:Room" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoom" nillable="true" type="tns:ArrayOfRoom" />
+  <xs:complexType name="Room">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoomCapacityAdults" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomCapacityChilds" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomCapacityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryBeds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCount" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomDoorNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Room" nillable="true" type="tns:Room" />
+  <xs:complexType name="ArrayOfBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Booking" nillable="true" type="tns:Booking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBooking" nillable="true" type="tns:ArrayOfBooking" />
+  <xs:complexType name="Booking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BookingArrivalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BookingCustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BookingDepartureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BookingId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingRoomCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingRoomId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BookingTotalAdults" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingTotalChilds" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingTotalCost" type="xs:float" />
+      <xs:element minOccurs="0" name="BookingTotalNights" type="xs:int" />
+      <xs:element minOccurs="0" name="BookingTotalRooms" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Booking" nillable="true" type="tns:Booking" />
+  <xs:complexType name="ArrayOfCustomerDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerDetails" nillable="true" type="tns:ArrayOfCustomerDetails" />
+  <xs:complexType name="CustomerDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckedIn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CustomerDetailsId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
+  <xs:complexType name="ArrayOfHotel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="tns:Hotel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHotel" nillable="true" type="tns:ArrayOfHotel" />
+  <xs:complexType name="Hotel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HotelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelId" type="xs:int" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelTotalFloors" type="xs:int" />
+      <xs:element minOccurs="0" name="HotelTotalRooms" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hotel" nillable="true" type="tns:Hotel" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerFName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerPhoneNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+</xs:schema>
