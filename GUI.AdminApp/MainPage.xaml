@@ -11,8 +11,7 @@
 
         <SearchBox x:Name = "mySearchBox"
          FocusOnKeyboardInput = "False"
-         QuerySubmitted= "mySearchBox_QuerySubmitted" 
-         Height = "35" Width = "400" Margin = "234,132,732,601"/>
+         QuerySubmitted= "mySearchBox_QuerySubmitted" Margin = "10,117,10,493"/>
 
     </Grid>
 </Page>
