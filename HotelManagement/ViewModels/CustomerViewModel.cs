@@ -29,6 +29,8 @@ namespace HotelManagement.ViewModels
 
         public string CustomerCity { get; set; }
 
+        public string CustomerCountry { get; set; }
+
         public string CustomerPhoneNo { get; set; }
 
         public string CustomerEmail { get; set; }

@@ -1,0 +1,110 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@model HotelManagement.ViewModels.CustomerViewModel
+
+
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+
+<div class="row content">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+
+        <div class="form-box">
+       
+            <div class="inner-form">
+
+
+                @using (Html.BeginForm("CreateUser", "Registration", "POST"))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerFName, "First Name")
+                        @Html.TextBoxFor(model => model.CustomerFName, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerFName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerLName, "Last Name")
+                        @Html.TextBoxFor(model => model.CustomerLName, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerLName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerGender, "Gender")
+                        @Html.TextBoxFor(model => model.CustomerGender, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerCountry, "Country")
+                        @Html.TextBoxFor(model => model.CustomerCountry, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCountry, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+             
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerCity, "City")
+                        @Html.TextBoxFor(model => model.CustomerCity, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCity, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerAddress, "Address")
+                        @Html.TextBoxFor(model => model.CustomerAddress, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerPhoneNo, "Phone Number")
+                        @Html.TextBoxFor(model => model.CustomerPhoneNo, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerPhoneNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+              
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerEmail, "Email Address")
+                        @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control" })
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.CustomerId, new { id = "hiddenId" })
+                 
+                            <input type="submit" value="Create Account" class="btn btn-primary create-save-btn" />
+            
+                    </div>
+
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

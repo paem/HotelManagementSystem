@@ -26,6 +26,9 @@ namespace HMS.Models
         public string CustomerCity { get; set; }
 
         [DataMember]
+        public string CustomerCountry { get; set; }
+
+        [DataMember]
         public string  CustomerPhoneNo { get; set; }
 
         [DataMember]
