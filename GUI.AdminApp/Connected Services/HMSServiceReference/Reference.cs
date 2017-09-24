@@ -564,6 +564,8 @@ namespace GUI.AdminApp.HMSServiceReference {
         
         private string CustomerCityField;
         
+        private string CustomerCountryField;
+        
         private string CustomerEmailField;
         
         private string CustomerFNameField;
@@ -598,6 +600,19 @@ namespace GUI.AdminApp.HMSServiceReference {
                 if ((object.ReferenceEquals(this.CustomerCityField, value) != true)) {
                     this.CustomerCityField = value;
                     this.RaisePropertyChanged("CustomerCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerCountry {
+            get {
+                return this.CustomerCountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerCountryField, value) != true)) {
+                    this.CustomerCountryField = value;
+                    this.RaisePropertyChanged("CustomerCountry");
                 }
             }
         }

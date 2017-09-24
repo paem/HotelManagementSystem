@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
         <ListBox x:Name="userList" Margin="0 200 0 0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -21,10 +22,15 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+
         <SearchBox x:Name = "mySearchBox"
          FocusOnKeyboardInput = "False"
-         QuerySubmitted= "mySearchBox_QuerySubmitted" Height = "35" Width = "400" Margin = "10,67,-50,538"/>
-
+         QuerySubmitted= "mySearchBox_QuerySubmitted" Height = "35" Width = "400" Margin = "10,67,-50,538"
+                   />
+        <!-- <AutoSuggestBox x:Name="SearchBox" PlaceholderText="Search" QueryIcon="Find" Width="200"
+                TextChanged="AutoSuggestBox_TextChanged"
+                QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+-->
     </Grid>
 </Page>

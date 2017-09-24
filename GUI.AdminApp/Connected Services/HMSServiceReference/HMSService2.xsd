@@ -80,6 +80,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCountry" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerEmail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerFName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerGender" nillable="true" type="xs:string" />
