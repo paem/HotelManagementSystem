@@ -17,6 +17,14 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public ICollection<Customer> GetCustomers()
+        {
+            using (var context = new HMSDbContext())
+            {
+                return context.Customers.AsNoTracking().ToList();
+            }
+        }
+
         public void CreateUser(Customer customerObj)
         {
             using (var context = new HMSDbContext())

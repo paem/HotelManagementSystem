@@ -73,5 +73,12 @@ namespace HotelManagementService
         {
             _roomRepository.DeleteRoomById(roomId);
         }
+
+        public ICollection<Customer> GetCustomers()
+        {
+           var customers = _customerRepository.GetCustomers();
+
+           return customers;
+        }
     }
 }

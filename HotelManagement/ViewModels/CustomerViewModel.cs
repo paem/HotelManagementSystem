@@ -11,11 +11,28 @@ namespace HotelManagement.ViewModels
 
         public ICollection<CustomerDetails> CustomerDetails { get; set; }
 
+        public ICollection<Customer> Customers { get; set; }
+
         public int CustomerDetailsId { get; set; }
 
         public int CustomerId { get; set; }
 
         public bool CheckedIn { get; set; }
+
+        public string CustomerFName { get; set; }
+
+        public string CustomerLName { get; set; }
+
+        public string CustomerGender { get; set; }
+
+        public string CustomerAddress { get; set; }
+
+        public string CustomerCity { get; set; }
+
+        public string CustomerPhoneNo { get; set; }
+
+        public string CustomerEmail { get; set; }
+
 
     }
 }

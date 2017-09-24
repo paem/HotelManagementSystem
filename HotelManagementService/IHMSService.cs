@@ -41,5 +41,8 @@ namespace HotelManagementService
         [OperationContract]
         void DeleteRoomById(int roomId);
 
+        [OperationContract]
+        ICollection<Customer> GetCustomers();
+
     }
 }
