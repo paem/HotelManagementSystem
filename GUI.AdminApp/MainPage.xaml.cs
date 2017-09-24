@@ -26,5 +26,10 @@ namespace GUI.AdminApp
         {
             this.InitializeComponent();
         }
+        private void mySearchBox_QuerySubmitted(SearchBox sender,
+            SearchBoxQuerySubmittedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(SearchResultPage1), args.QueryText);
+        }
     }
 }

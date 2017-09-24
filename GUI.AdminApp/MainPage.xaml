@@ -9,5 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <SearchBox x:Name = "mySearchBox"
+         FocusOnKeyboardInput = "False"
+         QuerySubmitted= "mySearchBox_QuerySubmitted" 
+         Height = "35" Width = "400" Margin = "234,132,732,601"/>
+
     </Grid>
 </Page>
