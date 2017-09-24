@@ -22,6 +22,11 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        class SearchResultPage
+        {
+
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -29,7 +34,7 @@ namespace GUI.AdminApp
         private void mySearchBox_QuerySubmitted(SearchBox sender,
             SearchBoxQuerySubmittedEventArgs args)
         {
-            this.Frame.Navigate(typeof(SearchResultPage1), args.QueryText);
+            this.Frame.Navigate(typeof(SearchResultPage), args.QueryText);
         }
     }
 }
