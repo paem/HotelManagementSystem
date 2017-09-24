@@ -23,33 +23,93 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        GUI.AdminApp.HMSServiceReference.HMSServiceClient HMSClient = new HMSServiceReference.HMSServiceClient();
+        HMSServiceReference.HMSServiceClient HMSClient = new HMSServiceReference.HMSServiceClient();
 
-        HMSServiceReference.Customer customer = new HMSServiceReference.Customer();
-
+        //Skriver ut alla användare
         private async void LoadCustomers()
         {
-           var customerList = await HMSClient.GetCustomersAsync();
 
-            userList.ItemsSource = customerList;
+            var customerList = await HMSClient.GetCustomersAsync();
 
+            userList.ItemsSource = customerList; 
 
         }
-        class SearchResultPage
-        {
-        }
-
+    
         public MainPage()
         {
-            LoadCustomers();
 
+           LoadCustomers();
+           
 
             this.InitializeComponent();
         }
         private void mySearchBox_QuerySubmitted(SearchBox sender,
             SearchBoxQuerySubmittedEventArgs args)
         {
-            this.Frame.Navigate(typeof(SearchResultPage), args.QueryText);
+            string keyword = args.QueryText;
+            var customerList = HMSClient.GetCustomersAsync();
+
+            var searchResult = customerList.Result.Where(name => name.ToString().Contains(keyword));
+
+            userList.ItemsSource = searchResult;
+            
+
+         //   this.Frame.Navigate(typeof(SearchResultPage), args.QueryText);
         }
+     /*   class SearchResultPage
+        {
+
+        }
+        */
+
+
+
+
+        /*
+        //Kanske ska använda AUTOSUGGESTBOX istället för SearchBOX
+
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            // Only get results when it was a user typing,
+            // otherwise assume the value got filled in by TextMemberPath
+            // or the handler for SuggestionChosen.
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                //Set the ItemsSource to be your filtered dataset
+                //sender.ItemsSource = dataset;
+             
+              
+            //  var customerList = HMSClient.GetCustomersAsync();
+
+              //  userList.ItemsSource = customerList;
+            }
+        }
+
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            // Set sender.Text. You can use args.SelectedItem to build your text string.
+        }
+
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            if (args.ChosenSuggestion != null)
+            {
+                // User selected an item from the suggestion list, take an action on it here.
+            }
+            else
+            {
+                // Use args.QueryText to determine what to do.
+                string keyword = args.QueryText;
+
+                var customerList = HMSClient.GetCustomersAsync();
+
+                var searchResult = customerList.Result.Where(name => name.ToString().Contains(keyword));
+
+                userList.ItemsSource = searchResult;
+            }
+        }
+        */
     }
 }
