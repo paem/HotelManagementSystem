@@ -9,9 +9,22 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <ListBox x:Name="userList" Margin="0 200 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Height = "35" Width = "400"  Margin="200 0 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding CustomerFName}" />
+                            <TextBlock Text="{Binding CustomerLName}"  />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
         <SearchBox x:Name = "mySearchBox"
          FocusOnKeyboardInput = "False"
-         QuerySubmitted= "mySearchBox_QuerySubmitted" Height = "35" Width = "400" Margin = "10,117,10,493"/>
+         QuerySubmitted= "mySearchBox_QuerySubmitted" Height = "35" Width = "400" Margin = "10,67,-50,538"/>
 
     </Grid>
 </Page>

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace GUI.AdminApp
@@ -22,13 +23,27 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        GUI.AdminApp.HMSServiceReference.HMSServiceClient HMSClient = new HMSServiceReference.HMSServiceClient();
+
+        HMSServiceReference.Customer customer = new HMSServiceReference.Customer();
+
+        private async void LoadCustomers()
+        {
+           var customerList = await HMSClient.GetCustomersAsync();
+
+            userList.ItemsSource = customerList;
+
+
+        }
         class SearchResultPage
         {
-
         }
 
         public MainPage()
         {
+            LoadCustomers();
+
+
             this.InitializeComponent();
         }
         private void mySearchBox_QuerySubmitted(SearchBox sender,
