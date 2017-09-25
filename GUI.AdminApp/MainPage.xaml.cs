@@ -46,7 +46,8 @@ namespace GUI.AdminApp
         private void mySearchBox_QuerySubmitted(SearchBox sender,
             SearchBoxQuerySubmittedEventArgs args)
         {
-            string keyword = args.QueryText;
+            string keyword = mySearchBox.QueryText;
+
             var customerList = HMSClient.GetCustomersAsync();
 
             var searchResult = customerList.Result.Where(name => name.ToString().Contains(keyword));
