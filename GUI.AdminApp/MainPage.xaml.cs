@@ -26,17 +26,19 @@ namespace GUI.AdminApp
     {
         private readonly HMSServiceClient HMSClient = new HMSServiceClient();
 
-        /*
+        
         //Skriver ut alla användare
-        private async void LoadCustomers()
+        private async void LoadCustomers(AutoSuggestBox sender)
         {
             var customerList = await HMSClient.GetCustomersAsync();
-            userList.ItemsSource = customerList; 
+            var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
+
+            userList.ItemsSource = searchResult; 
         }
-       */
+      
         public MainPage()
         {
-            //LoadCustomers();
+           
             this.InitializeComponent();
         }
 
@@ -58,9 +60,10 @@ namespace GUI.AdminApp
         {
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
-                var customerList = HMSClient.GetCustomersAsync();
-                var searchResult = customerList.Result.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text));
-                userList.ItemsSource = searchResult;
+                LoadCustomers(sender);
+               // var customerList = HMSClient.GetCustomersAsync();
+                //var searchResult = customerList.Result.Where(name => (name.CustomerFName ?? "").Contains(sender.Text));
+               // userList.ItemsSource = searchResult;
             }
         }
     }

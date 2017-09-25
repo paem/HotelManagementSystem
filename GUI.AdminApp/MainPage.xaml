@@ -10,7 +10,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <ListBox x:Name="userList" Margin="0 200 0 0">
+        <ListBox x:Name="userList" Margin="0,65,0,-65">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height = "35" Width = "400"  Margin="200 0 0 0">
