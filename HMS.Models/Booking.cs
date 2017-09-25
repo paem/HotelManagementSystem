@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace HMS.Models
@@ -21,13 +22,16 @@ namespace HMS.Models
         public DateTime BookingDepartureDate { get; set; }
 
         [DataMember]
-        public int BookingRoomCategoryId { get; set; }
+        public int RoomId { get; set; }
+        [ForeignKey("RoomId")]
+
+        public virtual Room Room { get; set; }
 
         [DataMember]
-        public int BookingRoomId { get; set; }
+        public int CustomerId { get; set; }
+        [ForeignKey("CustomerId")]
 
-        [DataMember]
-        public int BookingCustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
 
         [DataMember]
         public bool BookingStatus { get; set; }
