@@ -18,8 +18,6 @@ namespace HotelManagement.ViewModels
 
         public DateTime BookingDepartureDate { get; set; }
 
-        public int BookingRoomCategoryId { get; set; }
-
         public int BookingRoomId { get; set; }
 
         public int BookingCustomerId { get; set; }

@@ -35,6 +35,8 @@ namespace HotelManagement.ViewModels
 
         public string CustomerEmail { get; set; }
 
+        public string Password { get; set; }
+
         public bool IsEdit { get; set; }
 
     }

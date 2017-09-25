@@ -7,13 +7,13 @@ namespace HMS.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Addedcustomeridtocustomerdetails : IMigrationMetadata
+    public sealed partial class passwordcustomertable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Addedcustomeridtocustomerdetails));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(passwordcustomertable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709131234302_Added customerid to customerdetails"; }
+            get { return "201709251331315_password customer table"; }
         }
         
         string IMigrationMetadata.Source

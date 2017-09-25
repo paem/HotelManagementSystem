@@ -50,30 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HMSDbContext.cs" />
-    <Compile Include="Migrations\201709121828362_New Mig.cs" />
-    <Compile Include="Migrations\201709121828362_New Mig.Designer.cs">
-      <DependentUpon>201709121828362_New Mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709131234302_Added customerid to customerdetails.cs" />
-    <Compile Include="Migrations\201709131234302_Added customerid to customerdetails.Designer.cs">
-      <DependentUpon>201709131234302_Added customerid to customerdetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709131247540_auto increment.cs" />
-    <Compile Include="Migrations\201709131247540_auto increment.Designer.cs">
-      <DependentUpon>201709131247540_auto increment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709181403470_update.cs" />
-    <Compile Include="Migrations\201709181403470_update.Designer.cs">
-      <DependentUpon>201709181403470_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709181436184_addedPrice.cs" />
-    <Compile Include="Migrations\201709181436184_addedPrice.Designer.cs">
-      <DependentUpon>201709181436184_addedPrice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709241527268_createuser.cs" />
-    <Compile Include="Migrations\201709241527268_createuser.Designer.cs">
-      <DependentUpon>201709241527268_createuser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201709241633079_update database required annotations.cs" />
     <Compile Include="Migrations\201709241633079_update database required annotations.Designer.cs">
       <DependentUpon>201709241633079_update database required annotations.cs</DependentUpon>
@@ -81,6 +57,10 @@
     <Compile Include="Migrations\201709251324170_update database tables.cs" />
     <Compile Include="Migrations\201709251324170_update database tables.Designer.cs">
       <DependentUpon>201709251324170_update database tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709251331315_password customer table.cs" />
+    <Compile Include="Migrations\201709251331315_password customer table.Designer.cs">
+      <DependentUpon>201709251331315_password customer table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,29 +81,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709121828362_New Mig.resx">
-      <DependentUpon>201709121828362_New Mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709131234302_Added customerid to customerdetails.resx">
-      <DependentUpon>201709131234302_Added customerid to customerdetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709131247540_auto increment.resx">
-      <DependentUpon>201709131247540_auto increment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709181403470_update.resx">
-      <DependentUpon>201709181403470_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709181436184_addedPrice.resx">
-      <DependentUpon>201709181436184_addedPrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709241527268_createuser.resx">
-      <DependentUpon>201709241527268_createuser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709241633079_update database required annotations.resx">
       <DependentUpon>201709241633079_update database required annotations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709251324170_update database tables.resx">
       <DependentUpon>201709251324170_update database tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709251331315_password customer table.resx">
+      <DependentUpon>201709251331315_password customer table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

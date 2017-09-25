@@ -36,5 +36,9 @@ namespace HMS.Models
         [DataMember]
         public string CustomerEmail { get; set; } 
 
+        [DataMember]
+        [MaxLength(25)]
+        public string Password { get; set; }
+
     }
 }

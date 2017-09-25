@@ -36,10 +36,9 @@ namespace HotelManagement.Controllers
                 var bookingObject = new Booking
                 {
                     BookingId = viewModel.BookingId,
-                    BookingCustomerId = viewModel.BookingCustomerId,
+                    CustomerId = viewModel.BookingCustomerId,
                     BookingDate = DateTime.Now,
-                    BookingRoomId = viewModel.BookingRoomId,
-                    BookingRoomCategoryId = viewModel.BookingRoomCategoryId,
+                    RoomId = viewModel.BookingRoomId,                
                     BookingArrivalDate = viewModel.BookingArrivalDate,
                     BookingDepartureDate = viewModel.BookingDepartureDate,
                     BookingStatus = viewModel.BookingStatus,

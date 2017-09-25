@@ -44,6 +44,7 @@ namespace HMS.Data.Repositories
                     customerInDb.CustomerPhoneNo = customerObj.CustomerPhoneNo;
                     customerInDb.CustomerAddress = customerObj.CustomerAddress;
                     customerInDb.CustomerCity = customerObj.CustomerCity;
+                    customerInDb.Password = customerObj.Password;
 
                 }
                 context.SaveChanges();

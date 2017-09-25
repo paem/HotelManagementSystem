@@ -31,18 +31,17 @@
   <xs:complexType name="Booking">
     <xs:sequence>
       <xs:element minOccurs="0" name="BookingArrivalDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="BookingCustomerId" type="xs:int" />
       <xs:element minOccurs="0" name="BookingDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="BookingDepartureDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="BookingId" type="xs:int" />
-      <xs:element minOccurs="0" name="BookingRoomCategoryId" type="xs:int" />
-      <xs:element minOccurs="0" name="BookingRoomId" type="xs:int" />
       <xs:element minOccurs="0" name="BookingStatus" type="xs:boolean" />
       <xs:element minOccurs="0" name="BookingTotalAdults" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalChilds" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalCost" type="xs:float" />
       <xs:element minOccurs="0" name="BookingTotalNights" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalRooms" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Booking" nillable="true" type="tns:Booking" />
@@ -87,6 +86,7 @@
       <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
       <xs:element minOccurs="0" name="CustomerLName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerPhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
