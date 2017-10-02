@@ -80,5 +80,20 @@ namespace HotelManagementService
 
            return customers;
         }
+
+        public ICollection<RoomCategory> GetRoomCategoryTypes()
+        {
+            return _roomRepository.GetRoomCategoryTypes();
+        }
+
+        public ICollection<RoomCapacity> GetRoomCapacity()
+        {
+            return _roomRepository.GetRoomCapacity();
+        }
+
+        public ICollection<Room> GetRoomsByCategoryId(int roomCategoryId)
+        {
+            return _roomRepository.GetRoomByCategoryId(roomCategoryId);
+        }
     }
 }

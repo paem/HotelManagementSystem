@@ -8,6 +8,7 @@ namespace HMS.Models
     [DataContract]
     public class Booking
     {
+        [Key]
         [Required]
         [DataMember]
         public int BookingId { get; set; }
@@ -20,6 +21,11 @@ namespace HMS.Models
 
         [DataMember]
         public DateTime BookingDepartureDate { get; set; }
+
+        [DataMember]
+        public int RoomCategoryId { get; set; }
+        [ForeignKey("RoomCategoryId")]
+        public virtual RoomCategory RoomCategory { get; set; }
 
         [DataMember]
         public int RoomId { get; set; }

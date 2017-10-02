@@ -8,6 +8,7 @@ namespace HMS.Models
     [DataContract]
     public class Hotel
     {
+        [Key]
         [Required]
         [DataMember]
         public int HotelId { get; set; }

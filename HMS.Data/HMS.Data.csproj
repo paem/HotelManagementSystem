@@ -50,17 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HMSDbContext.cs" />
-    <Compile Include="Migrations\201709241633079_update database required annotations.cs" />
-    <Compile Include="Migrations\201709241633079_update database required annotations.Designer.cs">
-      <DependentUpon>201709241633079_update database required annotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709251324170_update database tables.cs" />
-    <Compile Include="Migrations\201709251324170_update database tables.Designer.cs">
-      <DependentUpon>201709251324170_update database tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709251331315_password customer table.cs" />
-    <Compile Include="Migrations\201709251331315_password customer table.Designer.cs">
-      <DependentUpon>201709251331315_password customer table.cs</DependentUpon>
+    <Compile Include="Migrations\201710021654040_new mig.cs" />
+    <Compile Include="Migrations\201710021654040_new mig.Designer.cs">
+      <DependentUpon>201710021654040_new mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +65,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\HMS.Models\HMS.Models.csproj">
       <Project>{199bd01e-cef4-49c4-a40b-c2b93d7a3694}</Project>
@@ -81,14 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709241633079_update database required annotations.resx">
-      <DependentUpon>201709241633079_update database required annotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709251324170_update database tables.resx">
-      <DependentUpon>201709251324170_update database tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709251331315_password customer table.resx">
-      <DependentUpon>201709251331315_password customer table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710021654040_new mig.resx">
+      <DependentUpon>201710021654040_new mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

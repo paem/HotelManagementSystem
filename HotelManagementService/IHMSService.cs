@@ -44,5 +44,14 @@ namespace HotelManagementService
         [OperationContract]
         ICollection<Customer> GetCustomers();
 
+        [OperationContract]
+        ICollection<Room> GetRoomsByCategoryId(int roomCategoryId);
+
+        [OperationContract]
+        ICollection<RoomCategory> GetRoomCategoryTypes();
+
+        [OperationContract]
+        ICollection<RoomCapacity> GetRoomCapacity();
+
     }
 }

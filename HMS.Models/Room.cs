@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace HMS.Models
@@ -7,6 +8,7 @@ namespace HMS.Models
     [DataContract]
     public class Room
     {
+        [Key]
         [Required]
         [DataMember]
         public int RoomId { get; set; }
@@ -21,22 +23,9 @@ namespace HMS.Models
         public bool RoomStatus { get; set; }
 
         [DataMember]
-        public string RoomCapacityName { get; set; }
-
-        [DataMember]
-        public int RoomCapacityAdults { get; set; }
-
-        [DataMember]
-        public int RoomCapacityChilds { get; set; }
-
-        [DataMember]
-        public string RoomCategoryName { get; set; }
-
-        [DataMember]
-        public string RoomCategoryDescription { get; set; }
-
-        [DataMember]
-        public string RoomCategoryBeds { get; set; }
+        public int? RoomCategoryId { get; set; }
+        [ForeignKey("RoomCategoryId")]
+        public virtual RoomCategory RoomCategory { get; set; }
 
         [DataMember]
         public double RoomPrice { get; set; }

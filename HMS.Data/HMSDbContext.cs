@@ -25,6 +25,8 @@ namespace HMS.Data
         public DbSet<CustomerDetails> CustomerDetails { get; set; }
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<RoomCapacity> RoomCapacity { get; set; }
+        public DbSet<RoomCategory> RoomCategory { get; set; }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.

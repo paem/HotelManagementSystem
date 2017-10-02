@@ -7,13 +7,13 @@ namespace HMS.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class updatedatabaserequiredannotations : IMigrationMetadata
+    public sealed partial class newmig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedatabaserequiredannotations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newmig));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709241633079_update database required annotations"; }
+            get { return "201710021654040_new mig"; }
         }
         
         string IMigrationMetadata.Source

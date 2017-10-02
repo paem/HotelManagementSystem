@@ -33,6 +33,31 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public ICollection<RoomCapacity> GetRoomCapacity()
+        {
+            using (var context = new HMSDbContext())
+            {
+                return context.RoomCapacity.AsNoTracking().ToList();
+            }
+        }
+
+        public ICollection<RoomCategory> GetRoomCategoryTypes()
+        {
+            using (var context = new HMSDbContext())
+            {
+                return context.RoomCategory.AsNoTracking().ToList();
+            }
+        }
+
+        public ICollection<Room> GetRoomByCategoryId(int RoomCategoryId)
+        {
+            using (var context = new HMSDbContext())
+            {
+                // Get room by category id
+                return context.Rooms.Where(e => e.RoomCategoryId == RoomCategoryId).ToList();
+            }
+        }
+
         public ICollection<Room> GetRooms()
         {
             using (var context = new HMSDbContext())
