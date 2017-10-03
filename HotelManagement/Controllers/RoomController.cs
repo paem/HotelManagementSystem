@@ -16,9 +16,17 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             var rooms = _roomWCFClient.GetRooms();
+            var categoryTypes = _roomWCFClient.GetRoomCategoryTypes();
+            var capacity = _roomWCFClient.GetRoomCapacity();
             var viewModel = new RoomViewModel
             {
-                Rooms = rooms
+                Rooms = rooms,
+                CategoryTypes = categoryTypes,
+                RoomCapacity = capacity,
+                
+
+        
+                
             };
 
             return View(viewModel);    

@@ -10,6 +10,10 @@ namespace HotelManagement.ViewModels
     {
         public ICollection<Room> Rooms { get; set; }
 
+        public ICollection<RoomCategory> CategoryTypes { get; set; }
+
+        public ICollection<RoomCapacity> RoomCapacity { get; set; }
+
         public int RoomId { get; set; }
         
         public int RoomDoorNumber { get; set; }
@@ -18,18 +22,7 @@ namespace HotelManagement.ViewModels
        
         public bool RoomStatus { get; set; }
 
-        public string RoomPriceName { get; set; }
+        public string RoomPrice { get; set; }
 
-        public string RoomCategoryName { get; set; }
-
-        public string RoomCategoryDescription { get; set; }
-
-        public string RoomCategoryBeds { get; set; }
-
-        public string RoomCapacityName { get; set; }
-
-        public int RoomCapacityAdults { get; set; }
-
-        public int RoomCapacityChilds { get; set; }
     }
 }
