@@ -33,20 +33,21 @@ namespace GUI.AdminApp
             var customerList = await HMSClient.GetCustomersAsync();
             var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
 
-            userList.ItemsSource = searchResult; 
+            userList.ItemsSource = searchResult;
         }
       
         public MainPage()
         {
-           
             this.InitializeComponent();
         }
+
 
         private void AutoSuggBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             if (args.ChosenSuggestion != null)
             {
                 AutoSuggBox.Text = args.ChosenSuggestion.ToString();
+
             }
         }
 
@@ -54,6 +55,7 @@ namespace GUI.AdminApp
         {
             var selectedItem = args.SelectedItem.ToString();
             sender.Text = selectedItem;
+           
         }
 
         private void AutoSuggBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -61,10 +63,16 @@ namespace GUI.AdminApp
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
                 LoadCustomers(sender);
-               // var customerList = HMSClient.GetCustomersAsync();
+                // var customerList = HMSClient.GetCustomersAsync();
                 //var searchResult = customerList.Result.Where(name => (name.CustomerFName ?? "").Contains(sender.Text));
-               // userList.ItemsSource = searchResult;
+                // userList.ItemsSource = searchResult;
             }
+        }
+
+        private void userList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            Frame.Navigate(typeof(EditUser));
         }
     }
 }
