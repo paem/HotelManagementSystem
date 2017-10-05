@@ -16,6 +16,8 @@ namespace HotelManagement.ViewModels
 
         public int RoomId { get; set; }
         
+         public int CategoryId { get; set; }
+        
         public int RoomDoorNumber { get; set; }
 
         public int RoomCount { get; set; }
