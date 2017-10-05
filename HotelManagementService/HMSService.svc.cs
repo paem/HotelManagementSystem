@@ -95,5 +95,11 @@ namespace HotelManagementService
         {
             return _roomRepository.GetRoomByCategoryId(roomCategoryId);
         }
+        
+        public ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int customerDetailsId)
+		{
+            return _customerRepository.GetCustomerByCustomerDetailsId(customerDetailsId);
+		}
+        
     }
 }
