@@ -5,6 +5,31 @@
 
 <h2>Index</h2>
 
+@using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
+{
+    <div>    
+	<div class="form-group">
+      @Html.LabelFor(model => model.SectionTypes, "Utskott")
+      @Html.DropDownList(model => model.CategoryId, new SelectList(Model.CategoryTypes "CategoryId", "Name"), new { @id = "CategoryList" })
+      <div class="error-holder">
+       @Html.ValidationMessageFor(model => model.CategoryTypes, "", new { @class = "text-danger" })
+         </div>
+          </div>
+        Last Name:<br>
+        <input type="text" id="nameToFind" name="nameToFind">
+        <input type="submit" id="submitId" value="submit" />
+    </div>
+}
+
+@{
+    if(ViewBag.SearchKey != null)
+    {
+        <span>
+            Search Key: @ViewBag.SearchKey
+        </span>
+    }
+}
+
 <div class="content" style="display: block">
 
     @foreach (var item in Model.Rooms)
@@ -40,8 +65,20 @@
         </div>
         }
     }
-
-
-
 </div>
+
+@section Script{
+
+
+<script type="text/javascript">
+            $(document).ready(function () {
+                $(document).on("change", '[id*="ProductList"]', function () {
+                    $.post("/QuoteViewModel/GetProduct", { pId: $(this).val() }, function (data) {
+                        $("[id*='ProductId']").val(data.ProductId);
+                        $("[id*='Price']").val(data.Price);
+                    });
+                });
+              });
+            </script>
+}
 
