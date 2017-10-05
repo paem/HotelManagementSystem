@@ -24,6 +24,15 @@ namespace HMS.Data.Repositories
                 return context.Customers.AsNoTracking().ToList();
             }
         }
+        
+        public ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int CustomerDetailsId)
+		{
+			using (var context = new HMSDbContext())
+			{
+				// Get customer by category id
+                return context.CustomerDetails.Where(e => e.CustomerId == CustomerDetailsId).ToList();
+			}
+		}
 
         public void CreateUser(Customer customerObj)
         {
