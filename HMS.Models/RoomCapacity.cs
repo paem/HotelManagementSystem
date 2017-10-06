@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace HMS.Models
 {
     [DataContract]
-   public class RoomCapacity
+    public class RoomCapacity
     {
         [Key]
         [Required]

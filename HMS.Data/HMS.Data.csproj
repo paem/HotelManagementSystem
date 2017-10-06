@@ -50,9 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HMSDbContext.cs" />
-    <Compile Include="Migrations\201710021654040_new mig.cs" />
-    <Compile Include="Migrations\201710021654040_new mig.Designer.cs">
-      <DependentUpon>201710021654040_new mig.cs</DependentUpon>
+    <Compile Include="Migrations\201710060439229_NEW MIGRATION.cs" />
+    <Compile Include="Migrations\201710060439229_NEW MIGRATION.Designer.cs">
+      <DependentUpon>201710060439229_NEW MIGRATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710060442246_LATEST MIG.cs" />
+    <Compile Include="Migrations\201710060442246_LATEST MIG.Designer.cs">
+      <DependentUpon>201710060442246_LATEST MIG.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +76,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021654040_new mig.resx">
-      <DependentUpon>201710021654040_new mig.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710060439229_NEW MIGRATION.resx">
+      <DependentUpon>201710060439229_NEW MIGRATION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710060442246_LATEST MIG.resx">
+      <DependentUpon>201710060442246_LATEST MIG.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

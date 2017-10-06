@@ -3,7 +3,7 @@ namespace HMS.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class newmig : DbMigration
+    public partial class NEWMIGRATION : DbMigration
     {
         public override void Up()
         {
@@ -15,7 +15,6 @@ namespace HMS.Data.Migrations
                         BookingDate = c.DateTime(nullable: false),
                         BookingArrivalDate = c.DateTime(nullable: false),
                         BookingDepartureDate = c.DateTime(nullable: false),
-                        RoomCategoryId = c.Int(nullable: false),
                         RoomId = c.Int(nullable: false),
                         CustomerId = c.Int(nullable: false),
                         BookingStatus = c.Boolean(nullable: false),
@@ -28,8 +27,6 @@ namespace HMS.Data.Migrations
                 .PrimaryKey(t => t.BookingId)
                 .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
                 .ForeignKey("dbo.Rooms", t => t.RoomId, cascadeDelete: true)
-                .ForeignKey("dbo.RoomCategories", t => t.RoomCategoryId, cascadeDelete: true)
-                .Index(t => t.RoomCategoryId)
                 .Index(t => t.RoomId)
                 .Index(t => t.CustomerId);
             
@@ -58,11 +55,11 @@ namespace HMS.Data.Migrations
                         RoomDoorNumber = c.Int(nullable: false),
                         RoomCount = c.Int(nullable: false),
                         RoomStatus = c.Boolean(nullable: false),
-                        RoomCategoryId = c.Int(),
+                        RoomCategoryId = c.Int(nullable: false),
                         RoomPrice = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.RoomId)
-                .ForeignKey("dbo.RoomCategories", t => t.RoomCategoryId)
+                .ForeignKey("dbo.RoomCategories", t => t.RoomCategoryId, cascadeDelete: true)
                 .Index(t => t.RoomCategoryId);
             
             CreateTable(
@@ -119,7 +116,6 @@ namespace HMS.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.CustomerDetails", "CustomerId", "dbo.Customers");
-            DropForeignKey("dbo.Bookings", "RoomCategoryId", "dbo.RoomCategories");
             DropForeignKey("dbo.Bookings", "RoomId", "dbo.Rooms");
             DropForeignKey("dbo.Rooms", "RoomCategoryId", "dbo.RoomCategories");
             DropForeignKey("dbo.RoomCategories", "RoomCapacityId", "dbo.RoomCapacities");
@@ -129,7 +125,6 @@ namespace HMS.Data.Migrations
             DropIndex("dbo.Rooms", new[] { "RoomCategoryId" });
             DropIndex("dbo.Bookings", new[] { "CustomerId" });
             DropIndex("dbo.Bookings", new[] { "RoomId" });
-            DropIndex("dbo.Bookings", new[] { "RoomCategoryId" });
             DropTable("dbo.Hotels");
             DropTable("dbo.CustomerDetails");
             DropTable("dbo.RoomCapacities");

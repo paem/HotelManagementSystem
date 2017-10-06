@@ -203,6 +203,8 @@
     <Content Include="Properties\DataSources\HMS.Models.Customer.datasource" />
     <Content Include="Properties\DataSources\HMS.Models.CustomerDetails.datasource" />
     <Content Include="Properties\DataSources\HMS.Models.Hotel.datasource" />
+    <Content Include="Properties\DataSources\HMS.Models.RoomCapacity.datasource" />
+    <Content Include="Properties\DataSources\HMS.Models.RoomCategory.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

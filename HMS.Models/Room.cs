@@ -21,11 +21,11 @@ namespace HMS.Models
 
         [DataMember]
         public bool RoomStatus { get; set; }
-
+    
         [DataMember]
-        public int? RoomCategoryId { get; set; }
         [ForeignKey("RoomCategoryId")]
         public virtual RoomCategory RoomCategory { get; set; }
+        public int RoomCategoryId { get; set; }
 
         [DataMember]
         public double RoomPrice { get; set; }

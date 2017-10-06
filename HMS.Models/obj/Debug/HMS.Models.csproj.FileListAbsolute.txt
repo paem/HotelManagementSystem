@@ -23,4 +23,3 @@ C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Models\bin\Debug\HMS.
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.csproj.CoreCompileInputs.cache
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.dll
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.pdb
-C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Models\obj\Debug\HMS.Models.csprojResolveAssemblyReference.cache
