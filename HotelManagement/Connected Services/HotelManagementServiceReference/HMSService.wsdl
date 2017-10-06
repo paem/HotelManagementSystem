@@ -67,6 +67,30 @@
   <wsdl:message name="IHMSService_GetCustomers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomsByCategoryId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomsByCategoryId" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomsByCategoryId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomsByCategoryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomCategoryTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomCategoryTypes" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomCategoryTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomCategoryTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomCapacity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomCapacity" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetRoomCapacity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomCapacityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetCustomerByCustomerDetailsId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCustomerDetailsId" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetCustomerByCustomerDetailsId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCustomerDetailsIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHMSService">
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRooms" message="tns:IHMSService_GetRooms_InputMessage" />
@@ -107,6 +131,22 @@
     <wsdl:operation name="GetCustomers">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCustomers" message="tns:IHMSService_GetCustomers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCustomersResponse" message="tns:IHMSService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomsByCategoryId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRoomsByCategoryId" message="tns:IHMSService_GetRoomsByCategoryId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetRoomsByCategoryIdResponse" message="tns:IHMSService_GetRoomsByCategoryId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomCategoryTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRoomCategoryTypes" message="tns:IHMSService_GetRoomCategoryTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetRoomCategoryTypesResponse" message="tns:IHMSService_GetRoomCategoryTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomCapacity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRoomCapacity" message="tns:IHMSService_GetRoomCapacity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetRoomCapacityResponse" message="tns:IHMSService_GetRoomCapacity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCustomerDetailsId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId" message="tns:IHMSService_GetCustomerByCustomerDetailsId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse" message="tns:IHMSService_GetCustomerByCustomerDetailsId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHMSService" type="tns:IHMSService">
@@ -194,6 +234,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetCustomers">
       <soap:operation soapAction="http://tempuri.org/IHMSService/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomsByCategoryId">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetRoomsByCategoryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomCategoryTypes">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetRoomCategoryTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomCapacity">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetRoomCapacity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByCustomerDetailsId">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

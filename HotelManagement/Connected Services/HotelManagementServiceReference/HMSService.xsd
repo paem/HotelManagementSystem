@@ -121,4 +121,56 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetRoomsByCategoryId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roomCategoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomsByCategoryIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomsByCategoryIdResult" nillable="true" type="q10:ArrayOfRoom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomCategoryTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomCategoryTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCategoryTypesResult" nillable="true" type="q11:ArrayOfRoomCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomCapacity">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomCapacityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCapacityResult" nillable="true" type="q12:ArrayOfRoomCapacity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByCustomerDetailsId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerDetailsId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByCustomerDetailsIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerByCustomerDetailsIdResult" nillable="true" type="q13:ArrayOfCustomerDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

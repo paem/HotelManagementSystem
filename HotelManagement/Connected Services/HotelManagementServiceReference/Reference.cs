@@ -74,6 +74,30 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomers", ReplyAction="http://tempuri.org/IHMSService/GetCustomersResponse")]
         System.Threading.Tasks.Task<HMS.Models.Customer[]> GetCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomsByCategoryId", ReplyAction="http://tempuri.org/IHMSService/GetRoomsByCategoryIdResponse")]
+        HMS.Models.Room[] GetRoomsByCategoryId(int roomCategoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomsByCategoryId", ReplyAction="http://tempuri.org/IHMSService/GetRoomsByCategoryIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Room[]> GetRoomsByCategoryIdAsync(int roomCategoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomCategoryTypes", ReplyAction="http://tempuri.org/IHMSService/GetRoomCategoryTypesResponse")]
+        HMS.Models.RoomCategory[] GetRoomCategoryTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomCategoryTypes", ReplyAction="http://tempuri.org/IHMSService/GetRoomCategoryTypesResponse")]
+        System.Threading.Tasks.Task<HMS.Models.RoomCategory[]> GetRoomCategoryTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomCapacity", ReplyAction="http://tempuri.org/IHMSService/GetRoomCapacityResponse")]
+        HMS.Models.RoomCapacity[] GetRoomCapacity();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomCapacity", ReplyAction="http://tempuri.org/IHMSService/GetRoomCapacityResponse")]
+        System.Threading.Tasks.Task<HMS.Models.RoomCapacity[]> GetRoomCapacityAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse")]
+        HMS.Models.CustomerDetails[] GetCustomerByCustomerDetailsId(int customerDetailsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +205,38 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.Customer[]> GetCustomersAsync() {
             return base.Channel.GetCustomersAsync();
+        }
+        
+        public HMS.Models.Room[] GetRoomsByCategoryId(int roomCategoryId) {
+            return base.Channel.GetRoomsByCategoryId(roomCategoryId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Room[]> GetRoomsByCategoryIdAsync(int roomCategoryId) {
+            return base.Channel.GetRoomsByCategoryIdAsync(roomCategoryId);
+        }
+        
+        public HMS.Models.RoomCategory[] GetRoomCategoryTypes() {
+            return base.Channel.GetRoomCategoryTypes();
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.RoomCategory[]> GetRoomCategoryTypesAsync() {
+            return base.Channel.GetRoomCategoryTypesAsync();
+        }
+        
+        public HMS.Models.RoomCapacity[] GetRoomCapacity() {
+            return base.Channel.GetRoomCapacity();
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.RoomCapacity[]> GetRoomCapacityAsync() {
+            return base.Channel.GetRoomCapacityAsync();
+        }
+        
+        public HMS.Models.CustomerDetails[] GetCustomerByCustomerDetailsId(int customerDetailsId) {
+            return base.Channel.GetCustomerByCustomerDetailsId(customerDetailsId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId) {
+            return base.Channel.GetCustomerByCustomerDetailsIdAsync(customerDetailsId);
         }
     }
 }

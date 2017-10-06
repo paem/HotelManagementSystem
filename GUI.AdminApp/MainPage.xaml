@@ -10,8 +10,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <ListView x:Name="userList" Margin="0,65,0,-65" SelectionChanged="userList_SelectionChanged" > <!--ListBox kan bytas ut mot GirdView-->
-            <ListView.ItemTemplate>
+        <ListBox x:Name="userList" Margin="0,65,0,-65" SelectionChanged="userList_SelectionChanged" > <!--ListBox kan bytas ut mot GirdView-->
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height = "35" Width = "400"  Margin="200 0 0 0">
                         <StackPanel Orientation="Horizontal">
@@ -20,9 +20,9 @@
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListBox.ItemTemplate>
             <TextBlock Height="100" TextWrapping="Wrap" Text="TextBlock" Width="100"/>
-        </ListView>
+        </ListBox>
 
         <AutoSuggestBox x:Name="AutoSuggBox" Header="Customer Search" PlaceholderText="Search for customer" 
                         QuerySubmitted="AutoSuggBox_QuerySubmitted" 

@@ -5,12 +5,12 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
+@using (Html.BeginForm("SearchAct", "Home", "POST"))
 {
     <div>    
 	<div class="form-group">
-      @Html.LabelFor(model => model.SectionTypes, "Utskott")
-      @Html.DropDownList(model => model.CategoryId, new SelectList(Model.CategoryTypes "CategoryId", "Name"), new { @id = "CategoryList" })
+      @Html.LabelFor(model => model.CategoryTypes, "Room category")
+      @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.CategoryTypes, "CategoryId", "Name"), new { @id = "CategoryList" })
       <div class="error-holder">
        @Html.ValidationMessageFor(model => model.CategoryTypes, "", new { @class = "text-danger" })
          </div>
