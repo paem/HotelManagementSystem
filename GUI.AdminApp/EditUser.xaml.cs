@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
 
+
 namespace GUI.AdminApp
 {
     public sealed partial class EditUser : Page
@@ -22,6 +23,32 @@ namespace GUI.AdminApp
         public EditUser()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Customer customer = (Customer)e.Parameter;
+            int CustomerId = customer.CustomerId;
+            string FName = customer.CustomerFName;
+            string LName = customer.CustomerLName;
+            string Email = customer.CustomerEmail;
+            string Gender = customer.CustomerGender;
+            string PhoneNumber = customer.CustomerPhoneNo;
+            string Country = customer.CustomerCountry;
+            string City = customer.CustomerCity;
+            string Adress = customer.CustomerAddress;
+
+            this.CustomerId.Text = CustomerId.ToString();
+            this.FName.Text = FName;
+            this.LName.Text = LName;
+            this.Email.Text = Email;
+            this.Gender.Text = Gender;
+            this.PhoneNumber.Text = PhoneNumber;
+            this.Country.Text = Country;
+            this.City.Text = City;
+            this.Adress.Text = Adress;
+
+            //userList.ItemsSource = e.Parameter.ToString();
+            
         }
     }
     }

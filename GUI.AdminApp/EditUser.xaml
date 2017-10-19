@@ -8,6 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock>Edit UserPage</TextBlock>
+        <GridView>
+            <TextBlock x:Name="CustomerId" Width="100"></TextBlock>
+            <TextBlock x:Name="FName"></TextBlock>
+            <TextBlock x:Name="LName"></TextBlock>
+            <TextBlock x:Name="Email"></TextBlock>
+            <TextBlock x:Name="Gender"></TextBlock>
+            <TextBlock x:Name="PhoneNumber"></TextBlock>
+            <TextBlock x:Name="Country"></TextBlock>
+            <TextBlock x:Name="City"></TextBlock>
+            <TextBlock x:Name="Adress"></TextBlock>
+            <Grid>
+                <Button>Edit</Button>
+            </Grid>
+        </GridView>
     </Grid>
 </Page>

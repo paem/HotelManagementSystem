@@ -25,22 +25,11 @@ namespace GUI.AdminApp
     public sealed partial class MainPage : Page
     {
         private readonly HMSServiceClient HMSClient = new HMSServiceClient();
-
-        
-        //Skriver ut alla användare
-        private async void LoadCustomers(AutoSuggestBox sender)
-        {
-            var customerList = await HMSClient.GetCustomersAsync();
-            var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
-
-            userList.ItemsSource = searchResult;
-        }
       
         public MainPage()
         {
             this.InitializeComponent();
         }
-
 
         private void AutoSuggBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
@@ -58,21 +47,23 @@ namespace GUI.AdminApp
            
         }
 
-        private void AutoSuggBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        private async void AutoSuggBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
-                LoadCustomers(sender);
-                // var customerList = HMSClient.GetCustomersAsync();
-                //var searchResult = customerList.Result.Where(name => (name.CustomerFName ?? "").Contains(sender.Text));
-                // userList.ItemsSource = searchResult;
+                var customerList = await HMSClient.GetCustomersAsync();
+                var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
+
+                userList.ItemsSource = searchResult;
             }
         }
 
         private void userList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            Frame.Navigate(typeof(EditUser));
+            
+            Frame.Navigate(typeof(EditUser), userList.SelectedItem);
         }
     }
 }
+
+//var selectedSource = Convert.ToString(((GridView)sender).SelectedItem);
