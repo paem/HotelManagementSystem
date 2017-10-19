@@ -1,84 +1,74 @@
-﻿@model HotelManagement.ViewModels.RoomViewModel
+﻿@model HotelManagement.ViewModels.RoomAndCategoryViewModel
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("SearchAct", "Home", "POST"))
-{
-    <div>    
-	<div class="form-group">
-      @Html.LabelFor(model => model.CategoryTypes, "Room category")
-      @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.CategoryTypes, "CategoryId", "Name"), new { @id = "CategoryList" })
-      <div class="error-holder">
-       @Html.ValidationMessageFor(model => model.CategoryTypes, "", new { @class = "text-danger" })
-         </div>
-          </div>
-        Last Name:<br>
-        <input type="text" id="nameToFind" name="nameToFind">
-        <input type="submit" id="submitId" value="submit" />
+
+<style>
+    .dropdown-name, h4, .dropdownLabel {
+        margin-left: 13px;
+    }
+</style>
+
+
+<div class="row">
+    <div class="start-banner">
     </div>
-}
-
-@{
-    if(ViewBag.SearchKey != null)
-    {
-        <span>
-            Search Key: @ViewBag.SearchKey
-        </span>
-    }
-}
-
-<div class="content" style="display: block">
-
-    @foreach (var item in Model.Rooms)
-    {
-        <!--Ska det vara false eller true?? lite confused haha.-->
-        if (Model.RoomStatus == false)
-        {     
-        <div class="row event" id="myTable">
-            <div class="col-md-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-                <div class="thumbnail">
-                    <h3>Available Rooms</h3>
-                    <img style="max-height: 450px" src="" alt="room image">
-                    <div class="caption">                                        
-                        <p>
-                             Categorytype:
-                            <!--Kanske måste göra en foreach för varje värde här? om vi vill ha det snyggt, inte säker på designen än.-->
-                            @foreach (var categoryType in @Model.CategoryTypes)
-                            {
-                                if (categoryType.RoomCategoryId == @item.RoomCategoryId)
-                                {
-                                    @categoryType.RoomCategoryName
-                                    @categoryType.RoomCategoryDesc
-                                    @categoryType.RoomCategoryBeds          
-                                    @categoryType.RoomCapacity.RoomCapacityName
-                                    @categoryType.RoomCapacity.RoomCapacityAdults
-                                    @categoryType.RoomCapacity.RoomCapacityChildren
-                                }
-                            }
-                        </p>                                                    
-                   </div>
-                </div>
-            </div>
-        </div>
-        }
-    }
+</div>
+<div class="col-md-12">
+    <div class="col-md-12">     
+        <p class="dropdownLabel">
+            <strong>Choose room type</strong>
+        </p>
+        <select name="myFormInputName" id="myFormInputName" class="form-control dropdown-name">
+         @foreach (var link in Model.CategoryTypes)
+         {
+            <option value="@(link.RoomCategoryId)">@(link.RoomCategoryName)</option>
+         }
+        </select>
+    </div>
+   
 </div>
 
-@section Script{
+<div class="col-md-12">
+    <div id="partialPlaceHolder" style="display: none;"></div>
+</div>
 
 
-<script type="text/javascript">
-            $(document).ready(function () {
-                $(document).on("change", '[id*="ProductList"]', function () {
-                    $.post("/QuoteViewModel/GetProduct", { pId: $(this).val() }, function (data) {
-                        $("[id*='ProductId']").val(data.ProductId);
-                        $("[id*='Price']").val(data.Price);
-                    });
+
+@section scripts {
+    <script>
+
+        function renderRoom(RoomCategoryId) {
+            /* Request the partial view with .get request. */
+            $.get('/Room/RoomInformation/' + RoomCategoryId,
+                function (data) {
+
+                    /* data is the pure html returned from action method, load it to your page */
+                    $('#partialPlaceHolder').html(data);
+
+                    /* little fade in effect */
+                    $('#partialPlaceHolder').fadeIn('fast');
                 });
-              });
-            </script>
-}
+        }
 
+
+        $(document)
+            .ready(function () {
+                // Initial room to render
+                var RoomCategoryId = $("#myFormInputName").val();
+                renderRoom(RoomCategoryId);
+
+                // Select room to show
+                $("#myFormInputName")
+                    .on('change',
+                    function () {
+                        var RoomCategoryId = $(this).val();
+                        renderRoom(RoomCategoryId);
+                    });
+            });
+
+    </script>
+}
