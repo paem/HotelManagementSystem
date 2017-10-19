@@ -22,13 +22,8 @@ namespace HMS.Models
         [DataMember]
         public DateTime BookingDepartureDate { get; set; }
 
-        /* Går inte att ha ett o samma foreign keys på flera ställen tydligen..???? ger error: Introducing FOREIGN KEY constraint 'FK_dbo.Bookings_dbo.RoomCategories_RoomCategoryId' on table 'Bookings' may cause cycles or multiple cascade paths
-          [DataMember]
-          public int RoomCategoryId { get; set; }
-          [ForeignKey("RoomCategoryId")]
-          public virtual RoomCategory RoomCategory { get; set; }
-
-        */
+        [DataMember]
+        public int RoomCategoryId { get; set; }
 
         [DataMember]
         public int RoomId { get; set; }

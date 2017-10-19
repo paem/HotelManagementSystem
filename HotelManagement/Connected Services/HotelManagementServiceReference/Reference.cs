@@ -98,6 +98,24 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse")]
         System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomById", ReplyAction="http://tempuri.org/IHMSService/GetRoomByIdResponse")]
+        HMS.Models.Room GetRoomById(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomById", ReplyAction="http://tempuri.org/IHMSService/GetRoomByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Room> GetRoomByIdAsync(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCategoryById", ReplyAction="http://tempuri.org/IHMSService/GetCategoryByIdResponse")]
+        HMS.Models.RoomCategory GetCategoryById(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCategoryById", ReplyAction="http://tempuri.org/IHMSService/GetCategoryByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.RoomCategory> GetCategoryByIdAsync(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/RoomDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/RoomDetailInfoByIdResponse")]
+        HMS.Models.Room[] RoomDetailInfoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/RoomDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/RoomDetailInfoByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Room[]> RoomDetailInfoByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,6 +255,30 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId) {
             return base.Channel.GetCustomerByCustomerDetailsIdAsync(customerDetailsId);
+        }
+        
+        public HMS.Models.Room GetRoomById(int roomId) {
+            return base.Channel.GetRoomById(roomId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Room> GetRoomByIdAsync(int roomId) {
+            return base.Channel.GetRoomByIdAsync(roomId);
+        }
+        
+        public HMS.Models.RoomCategory GetCategoryById(int roomId) {
+            return base.Channel.GetCategoryById(roomId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.RoomCategory> GetCategoryByIdAsync(int roomId) {
+            return base.Channel.GetCategoryByIdAsync(roomId);
+        }
+        
+        public HMS.Models.Room[] RoomDetailInfoById(int id) {
+            return base.Channel.RoomDetailInfoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Room[]> RoomDetailInfoByIdAsync(int id) {
+            return base.Channel.RoomDetailInfoByIdAsync(id);
         }
     }
 }

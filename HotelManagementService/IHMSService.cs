@@ -56,5 +56,14 @@ namespace HotelManagementService
         [OperationContract]
         ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int customerDetailsId);
 
+        [OperationContract]
+        Room GetRoomById(int roomId);
+
+        [OperationContract]
+        RoomCategory GetCategoryById(int roomId);
+
+        [OperationContract]
+        ICollection<Room> RoomDetailInfoById(int id);
+   
     }
 }

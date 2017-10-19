@@ -1,0 +1,259 @@
+﻿@model HotelManagement.ViewModels.RoomAndCategoryViewModel
+@{
+    ViewBag.Title = "About Page";
+}
+
+
+<style>
+    /* Left side Card Item (Info) */
+    .item-left {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        height: 550px;
+        margin: 15px;
+        padding: 15px;
+    }
+
+        .item-left.profile {
+            margin-bottom: 60px;
+            padding: 0;
+        }
+
+
+    .profile-text {
+        margin-top: 30px;
+    }
+
+    .item-left img {
+        margin-top: 14px;
+    }
+
+    .item-left h3 {
+        margin: 0;
+    }
+
+    .left-main-content {
+        margin-top: 10px;
+    }
+
+    .relative-holder {
+        height: 159px;
+    }
+
+
+    /* Right Side Card Item (Tasks)  */
+
+    .task-heading {
+        background-color: #229ee5;
+        border-bottom: 0.5px solid black;
+        color: white;
+        height: 50px;
+        line-height: 50px;
+    }
+
+        .task-heading p {
+            font-weight: bold;
+        }
+
+
+    .task-item {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        height: 300px;
+        margin: 15px 10px 40px 10px;
+        max-width: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .left-task-items {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        margin: 15px 10px 40px 10px;
+        max-width: 400px;
+        overflow: hidden;
+        position: relative;
+        transition: all 100ms ease-in;
+    }
+
+    .left-ul-item {
+        list-style: none;
+        padding: 0;
+    }
+
+
+    .task-item:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        transition: all 100ms ease-in;
+    }
+
+
+    /* Center button using transform (new browesers supports this only) */
+
+    .btn-more-info3 {
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 130px;
+    }
+
+    .btn-more-info {
+        bottom: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        left: 50%;
+        margin-left: -71px;
+        position: absolute;
+        width: 130px;
+    }
+
+
+    /* Some random fixing */
+
+    .card-heading div {
+        height: 100%;
+    }
+
+    .task-heading p {
+        margin: 0;
+    }
+
+
+    .list-group {
+        margin: 0;
+    }
+
+    .list-group-item {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .list-special .list-group-item:first-child {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .list-special .list-group-item:last-child {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .pagination-holder {
+        margin-left: 100px;
+    }
+
+
+
+    .right-task-expand {
+        height: 310px;
+    }
+
+    .right-task-expanded {
+        height: 600px;
+    }
+
+    .left-task-expand {
+        height: 550px;
+    }
+
+    .left-task-expanded {
+        height: 750px;
+    }
+
+
+
+
+    .relative-li-item {
+        margin-bottom: 40px;
+    }
+
+    @@media (max-width: 480px) {
+        .item-left {
+            min-height: 300px;
+        }
+
+        .task-item {
+            height: 330px;
+        }
+
+        .pagination-holder {
+            margin-left: 0;
+        }
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Left side of page-->
+        <div class="col-xs-12">
+            <div class="left-side-holder">
+
+                <h1 style="color: black;">Rooms</h1>
+                <hr />
+                @foreach (var item in Model.Rooms)
+                {
+                    <div class="item-left left-task-items moreinfo-holder">
+                        <img class="img-responsive" src="@Model.RoomCategory.RoomCategoryImage" style="width:auto" alt="roompicture" />
+                        <h3>@Model.RoomCategory.RoomCategoryName</h3>
+                        <div class="left-main-content">
+                            <ul class="left-ul-item">
+                                <li>
+                                   Price: @item.RoomPrice
+                                    <br />
+                                   Number of rooms available: @item.RoomCount
+                                    <br />
+                                   Description: @Model.RoomCategory.RoomCategoryDesc
+                                    <br />
+                                   Bedtype: @Model.RoomCategory.RoomCategoryBeds
+                                    <br />
+
+                      <!--     Har inte fixat så man kan hämta Capacity än det ska gå egentligen redan tycker jag men...     
+                                 Size: @*@item.
+                                 Adult spots: @item.RoomCapacity.RoomCapacityAdults
+                                 Children spots: @item.RoomCapacity.RoomCapacityChildren*@ --> 
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="btn-more-info moreButtonLeft text-center" name="moreButton" id="moreButton">Mer Info</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            $(document)
+                .ready(function () {
+
+                    $('.moreButtonRight')
+                        .on('click',
+                        function () {
+                            var taskItemDiv = $(this).parent('div');
+                            taskItemDiv.toggleClass("right-task-expad right-task-expanded");
+                        });
+
+
+                    $('.moreButtonLeft')
+                        .on('click',
+                        function () {
+                            var taskItemDiv = $(this).parent('div');
+                            taskItemDiv.toggleClass("left-task-expand left-task-expanded");
+                        });
+
+                });
+        </script>

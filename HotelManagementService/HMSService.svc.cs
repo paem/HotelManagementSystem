@@ -100,6 +100,21 @@ namespace HotelManagementService
 		{
             return _customerRepository.GetCustomerByCustomerDetailsId(customerDetailsId);
 		}
-        
+
+        public Room GetRoomById(int roomId)
+        {
+            return _roomRepository.FindRoomById(roomId);
+        }
+
+        public RoomCategory GetCategoryById(int categoryId)
+        {
+            return _roomRepository.FindCategoryById(categoryId);
+        }
+
+        public ICollection<Room> RoomDetailInfoById(int id)
+        {
+            return _roomRepository.RoomDetailInfoById(id);
+        }
+   
     }
 }

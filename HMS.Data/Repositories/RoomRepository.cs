@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HMS.Models;
+using System.Data.Entity;
 
 namespace HMS.Data.Repositories
 {
@@ -75,5 +76,39 @@ namespace HMS.Data.Repositories
                 context.SaveChanges();
             }
         }
+
+        public Room FindRoomById(int roomId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+                return context.Rooms.AsNoTracking().SingleOrDefault(p => p.RoomId == roomId);
+            }
+        }
+
+        public RoomCategory FindCategoryById(int categoryId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+                return context.RoomCategory.AsNoTracking().SingleOrDefault(p => p.RoomCategoryId == categoryId);
+            }
+        }
+
+        // Could be optimized 
+        public ICollection<Room> RoomDetailInfoById(int id)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+              context.Configuration.LazyLoadingEnabled = false;
+
+              var query = context.Rooms.AsNoTracking().Where(p => p.RoomCategoryId == id)
+                                                           .Include(m => m.RoomCategories)
+                                                           .Include(r => r.RoomCapacities)
+                                                           .ToList();
+              
+
+                return query;
+            }
+        }
+
     }
 }

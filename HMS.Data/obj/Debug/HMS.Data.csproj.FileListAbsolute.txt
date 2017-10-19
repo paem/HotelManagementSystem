@@ -82,3 +82,8 @@ C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Da
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.NEWMIGRATION.resources
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.csproj.GenerateResource.Cache
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.LATESTMIG.resources
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\bin\Debug\Windows.Foundation.UniversalApiContract.winmd
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.newkeys.resources
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.imageinroomcategory.resources
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.navigationproperties.resources
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.update.resources

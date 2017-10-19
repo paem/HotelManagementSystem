@@ -17,12 +17,12 @@ namespace HotelManagement.Controllers
         {
             var rooms = _roomWCFClient.GetRooms();
             var categoryTypes = _roomWCFClient.GetRoomCategoryTypes();
-            var capacity = _roomWCFClient.GetRoomCapacity();
-            var viewModel = new RoomViewModel
+           
+            var viewModel = new RoomAndCategoryViewModel
             {
                 Rooms = rooms,
                 CategoryTypes = categoryTypes,
-                RoomCapacity = capacity,
+              
                 
 
         
@@ -32,39 +32,54 @@ namespace HotelManagement.Controllers
             return View(viewModel);    
         }
 
-
-       /*
-        [HttpPost]
-        public ActionResult CreateRoom(RoomViewModel viewModel)
+        // Partialview with all room information
+        public ActionResult RoomInformation(int id)
         {
-            if (ModelState.IsValid)
+            var room = _roomWCFClient.RoomDetailInfoById(id);
+            var categories = _roomWCFClient.GetCategoryById(id);
+        
+
+            var viewModel = new RoomAndCategoryViewModel
             {
-                viewModel.RoomId = 1; // HARD CODED 
-                viewModel.RoomDoorNumber = 45; // HARD CODED
-                viewModel.RoomCount = 5;
-                viewModel.RoomStatus = false;
+                Rooms = room,
+                RoomCategory = categories,
+             
+            };
+            return PartialView("_RoomInfoPartialView", viewModel);
+        } 
 
-                var roomObject = new Room
-                {
-                    RoomId = viewModel.RoomId,
-                    
-                };
-                _roomWCFClient.CreateRoom(roomObject);
+        /*
+         [HttpPost]
+         public ActionResult CreateRoom(RoomViewModel viewModel)
+         {
+             if (ModelState.IsValid)
+             {
+                 viewModel.RoomId = 1; // HARD CODED 
+                 viewModel.RoomDoorNumber = 45; // HARD CODED
+                 viewModel.RoomCount = 5;
+                 viewModel.RoomStatus = false;
 
-    
-                return RedirectToAction("Index", "EventList");
-            }
+                 var roomObject = new Room
+                 {
+                     RoomId = viewModel.RoomId,
+
+                 };
+                 _roomWCFClient.CreateRoom(roomObject);
 
 
-            
-            //viewModel.EventTypes = eventsTypes;
+                 return RedirectToAction("Index", "EventList");
+             }
 
 
-            return View("Index", viewModel);
-        }
+
+             //viewModel.EventTypes = eventsTypes;
 
 
-    */
+             return View("Index", viewModel);
+         }
+
+
+     */
 
     }
 }
