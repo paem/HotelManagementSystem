@@ -4,52 +4,66 @@
     ViewBag.Title = "Index";
 }
 
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+
+<style>
+    .input-group-addon {
+        background-color: white;
+        border-radius: 3px !important;
+    }
+</style>
+
+
+
 <h2>Index</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
+
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
         <h4>BookingViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookingId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingId, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
+        <div class="form-group has-feedback has-feedback-right">
             @Html.LabelFor(model => model.BookingDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
+            <div class="input-group date" id="datetimepicker">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @class = "form-control form-control input-group-addon", @placeholder = "Please input date" } })
+                    <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                    @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group has-feedback has-feedback-right">
             @Html.LabelFor(model => model.BookingArrivalDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingArrivalDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingArrivalDate, "", new { @class = "text-danger" })
+            <div class="input-group date" id="datetimepicker2">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BookingArrivalDate, new { htmlAttributes = new { @class = "form-control form-control input-group-addon", @placeholder = "Please input date" } })
+                    <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+
+                    @Html.ValidationMessageFor(model => model.BookingArrivalDate, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group has-feedback has-feedback-right">
             @Html.LabelFor(model => model.BookingDepartureDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingDepartureDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingDepartureDate, "", new { @class = "text-danger" })
+            <div class="input-group date" id="datetimepicker3">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BookingDepartureDate, new { htmlAttributes = new { @class = "form-control form-control input-group-addon", @placeholder = "Please input date" } })
+                    <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+                    @Html.ValidationMessageFor(model => model.BookingDepartureDate, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
-     
-
-    
 
         <div class="form-group">
             @Html.LabelFor(model => model.BookingTotalNights, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -98,4 +112,95 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/locale-all.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
+    <script>
+
+        /* Global FUNCTIONS */
+
+        function renderCalendar(data) {
+
+            $('#calendar')
+
+                .fullCalendar({
+
+                    header: {
+
+                        left: 'prev,next today',
+
+                        center: 'title',
+
+                        right: 'month,basicWeek,basicDay'
+
+                    },
+
+                    locale: 'sv',
+
+                    navLinks: true, // can click day/week names to navigate views
+
+                    editable: true,
+
+                    eventLimit: true, // allow "more" link when too many events
+
+                    events: data,
+
+
+
+                });
+
+        }
+
+        /* Global FUNCTIONS Ends */
+
+
+
+        /* DatetimePicker*/
+
+        $('#datetimepicker')
+
+            .datetimepicker({
+
+                locale: 'sv'
+
+            });
+
+        $('#datetimepicker2')
+
+               .datetimepicker({
+
+                   locale: 'sv'
+
+               });
+
+        $('#datetimepicker3')
+
+               .datetimepicker({
+
+                   locale: 'sv'
+
+               });
+
+
+
+                $(".btn-success").on("click", function() {
+
+                    $(".alert").removeClass("in").show();
+
+	                $(".alert").delay(200).addClass("in").fadeOut(2000);
+
+                });
+
+    </script>
+
+
 }
