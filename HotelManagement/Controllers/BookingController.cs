@@ -11,28 +11,30 @@ namespace HotelManagement.Controllers
     {
         private readonly HMSService _bookingWCFClient = new HMSService();
 
+        //??
+        //public ActionResult Index()
+        //{
+        //    var rooms = _bookingWCFClient.GetRooms();
+        //    var viewModel = new RoomViewModel
+        //    {
+        //        Rooms = rooms
+        //    };
+
+        //    return View(viewModel);
+        //}
 
         public ActionResult Index()
         {
-            var rooms = _bookingWCFClient.GetRooms();
-            var viewModel = new RoomViewModel
-            {
-                Rooms = rooms
-            };
-
-            return View(viewModel);
+            return View(new BookingViewModel());
         }
 
 
-        
-         [HttpPost]
+        [HttpPost]
          public ActionResult CreateBooking(BookingViewModel viewModel)
          {
              if (ModelState.IsValid)
              {
-               
-
-
+             
                 var bookingObject = new Booking
                 {
                     BookingId = viewModel.BookingId,
@@ -52,18 +54,11 @@ namespace HotelManagement.Controllers
                  _bookingWCFClient.CreateBooking(bookingObject);
 
 
-                 return RedirectToAction("Index", "Booking");
-             }
+                return RedirectToAction("Index", "Booking");
+            }
 
-
-
-             //viewModel.EventTypes = eventsTypes;
-
-
-             return View("Index", viewModel);
-         }
-
-
+            return View("Index", viewModel);
+        }
      
     }
 }
