@@ -16,8 +16,7 @@ namespace HMS.Data.Repositories
                 if (bookObj.BookingId == 0)
                 {
                     // Create
-                    context.Booking.Add(bookObj);
-
+                    context.Booking.Add(bookObj);               
                 }
                 else
                 {

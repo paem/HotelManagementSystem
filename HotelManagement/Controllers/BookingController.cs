@@ -23,38 +23,41 @@ namespace HotelManagement.Controllers
         //    return View(viewModel);
         //}
 
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
+            Session["RoomId"] = id;
             return View(new BookingViewModel());
         }
 
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
          public ActionResult CreateBooking(BookingViewModel viewModel)
          {
              if (ModelState.IsValid)
              {
-             
+
+
                 var bookingObject = new Booking
                 {
                     BookingId = viewModel.BookingId,
-                    CustomerId = viewModel.BookingCustomerId,
+                    CustomerId = int.Parse(Session["UserID"].ToString()),
                     BookingDate = DateTime.Now,
-                    RoomId = viewModel.BookingRoomId,                
+                    RoomId = int.Parse(viewModel.BookingRoomId.ToString()),
                     BookingArrivalDate = viewModel.BookingArrivalDate,
                     BookingDepartureDate = viewModel.BookingDepartureDate,
-                    BookingStatus = viewModel.BookingStatus,
+                    BookingStatus = true,
                     BookingTotalAdults = viewModel.BookingTotalAdults,
                     BookingTotalChilds = viewModel.BookingTotalChilds,
                     BookingTotalCost = viewModel.BookingTotalCost,
                     BookingTotalNights = viewModel.BookingTotalNights,
-                    BookingTotalRooms = viewModel.BookingTotalRooms
+                    BookingTotalRooms = viewModel.BookingTotalRooms,
+                    RoomCategoryId = 1,               
                     
                  };
                  _bookingWCFClient.CreateBooking(bookingObject);
 
 
-                return RedirectToAction("Index", "Booking");
+                return RedirectToAction("Index", "Room");
             }
 
             return View("Index", viewModel);

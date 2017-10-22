@@ -216,6 +216,13 @@
                                  Children spots: @item.RoomCapacity.RoomCapacityChildren*@ --> 
                                 </li>
                             </ul>
+                            <div class="row" style="margin-right: 10px">                              
+                                @using (Html.BeginForm("Index", "Booking", new { id = @item.RoomId }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" style="float: right" class="btn btn-warning">Book</button>
+                                }
+                            </div>
                         </div>
                         <a class="btn-more-info moreButtonLeft text-center" name="moreButton" id="moreButton">Mer Info</a>
                     </div>
@@ -225,7 +232,6 @@
         </div>
     </div>
 </div>
-
 
 
 

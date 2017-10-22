@@ -38,7 +38,7 @@ namespace HotelManagement.Controllers
                     CustomerAddress = viewModel.CustomerAddress,
                     CustomerPhoneNo = viewModel.CustomerPhoneNo,
                     CustomerEmail = viewModel.CustomerEmail,
-                    Password = viewModel.Password,
+                    Password = viewModel.Password,                   
                
                 };
                 _customerWCFClient.CreateUser(customerObject);
