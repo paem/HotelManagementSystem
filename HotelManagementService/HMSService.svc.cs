@@ -115,6 +115,10 @@ namespace HotelManagementService
         {
             return _roomRepository.RoomDetailInfoById(id);
         }
-   
+
+        public Customer LoginUser(string Email, string Password)
+        {
+            return _customerRepository.LoginUser(Email, Password);
+        }
     }
 }

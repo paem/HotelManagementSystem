@@ -1,0 +1,46 @@
+﻿@model HotelManagement.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Mvc Simple Login Application Demo</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table>
+            <tr>
+                <td>@Html.LabelFor(a => a.CustomerEmail)</td>
+                <td>@Html.TextBoxFor(a => a.CustomerEmail)</td>
+                <td>@Html.ValidationMessageFor(a => a.CustomerEmail)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.Password)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+}  

@@ -64,6 +64,9 @@ namespace HotelManagementService
 
         [OperationContract]
         ICollection<Room> RoomDetailInfoById(int id);
-   
+
+        [OperationContract]
+        Customer LoginUser(string Email, string Password);
+
     }
 }

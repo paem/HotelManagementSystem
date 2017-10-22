@@ -233,6 +233,8 @@
     <Content Include="Views\Customer\CustomerDetails.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Room\_RoomInfoPartialView.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\UserDashBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

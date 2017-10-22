@@ -60,6 +60,15 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public Customer LoginUser(string Email, string Password)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+
+               return context.Customers.Where(a => a.CustomerEmail.Equals(Email) && a.Password.Equals(Password)).FirstOrDefault();
+                     
+            }
+        }
 
     }
 }

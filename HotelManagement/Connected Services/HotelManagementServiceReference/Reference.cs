@@ -116,6 +116,12 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/RoomDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/RoomDetailInfoByIdResponse")]
         System.Threading.Tasks.Task<HMS.Models.Room[]> RoomDetailInfoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoginUser", ReplyAction="http://tempuri.org/IHMSService/LoginUserResponse")]
+        HMS.Models.Customer LoginUser(string Email, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoginUser", ReplyAction="http://tempuri.org/IHMSService/LoginUserResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Customer> LoginUserAsync(string Email, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -279,6 +285,14 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.Room[]> RoomDetailInfoByIdAsync(int id) {
             return base.Channel.RoomDetailInfoByIdAsync(id);
+        }
+        
+        public HMS.Models.Customer LoginUser(string Email, string Password) {
+            return base.Channel.LoginUser(Email, Password);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Customer> LoginUserAsync(string Email, string Password) {
+            return base.Channel.LoginUserAsync(Email, Password);
         }
     }
 }

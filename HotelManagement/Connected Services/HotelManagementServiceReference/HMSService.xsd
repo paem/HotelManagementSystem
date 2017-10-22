@@ -215,4 +215,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="LoginUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="LoginUserResult" nillable="true" type="q17:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
