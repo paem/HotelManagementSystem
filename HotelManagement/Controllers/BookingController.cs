@@ -35,12 +35,14 @@ namespace HotelManagement.Controllers
          {
              if (ModelState.IsValid)
              {
-
+                var makeToString = Session["UserID"].ToString();
+                var makeToInt = int.Parse(makeToString);
+                var customerId = makeToInt;
 
                 var bookingObject = new Booking
                 {
                     BookingId = viewModel.BookingId,
-                    CustomerId = int.Parse(Session["UserID"].ToString()),
+                    CustomerId = customerId,
                     BookingDate = DateTime.Now,
                     RoomId = int.Parse(viewModel.BookingRoomId.ToString()),
                     BookingArrivalDate = viewModel.BookingArrivalDate,

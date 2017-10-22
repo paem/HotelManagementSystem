@@ -32,6 +32,7 @@ namespace HotelManagement.Controllers
                 {
                     Session["UserID"] = viewModel.CustomerId.ToString();
                     Session["Email"] = viewModel.CustomerEmail.ToString();
+                    Session["RoomId"] = null;
                     return RedirectToAction("UserDashBoard");
                 }           
             }
