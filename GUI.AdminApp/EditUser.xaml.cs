@@ -27,7 +27,7 @@ namespace GUI.AdminApp
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-   
+
             Customer customer = (Customer)e.Parameter;
           
             int CustomerId = customer.CustomerId;
@@ -40,25 +40,25 @@ namespace GUI.AdminApp
             string City = customer.CustomerCity;
             string Adress = customer.CustomerAddress;
 
-            this.CustomerId.Text = CustomerId.ToString();
-            this.FName.Text = FName;
-            this.LName.Text = LName;
-            this.Email.Text = Email;
-            this.Gender.Text = Gender;
-            this.PhoneNumber.Text = PhoneNumber;
-            this.Country.Text = Country;
-            this.City.Text = City;
-            this.Adress.Text = Adress;
+            this.CustomerId.Text = "Id: "+CustomerId.ToString();
+            this.FName.Text = "Name: "+FName;
+            this.LName.Text = "Lastname: "+LName;
+            this.Email.Text = "Email: "+Email;
+            this.Gender.Text = "Gender: "+Gender;
+            this.PhoneNumber.Text = "Phonenumber: "+PhoneNumber;
+            this.Country.Text = "Country: "+Country;
+            this.City.Text = "City: "+City;
+            this.Adress.Text = "Adress: "+Adress;
 
             CustomerDetails cd = new CustomerDetails();
             bool checkIn = cd.CheckedIn;
             if (checkIn == true)
             {
-                this.checkIn.Text = customer.CustomerFName+" is checked in";
+                this.checkIn.Text = customer.CustomerFName+" is checked in (Status: "+checkIn+")";
             }
             else
             {
-                this.checkIn.Text = customer.CustomerFName + " is not checked in";
+                this.checkIn.Text = customer.CustomerFName + " is not checked in (Status: " + checkIn + ")";
             }
 
             //userList.ItemsSource = e.Parameter.ToString();

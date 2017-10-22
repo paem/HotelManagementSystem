@@ -7,24 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-       
-        <GridView>
-            <Grid>
-                <TextBlock x:Name="checkIn"></TextBlock>
-            </Grid>
-            <TextBlock x:Name="CustomerId" Width="100"></TextBlock>
-            <TextBlock x:Name="FName"></TextBlock>
-            <TextBlock x:Name="LName"></TextBlock>
-            <TextBlock x:Name="Email"></TextBlock>
-            <TextBlock x:Name="Gender"></TextBlock>
-            <TextBlock x:Name="PhoneNumber"></TextBlock>
-            <TextBlock x:Name="Country"></TextBlock>
-            <TextBlock x:Name="City"></TextBlock>
-            <TextBlock x:Name="Adress"></TextBlock>
-            <Grid>
-                <Button>Edit</Button>
-            </Grid>
-        </GridView>
-    </Grid>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="30 30 0 0">
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="checkIn"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="CustomerId"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="FName"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="LName"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Email"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Gender"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="PhoneNumber"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Country"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="City"></TextBlock>
+            <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Adress"></TextBlock>
+            <Button FontSize="20"  Margin="0 10 0 10">Edit</Button>
+
+        </StackPanel>
+    </StackPanel>
 </Page>

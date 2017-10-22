@@ -10,21 +10,21 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <GridView x:Name="userList" Margin="0,65,0,-65" SelectionChanged="userList_SelectionChanged" > <!--ListBox kan bytas ut mot GirdView-->
-            <GridView.ItemTemplate>
+        <ListView x:Name="userList" Margin="0,65,0,-65" SelectionChanged="userList_SelectionChanged" >
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height = "35" Width = "400"  Margin="200 0 0 0">
+                    <StackPanel Height = "35" Width = "400">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="txbName" Text="{Binding CustomerFName}" />
+                            <TextBlock Margin="0 0 5 0" x:Name="txbName" Text="{Binding CustomerFName}" />
                             <TextBlock x:Name="txbLName" Text="{Binding CustomerLName}"  />
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
-            </GridView.ItemTemplate>
-            <TextBlock Height="100" TextWrapping="Wrap" Text="TextBlock" Width="100"/>
-        </GridView>
+            </ListView.ItemTemplate>
+            
+        </ListView>
 
-        <AutoSuggestBox x:Name="AutoSuggBox" Header="Customer Search" PlaceholderText="Search for customer" 
+        <AutoSuggestBox x:Name="AutoSuggBox" Margin="10 10 10 0" Header="Customer Search" PlaceholderText="Search for customer" 
                         QuerySubmitted="AutoSuggBox_QuerySubmitted" 
                         SuggestionChosen="AutoSuggBox_SuggestionChosen" 
                         TextChanged="AutoSuggBox_TextChanged"

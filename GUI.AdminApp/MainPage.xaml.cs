@@ -65,5 +65,3 @@ namespace GUI.AdminApp
         }
     }
 }
-
-//var selectedSource = Convert.ToString(((GridView)sender).SelectedItem);
