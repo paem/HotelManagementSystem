@@ -233,11 +233,11 @@
     <Content Include="Views\Customer\CustomerDetails.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Room\_RoomInfoPartialView.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Booking\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

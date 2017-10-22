@@ -20,13 +20,16 @@ namespace GUI.AdminApp
 {
     public sealed partial class EditUser : Page
     {
+        private readonly HMSServiceClient HMSClient = new HMSServiceClient(); 
         public EditUser()
         {
             this.InitializeComponent();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+   
             Customer customer = (Customer)e.Parameter;
+          
             int CustomerId = customer.CustomerId;
             string FName = customer.CustomerFName;
             string LName = customer.CustomerLName;
@@ -47,8 +50,19 @@ namespace GUI.AdminApp
             this.City.Text = City;
             this.Adress.Text = Adress;
 
+            CustomerDetails cd = new CustomerDetails();
+            bool checkIn = cd.CheckedIn;
+            if (checkIn == true)
+            {
+                this.checkIn.Text = customer.CustomerFName+" is checked in";
+            }
+            else
+            {
+                this.checkIn.Text = customer.CustomerFName + " is not checked in";
+            }
+
             //userList.ItemsSource = e.Parameter.ToString();
-            
+
         }
     }
     }
