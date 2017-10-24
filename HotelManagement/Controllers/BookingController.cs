@@ -25,25 +25,33 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index(int id, string roomCost)
         {
-            Session["RoomId"] = id;
-            Session["RoomCost"] = roomCost;
-            return View(new BookingViewModel());
+            
+            if (Session["UserID"] != null)
+            {
+                Session["RoomId"] = id;
+                Session["RoomCost"] = roomCost;
+                return View(new BookingViewModel());
+            }
+           
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult MyBookings()
         {
-            var bookings = _bookingWCFClient.BookingDetailInfoById(int.Parse(Session["UserId"].ToString()));
-            var rooms = _bookingWCFClient.GetRooms();
-     
-        
-            var viewModel = new BookingViewModel
+            if (Session["UserID"] != null)
             {
-                Bookings = bookings,
-                Rooms = rooms
-              
-            };
+                
+                var bookings = _bookingWCFClient.BookingDetailInfoById(int.Parse(Session["UserId"].ToString()));  
+                var rooms = _bookingWCFClient.GetRooms();
 
-            return View(viewModel);
+                var viewModel = new BookingViewModel
+                {
+                    Bookings = bookings,
+                    Rooms = rooms
+                };
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
 

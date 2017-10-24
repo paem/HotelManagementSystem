@@ -13,31 +13,43 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Home");
         }
 
         public ActionResult Login()
         {
-            return View();
+            if (Session["UserID"] == null)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(CustomerViewModel viewModel)
         {
-            var customerId = _customerWCFClient.GetUserByEmail(viewModel.CustomerEmail);
-            if (ModelState.IsValid)
+            if (Session["UserID"] == null)
             {
-                var obj = _customerWCFClient.LoginUser(viewModel.CustomerEmail,viewModel.Password);
-                if (obj != null)
+                var customerId = _customerWCFClient.GetUserByEmail(viewModel.CustomerEmail);
+                if (ModelState.IsValid)
                 {
-                    Session["UserID"] = customerId.CustomerId;
-                    Session["Email"] = viewModel.CustomerEmail.ToString();
-                    return RedirectToAction("UserDashBoard");
-                }           
-            }
+                    var obj = _customerWCFClient.LoginUser(viewModel.CustomerEmail, viewModel.Password);
+                    if (obj != null)
+                    {
+                        Session["UserID"] = customerId.CustomerId;
+                        Session["Email"] = viewModel.CustomerEmail.ToString();
+                        return RedirectToAction("UserDashBoard");
+                    }
+                }
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult UserDashBoard()

@@ -15,21 +15,21 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index()
         {
-            var rooms = _roomWCFClient.GetRooms();
-            var categoryTypes = _roomWCFClient.GetRoomCategoryTypes();
-           
-            var viewModel = new RoomAndCategoryViewModel
+            if (Session["UserID"] != null)
             {
-                Rooms = rooms,
-                CategoryTypes = categoryTypes,
-              
-                
+                var rooms = _roomWCFClient.GetRooms();
+                var categoryTypes = _roomWCFClient.GetRoomCategoryTypes();
 
-        
-                
-            };
+                var viewModel = new RoomAndCategoryViewModel
+                {
+                    Rooms = rooms,
+                    CategoryTypes = categoryTypes,
 
-            return View(viewModel);    
+                };
+
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         // Partialview with all room information
@@ -38,7 +38,6 @@ namespace HotelManagement.Controllers
             var room = _roomWCFClient.RoomDetailInfoById(id);
             var categories = _roomWCFClient.GetCategoryById(id);
             var capacites = _roomWCFClient.GetCapacityById(categories.RoomCapacityId);
-        
 
             var viewModel = new RoomAndCategoryViewModel
             {

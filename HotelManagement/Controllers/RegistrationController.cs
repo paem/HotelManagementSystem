@@ -10,15 +10,16 @@ namespace HotelManagement.Controllers
 {
     public class RegistrationController : Controller
     {
-
-
         private readonly HMSServiceClient _customerWCFClient = new HMSServiceClient();
-
 
         // GET: Registration
         public ActionResult Index()
         {
-            return View(new CustomerViewModel());
+            if (Session["UserID"] == null)
+            {
+                return View(new CustomerViewModel());
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         [ValidateAntiForgeryToken]
@@ -42,7 +43,6 @@ namespace HotelManagement.Controllers
                
                 };
                 _customerWCFClient.CreateUser(customerObject);
-
 
                 return RedirectToAction("Index", "Home");
             }

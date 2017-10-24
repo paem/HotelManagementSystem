@@ -10,17 +10,22 @@ namespace HotelManagement.Controllers
 {
     public class CustomerController : Controller
     {
+
         private readonly HMSService _customerWCFClient = new HMSService();
         // GET: Customer
         public ActionResult CustomerDetails()
         {
-            var customerDetails = _customerWCFClient.GetCustomerDetails();
-            var viewModel = new CustomerViewModel
+            if (Session["UserID"] != null)
             {
-                CustomerDetails = customerDetails
-            };
+                var customerDetails = _customerWCFClient.GetCustomerDetails();
+                var viewModel = new CustomerViewModel
+                {
+                    CustomerDetails = customerDetails
+                };
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }
