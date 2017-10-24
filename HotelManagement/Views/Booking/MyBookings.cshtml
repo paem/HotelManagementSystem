@@ -168,14 +168,19 @@
                    
                 </td>
             </tr>
-
-            <tr class="item">
+              <tr class="item">
                 <td>
                     Antal nätter: @item.BookingTotalNights
                 </td>
 
                 <td>
-              
+                    @foreach (var e in Model.Rooms)
+                    {
+                        if (e.RoomId == item.RoomId)
+                        {
+                            @e.RoomPrice
+                        }
+                    }
                 </td>
             </tr>
 
@@ -185,12 +190,18 @@
                 </td>
 
                 <td>
-                  
+                    @foreach (var e in Model.Rooms)
+                    {
+                        if (e.RoomId == item.RoomId)
+                        {
+                            @e.RoomPrice
+                        }
+                    }
                 </td>
             </tr>
 
             <tr class="total">
-                <td></td>
+                <td>Totala priset är per rum per natt.</td>
 
                 <td>
                     @item.BookingTotalCost Kr

@@ -37,12 +37,14 @@ namespace HotelManagement.Controllers
         {
             var room = _roomWCFClient.RoomDetailInfoById(id);
             var categories = _roomWCFClient.GetCategoryById(id);
+            var capacites = _roomWCFClient.GetCapacityById(categories.RoomCapacityId);
         
 
             var viewModel = new RoomAndCategoryViewModel
             {
                 Rooms = room,
                 RoomCategory = categories,
+                RoomCapacity = capacites
                 
             };
             return PartialView("_RoomInfoPartialView", viewModel);

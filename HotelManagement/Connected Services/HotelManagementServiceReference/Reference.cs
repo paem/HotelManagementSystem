@@ -140,6 +140,12 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/BookingDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/BookingDetailInfoByIdResponse")]
         System.Threading.Tasks.Task<HMS.Models.Booking[]> BookingDetailInfoByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCapacityById", ReplyAction="http://tempuri.org/IHMSService/GetCapacityByIdResponse")]
+        HMS.Models.RoomCapacity GetCapacityById(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCapacityById", ReplyAction="http://tempuri.org/IHMSService/GetCapacityByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.RoomCapacity> GetCapacityByIdAsync(int roomId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -335,6 +341,14 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.Booking[]> BookingDetailInfoByIdAsync(int id) {
             return base.Channel.BookingDetailInfoByIdAsync(id);
+        }
+        
+        public HMS.Models.RoomCapacity GetCapacityById(int roomId) {
+            return base.Channel.GetCapacityById(roomId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.RoomCapacity> GetCapacityByIdAsync(int roomId) {
+            return base.Channel.GetCapacityByIdAsync(roomId);
         }
     }
 }

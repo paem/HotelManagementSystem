@@ -33,12 +33,13 @@ namespace HotelManagement.Controllers
         public ActionResult MyBookings()
         {
             var bookings = _bookingWCFClient.BookingDetailInfoById(int.Parse(Session["UserId"].ToString()));
-
+            var rooms = _bookingWCFClient.GetRooms();
      
-
+        
             var viewModel = new BookingViewModel
             {
                 Bookings = bookings,
+                Rooms = rooms
               
             };
 

@@ -76,5 +76,8 @@ namespace HotelManagementService
 
         [OperationContract]
         ICollection<Booking> BookingDetailInfoById(int id);
+
+        [OperationContract]
+        RoomCapacity GetCapacityById(int roomId);
     }
 }

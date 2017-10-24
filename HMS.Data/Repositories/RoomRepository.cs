@@ -112,5 +112,12 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public RoomCapacity FindCapacityById(int capacityId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {         
+                return context.RoomCapacity.AsNoTracking().SingleOrDefault(p => p.RoomCapacityId == capacityId);
+            }
+        }
     }
 }

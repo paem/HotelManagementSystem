@@ -272,4 +272,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCapacityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roomId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCapacityByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCapacityByIdResult" nillable="true" type="q21:RoomCapacity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

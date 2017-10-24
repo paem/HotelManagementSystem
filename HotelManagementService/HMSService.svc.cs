@@ -135,5 +135,10 @@ namespace HotelManagementService
         {
             return _bookingRepository.BookingDetailInfoById(id);
         }
+
+        public RoomCapacity GetCapacityById(int capacityId)
+        {
+            return _roomRepository.FindCapacityById(capacityId);
+        }
     }
 }
