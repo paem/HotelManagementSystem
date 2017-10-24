@@ -122,6 +122,24 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoginUser", ReplyAction="http://tempuri.org/IHMSService/LoginUserResponse")]
         System.Threading.Tasks.Task<HMS.Models.Customer> LoginUserAsync(string Email, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetUserByEmail", ReplyAction="http://tempuri.org/IHMSService/GetUserByEmailResponse")]
+        HMS.Models.Customer GetUserByEmail(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetUserByEmail", ReplyAction="http://tempuri.org/IHMSService/GetUserByEmailResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Customer> GetUserByEmailAsync(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetBookingsByUserId", ReplyAction="http://tempuri.org/IHMSService/GetBookingsByUserIdResponse")]
+        HMS.Models.Booking[] GetBookingsByUserId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetBookingsByUserId", ReplyAction="http://tempuri.org/IHMSService/GetBookingsByUserIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Booking[]> GetBookingsByUserIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/BookingDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/BookingDetailInfoByIdResponse")]
+        HMS.Models.Booking[] BookingDetailInfoById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/BookingDetailInfoById", ReplyAction="http://tempuri.org/IHMSService/BookingDetailInfoByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Booking[]> BookingDetailInfoByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -293,6 +311,30 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.Customer> LoginUserAsync(string Email, string Password) {
             return base.Channel.LoginUserAsync(Email, Password);
+        }
+        
+        public HMS.Models.Customer GetUserByEmail(string Email) {
+            return base.Channel.GetUserByEmail(Email);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Customer> GetUserByEmailAsync(string Email) {
+            return base.Channel.GetUserByEmailAsync(Email);
+        }
+        
+        public HMS.Models.Booking[] GetBookingsByUserId(int id) {
+            return base.Channel.GetBookingsByUserId(id);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Booking[]> GetBookingsByUserIdAsync(int id) {
+            return base.Channel.GetBookingsByUserIdAsync(id);
+        }
+        
+        public HMS.Models.Booking[] BookingDetailInfoById(int id) {
+            return base.Channel.BookingDetailInfoById(id);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Booking[]> BookingDetailInfoByIdAsync(int id) {
+            return base.Channel.BookingDetailInfoByIdAsync(id);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace HotelManagement.Controllers
             {
                 Rooms = room,
                 RoomCategory = categories,
-             
+                
             };
             return PartialView("_RoomInfoPartialView", viewModel);
         } 

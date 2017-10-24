@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201710182323274_update.Designer.cs">
       <DependentUpon>201710182323274_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710241030270_new data types.cs" />
+    <Compile Include="Migrations\201710241030270_new data types.Designer.cs">
+      <DependentUpon>201710241030270_new data types.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710241233441_new navigation properties.cs" />
+    <Compile Include="Migrations\201710241233441_new navigation properties.Designer.cs">
+      <DependentUpon>201710241233441_new navigation properties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BookingRepository.cs" />
@@ -112,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710182323274_update.resx">
       <DependentUpon>201710182323274_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241030270_new data types.resx">
+      <DependentUpon>201710241030270_new data types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241233441_new navigation properties.resx">
+      <DependentUpon>201710241233441_new navigation properties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

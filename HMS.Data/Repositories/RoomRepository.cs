@@ -54,6 +54,7 @@ namespace HMS.Data.Repositories
         {
             using (var context = new HMSDbContext())
             {
+               
                 // Get room by category id
                 return context.Rooms.Where(e => e.RoomCategoryId == RoomCategoryId).ToList();
             }
@@ -89,6 +90,7 @@ namespace HMS.Data.Repositories
         {
             using (HMSDbContext context = new HMSDbContext())
             {
+                context.Configuration.LazyLoadingEnabled = false;
                 return context.RoomCategory.AsNoTracking().SingleOrDefault(p => p.RoomCategoryId == categoryId);
             }
         }

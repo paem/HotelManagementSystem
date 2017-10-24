@@ -120,5 +120,20 @@ namespace HotelManagementService
         {
             return _customerRepository.LoginUser(Email, Password);
         }
+
+        public Customer GetUserByEmail(string Email)
+        {
+            return _customerRepository.GetUserByEmail(Email);
+        }
+
+        public ICollection<Booking> GetBookingsByUserId(int id)
+        {
+            return _bookingRepository.GetBookingByUserId(id);
+        }
+
+        public ICollection<Booking> BookingDetailInfoById(int id)
+        {
+            return _bookingRepository.BookingDetailInfoById(id);
+        }
     }
 }

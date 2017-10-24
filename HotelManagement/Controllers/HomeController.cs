@@ -25,14 +25,14 @@ namespace HotelManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(CustomerViewModel viewModel)
         {
+            var customerId = _customerWCFClient.GetUserByEmail(viewModel.CustomerEmail);
             if (ModelState.IsValid)
             {
                 var obj = _customerWCFClient.LoginUser(viewModel.CustomerEmail,viewModel.Password);
                 if (obj != null)
                 {
-                    Session["UserID"] = viewModel.CustomerId.ToString();
+                    Session["UserID"] = customerId.CustomerId;
                     Session["Email"] = viewModel.CustomerEmail.ToString();
-                    Session["RoomId"] = null;
                     return RedirectToAction("UserDashBoard");
                 }           
             }

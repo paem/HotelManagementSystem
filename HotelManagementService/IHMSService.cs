@@ -68,5 +68,13 @@ namespace HotelManagementService
         [OperationContract]
         Customer LoginUser(string Email, string Password);
 
+        [OperationContract]
+        Customer GetUserByEmail(string Email);
+
+        [OperationContract]
+        ICollection<Booking> GetBookingsByUserId(int id);
+
+        [OperationContract]
+        ICollection<Booking> BookingDetailInfoById(int id);
     }
 }

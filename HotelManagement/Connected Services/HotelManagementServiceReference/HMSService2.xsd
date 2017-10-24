@@ -70,12 +70,15 @@
       <xs:element minOccurs="0" name="BookingStatus" type="xs:boolean" />
       <xs:element minOccurs="0" name="BookingTotalAdults" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalChilds" type="xs:int" />
-      <xs:element minOccurs="0" name="BookingTotalCost" type="xs:float" />
+      <xs:element minOccurs="0" name="BookingTotalCost" type="xs:double" />
       <xs:element minOccurs="0" name="BookingTotalNights" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalRooms" type="xs:int" />
       <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomCapacities" nillable="true" type="tns:ArrayOfRoomCapacity" />
+      <xs:element minOccurs="0" name="RoomCategories" nillable="true" type="tns:ArrayOfRoomCategory" />
       <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomId" type="xs:int" />
+      <xs:element minOccurs="0" name="Rooms" nillable="true" type="tns:ArrayOfRoom" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Booking" nillable="true" type="tns:Booking" />

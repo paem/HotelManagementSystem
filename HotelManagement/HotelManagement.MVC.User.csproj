@@ -236,6 +236,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\UserDashBoard.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Booking\MyBookings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

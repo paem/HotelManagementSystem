@@ -8,7 +8,13 @@ namespace HotelManagement.ViewModels
 {
     public class BookingViewModel
     {
-        public ICollection<Booking> Book { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
+
+        public ICollection<RoomCategory> RoomCategories { get; set; }
+
+        public RoomCategory RoomCategory { get; set; }
+
+        public Room Room { get; set; }
 
         public int BookingId { get; set; }
 
@@ -32,6 +38,6 @@ namespace HotelManagement.ViewModels
 
         public int BookingTotalChilds { get; set; }
 
-        public float BookingTotalCost { get; set; }
+        public double BookingTotalCost { get; set; }
     }
 }

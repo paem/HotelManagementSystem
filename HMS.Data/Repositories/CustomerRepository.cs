@@ -70,5 +70,14 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public Customer GetUserByEmail(string Email)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+
+                return context.Customers.Where(a => a.CustomerEmail.Equals(Email)).FirstOrDefault();
+
+            }
+        }
     }
 }

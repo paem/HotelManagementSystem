@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
@@ -51,6 +53,23 @@ namespace HMS.Models
         public int BookingTotalChilds { get; set; }
 
         [DataMember]
-        public float BookingTotalCost { get; set; }
+        public double BookingTotalCost { get; set; }
+
+        /* Navigation Properties*/
+        [DataMember]
+        public ICollection<RoomCapacity> RoomCapacities { get; set; }
+
+        [DataMember]
+        public ICollection<Room> Rooms { get; set; }
+
+        [DataMember]
+        public ICollection<RoomCategory> RoomCategories { get; set; }
+
+        public Booking()
+        {
+            RoomCategories = new Collection<RoomCategory>();
+            RoomCapacities = new Collection<RoomCapacity>();
+            Rooms = new Collection<Room>();
+        }
     }
 }

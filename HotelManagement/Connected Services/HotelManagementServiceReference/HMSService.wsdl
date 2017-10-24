@@ -115,6 +115,24 @@
   <wsdl:message name="IHMSService_LoginUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_GetUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetBookingsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetBookingsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_BookingDetailInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingDetailInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_BookingDetailInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingDetailInfoByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHMSService">
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRooms" message="tns:IHMSService_GetRooms_InputMessage" />
@@ -187,6 +205,18 @@
     <wsdl:operation name="LoginUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoginUser" message="tns:IHMSService_LoginUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/LoginUserResponse" message="tns:IHMSService_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetUserByEmail" message="tns:IHMSService_GetUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetUserByEmailResponse" message="tns:IHMSService_GetUserByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetBookingsByUserId" message="tns:IHMSService_GetBookingsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetBookingsByUserIdResponse" message="tns:IHMSService_GetBookingsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingDetailInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/BookingDetailInfoById" message="tns:IHMSService_BookingDetailInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/BookingDetailInfoByIdResponse" message="tns:IHMSService_BookingDetailInfoById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHMSService" type="tns:IHMSService">
@@ -346,6 +376,33 @@
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <soap:operation soapAction="http://tempuri.org/IHMSService/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetUserByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingsByUserId">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetBookingsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingDetailInfoById">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/BookingDetailInfoById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
