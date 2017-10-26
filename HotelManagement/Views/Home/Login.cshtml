@@ -4,7 +4,106 @@
     ViewBag.Title = "Login";
 }
 
+	<!-- Website CSS style -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Website Font style -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+
 <style>
+
+    body {
+        background-image: url(https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg);
+        background-attachment: fixed;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        margin: 0;
+        font-family: 'Oxygen', sans-serif;
+    }
+
+    .main {
+        margin: 50px 15px;
+    }
+
+    h1.title {
+        font-size: 32px;
+        font-family: 'Passion One', cursive;
+        font-weight: 400;
+    }
+
+    hr {
+        width: 10%;
+        color: #fff;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+
+    .main-login {   
+        background-color: #fff;
+        /* shadows and rounded borders */
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 20px!important;
+        -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-control {
+        height: auto !important;
+        padding: 8px 12px !important;
+    }
+
+    .input-group {
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+    }
+
+    .main-center {
+        margin-top: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 40px;
+        background-color: #353333;
+        color: #FFF;
+        text-shadow: none;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    }
+
+    span.input-group-addon i {
+        color: #009edf;
+        font-size: 17px;
+    }
+
+    .login-button {
+        margin-top: 5px;
+    }
+
+    .login-register {
+        font-size: 11px;
+        text-align: center;
+    }
 
     .box--first {
         border-radius: 5px 5px 0 0;
@@ -23,58 +122,13 @@
 
  
 
-    body {
-        background-image: url(https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg); 
-        background-attachment: fixed;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #fff;
-        margin: 0;
-      
-    }
 
     .back {
         background-color: #2a7ba8;
     }
 
-    .page-wrapper {
-        margin: 0;
-        padding: 0;
-    }
 
-    .text-box h1 {
-        font-size: 60px;
-    }
-
-    .text-box p {
-        margin-top: -37px;
-    }
-
-
-    .login-form {
-        background-color: white;
-        border-radius: 6px;
-        color: black;
-        margin: 0 auto;
-        max-width: 300px;
-        padding: 20px;
-        text-align: center;
-        margin-top: 20%;
-    }
-
-    .login-group {
-        text-align: left
-    }
-
-    .login-h2 {
-        margin-bottom: 20px;
-    }
-
-    .login-p {
-        margin: 0 auto !important;
-        margin-top: 20px !important;
-    }
+   
 
 
 </style>
@@ -82,45 +136,57 @@
 
 @section outsideContainer
 {
-    <section>
-        <div class="header">
-            <div class="text-box text-center">
-                <img src="~/content/images/decore-logo.png">
 
+
+
+<section>
+    <div class="container" style="margin-top: 15em;">   
+        <div class="row main">
+            <div class="main-login main-center">
+                <h1 class="title text-center">Login</h1>
                 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
-                  
-                    <div class="login-form">
 
-
-                        <h2 class="login-h2">Login</h2>
-
-                        <div class="form-group login-group" style="text-align: left">
-                            @Html.LabelFor(model => model.CustomerEmail, "Email")
-                            @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "email@gmail.com" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerEmail, "Email", new { @class = "cols-sm-2 control-label" })
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })
+                                <div class="error-holder">
+                                    @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group login-group" style="text-align: left">
-                            @Html.LabelFor(model => model.Password, "Password")
-                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "password" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <input type="submit" value="Logga in" class="btn btn-primary onLogin" />
                     </div>
+
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        @Html.LabelFor(model => model.Password, "Password", new { @class = "cols-sm-2 control-label" })
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter your Password" })
+                                <div class="error-holder">
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.CustomerId, new { id = "hiddenId" })
+                        <input type="submit" style="margin: 0 auto;" value="Login"  class="btn btn-primary btn-lg btn-block login-button text-center" />
+                    </div>
+
                 }
-
-
-          
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
 
 }
@@ -132,6 +198,12 @@
             crossorigin="anonymous">
 
     </script>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+
 
     <script>
         $(document)

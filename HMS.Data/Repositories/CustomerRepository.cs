@@ -98,7 +98,7 @@ namespace HMS.Data.Repositories
             using (HMSDbContext context = new HMSDbContext())
             {
 
-                return context.CustomerDetails.AsNoTracking().SingleOrDefault(p => p.CustomerId == customerId);
+                return context.CustomerDetails.Where(a => a.CustomerId.Equals(customerId)).FirstOrDefault();
 
             }
         }
