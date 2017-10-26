@@ -85,6 +85,13 @@ namespace HotelManagement.Controllers
                  };
                  _bookingWCFClient.CreateBooking(bookingObject);
 
+                var customerDetailsObject = new CustomerDetails
+                {
+                    CustomerDetailsId = 0,
+                    CustomerId = int.Parse(Session["UserID"].ToString()),
+                    CheckedIn = false
+                };
+                _bookingWCFClient.CreateCustomerDetails(customerDetailsObject);
 
                 return RedirectToAction("Index", "Room");
             }

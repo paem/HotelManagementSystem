@@ -146,6 +146,24 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCapacityById", ReplyAction="http://tempuri.org/IHMSService/GetCapacityByIdResponse")]
         System.Threading.Tasks.Task<HMS.Models.RoomCapacity> GetCapacityByIdAsync(int roomId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/SetCheckedIn", ReplyAction="http://tempuri.org/IHMSService/SetCheckedInResponse")]
+        void SetCheckedIn(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/SetCheckedIn", ReplyAction="http://tempuri.org/IHMSService/SetCheckedInResponse")]
+        System.Threading.Tasks.Task SetCheckedInAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByCustomerIdResponse")]
+        void DeleteBookingByCustomerId(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByCustomerIdResponse")]
+        System.Threading.Tasks.Task DeleteBookingByCustomerIdAsync(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
+        void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
+        System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -349,6 +367,30 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.RoomCapacity> GetCapacityByIdAsync(int roomId) {
             return base.Channel.GetCapacityByIdAsync(roomId);
+        }
+        
+        public void SetCheckedIn(int userId) {
+            base.Channel.SetCheckedIn(userId);
+        }
+        
+        public System.Threading.Tasks.Task SetCheckedInAsync(int userId) {
+            return base.Channel.SetCheckedInAsync(userId);
+        }
+        
+        public void DeleteBookingByCustomerId(int customerId) {
+            base.Channel.DeleteBookingByCustomerId(customerId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBookingByCustomerIdAsync(int customerId) {
+            return base.Channel.DeleteBookingByCustomerIdAsync(customerId);
+        }
+        
+        public void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject) {
+            base.Channel.CreateCustomerDetails(customerDetailsObject);
+        }
+        
+        public System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject) {
+            return base.Channel.CreateCustomerDetailsAsync(customerDetailsObject);
         }
     }
 }

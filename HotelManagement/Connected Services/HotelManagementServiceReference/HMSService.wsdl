@@ -139,6 +139,24 @@
   <wsdl:message name="IHMSService_GetCapacityById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCapacityByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_SetCheckedIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCheckedIn" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_SetCheckedIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCheckedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_DeleteBookingByCustomerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookingByCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_DeleteBookingByCustomerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookingByCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_CreateCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_CreateCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerDetailsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHMSService">
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRooms" message="tns:IHMSService_GetRooms_InputMessage" />
@@ -227,6 +245,18 @@
     <wsdl:operation name="GetCapacityById">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCapacityById" message="tns:IHMSService_GetCapacityById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCapacityByIdResponse" message="tns:IHMSService_GetCapacityById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCheckedIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/SetCheckedIn" message="tns:IHMSService_SetCheckedIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/SetCheckedInResponse" message="tns:IHMSService_SetCheckedIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookingByCustomerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerId" message="tns:IHMSService_DeleteBookingByCustomerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerIdResponse" message="tns:IHMSService_DeleteBookingByCustomerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/CreateCustomerDetails" message="tns:IHMSService_CreateCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse" message="tns:IHMSService_CreateCustomerDetails_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHMSService" type="tns:IHMSService">
@@ -422,6 +452,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetCapacityById">
       <soap:operation soapAction="http://tempuri.org/IHMSService/GetCapacityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCheckedIn">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/SetCheckedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookingByCustomerId">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/DeleteBookingByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/CreateCustomerDetails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
