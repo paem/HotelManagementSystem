@@ -29,10 +29,23 @@ namespace HMS.Data.Repositories
 		{
 			using (var context = new HMSDbContext())
 			{
-				// Get customer by category id
                 return context.CustomerDetails.Where(e => e.CustomerId == CustomerDetailsId).ToList();
 			}
 		}
+
+        public void CreateCustomerDetails(CustomerDetails customerDetailsObj)
+        {
+            using (var context = new HMSDbContext())
+            {
+                if (customerDetailsObj.CustomerDetailsId == 0)
+                {
+                    // Create
+                    context.CustomerDetails.Add(customerDetailsObj);
+
+                }        
+                context.SaveChanges();
+            }
+        }
 
         public void CreateUser(Customer customerObj)
         {
@@ -42,7 +55,7 @@ namespace HMS.Data.Repositories
                 {
                     // Create
                     context.Customers.Add(customerObj);
-
+                   
                 }
                 else
                 {
@@ -77,6 +90,16 @@ namespace HMS.Data.Repositories
 
                 return context.Customers.Where(a => a.CustomerEmail.Equals(Email)).FirstOrDefault();
 
+            }
+        }
+
+
+        public void SetCheckedIn(int userId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+                var userInDb = context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;       
+                context.SaveChanges();
             }
         }
     }

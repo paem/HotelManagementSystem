@@ -140,5 +140,20 @@ namespace HotelManagementService
         {
             return _roomRepository.FindCapacityById(capacityId);
         }
+
+        public void SetCheckedIn(int userId)
+        {
+           _customerRepository.SetCheckedIn(userId);
+        }
+
+        public void DeleteBookingByCustomerId(int customerId)
+        {
+            _bookingRepository.DeleteBookingByCustomerId(customerId);
+        }
+
+        public void CreateCustomerDetails(CustomerDetails customerDetailsObject)
+        {
+            _customerRepository.CreateCustomerDetails(customerDetailsObject);
+        }
     }
 }

@@ -79,5 +79,14 @@ namespace HotelManagementService
 
         [OperationContract]
         RoomCapacity GetCapacityById(int roomId);
+
+        [OperationContract]
+        void SetCheckedIn(int userId);
+
+        [OperationContract]
+        void DeleteBookingByCustomerId(int customerId);
+
+        [OperationContract]
+        void CreateCustomerDetails(CustomerDetails customerDetailsObject);
     }
 }

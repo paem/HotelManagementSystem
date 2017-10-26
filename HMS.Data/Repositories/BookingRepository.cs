@@ -70,5 +70,15 @@ namespace HMS.Data.Repositories
                 return query;
             }
         }
+
+        public void DeleteBookingByCustomerId(int customerId)
+        {
+            using (var context = new HMSDbContext())
+            {
+                var bookingInDb = context.Booking.SingleOrDefault(e => e.CustomerId == customerId);
+                context.Booking.Remove(bookingInDb);
+                context.SaveChanges();
+            }
+        }
     }
 }
