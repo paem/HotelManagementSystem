@@ -21,6 +21,9 @@ namespace HotelManagementService
         void CreateRoom(Room roomObject);
 
         [OperationContract]
+        void CreateRoomCategory(RoomCategory roomCategoryObject);
+
+        [OperationContract]
         ICollection<Booking> GetBookingStatus();
 
         [OperationContract]
@@ -88,5 +91,8 @@ namespace HotelManagementService
 
         [OperationContract]
         void CreateCustomerDetails(CustomerDetails customerDetailsObject);
+
+        [OperationContract]
+        CustomerDetails GetCustomerDetailsByCustomerId(int customerId);
     }
 }

@@ -19,6 +19,12 @@
   <wsdl:message name="IHMSService_CreateRoom_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateRoomResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_CreateRoomCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoomCategory" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_CreateRoomCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoomCategoryResponse" />
+  </wsdl:message>
   <wsdl:message name="IHMSService_GetBookingStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBookingStatus" />
   </wsdl:message>
@@ -166,6 +172,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/CreateRoom" message="tns:IHMSService_CreateRoom_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/CreateRoomResponse" message="tns:IHMSService_CreateRoom_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CreateRoomCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/CreateRoomCategory" message="tns:IHMSService_CreateRoomCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/CreateRoomCategoryResponse" message="tns:IHMSService_CreateRoomCategory_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetBookingStatus">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetBookingStatus" message="tns:IHMSService_GetBookingStatus_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetBookingStatusResponse" message="tns:IHMSService_GetBookingStatus_OutputMessage" />
@@ -272,6 +282,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateRoom">
       <soap:operation soapAction="http://tempuri.org/IHMSService/CreateRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoomCategory">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/CreateRoomCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

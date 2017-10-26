@@ -195,6 +195,8 @@
                 <hr />
                 @foreach (var item in Model.Rooms)
                 {
+                    if (item.RoomStatus != true)
+                    {                 
                     <div class="item-left left-task-items moreinfo-holder">
                         <img class="img-responsive" src="@Model.RoomCategory.RoomCategoryImage" style="width:auto" alt="roompicture" />
                         <h3>@Model.RoomCategory.RoomCategoryName</h3>
@@ -203,7 +205,7 @@
                                 <li>
                                    Price: @item.RoomPrice
                                     <br />
-                                   Number of rooms available: @item.RoomCount
+                                   Number of rooms available: @Model.RoomCategory.RoomCount
                                     <br />
                                    Description: @Model.RoomCategory.RoomCategoryDesc
                                     <br />
@@ -224,6 +226,7 @@
                         </div>
                         <a class="btn-more-info moreButtonLeft text-center" name="moreButton" id="moreButton">Mer Info</a>
                     </div>
+                    }
                 }
 
             </div>

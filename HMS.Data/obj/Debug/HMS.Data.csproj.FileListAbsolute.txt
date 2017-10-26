@@ -111,3 +111,4 @@ C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug
 C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.newnavigationproperties.resources
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.newdatatypes.resources
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.newnavigationproperties.resources
+C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.roomcountchanges.resources

@@ -19,9 +19,6 @@ namespace HMS.Models
         public int RoomDoorNumber { get; set; }
 
         [DataMember]
-        public int RoomCount { get; set; }
-
-        [DataMember]
         public bool RoomStatus { get; set; }
     
         [DataMember]

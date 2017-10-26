@@ -13,7 +13,6 @@
       <xs:element minOccurs="0" name="RoomCapacityId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomCategories" nillable="true" type="tns:ArrayOfRoomCategory" />
       <xs:element minOccurs="0" name="RoomCategory" nillable="true" type="tns:RoomCategory" />
-      <xs:element minOccurs="0" name="RoomCount" type="xs:int" />
       <xs:element minOccurs="0" name="RoomDoorNumber" type="xs:int" />
       <xs:element minOccurs="0" name="RoomId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomPrice" type="xs:double" />
@@ -51,6 +50,7 @@
       <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomCategoryImage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RoomCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCount" type="xs:double" />
       <xs:element minOccurs="0" name="Rooms" nillable="true" type="tns:ArrayOfRoom" />
     </xs:sequence>
   </xs:complexType>

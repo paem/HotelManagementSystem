@@ -33,6 +33,11 @@ namespace HotelManagementService
             _roomRepository.CreateRoom(roomObject);
         }
 
+        public void CreateRoomCategory(RoomCategory roomCategoryObject)
+        {
+            _roomRepository.CreateRoomCategory(roomCategoryObject);
+        }
+
         public ICollection<CustomerDetails> GetCustomerDetails()
         {
             var customerDetails = _customerRepository.GetCustomerDetails();
@@ -154,6 +159,11 @@ namespace HotelManagementService
         public void CreateCustomerDetails(CustomerDetails customerDetailsObject)
         {
             _customerRepository.CreateCustomerDetails(customerDetailsObject);
+        }
+
+        public CustomerDetails GetCustomerDetailsByCustomerId(int customerId)
+        {
+            return _customerRepository.GetCustomerDetailsByCustomerId(customerId);
         }
     }
 }

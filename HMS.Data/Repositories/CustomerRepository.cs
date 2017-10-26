@@ -93,12 +93,21 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public CustomerDetails GetCustomerDetailsByCustomerId(int customerId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+
+                return context.CustomerDetails.AsNoTracking().SingleOrDefault(p => p.CustomerId == customerId);
+
+            }
+        }
 
         public void SetCheckedIn(int userId)
         {
             using (HMSDbContext context = new HMSDbContext())
             {
-                var userInDb = context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;       
+                context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;
                 context.SaveChanges();
             }
         }

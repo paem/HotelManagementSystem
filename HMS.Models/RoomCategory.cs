@@ -28,7 +28,8 @@ namespace HMS.Models
         [DataMember]
         public string RoomCategoryImage { get; set; }
 
-
+        [DataMember]
+        public double RoomCount { get; set; }
         /* Navigation Properties*/
         [DataMember]
         public ICollection<Room> Rooms { get; set; }

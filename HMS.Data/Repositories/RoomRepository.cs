@@ -25,9 +25,29 @@ namespace HMS.Data.Repositories
                     // Edit
                     var roomInDb = context.Rooms.SingleOrDefault(p => p.RoomId == roomObj.RoomId);
 
-                    roomInDb.RoomDoorNumber = roomObj.RoomDoorNumber;
-                    roomInDb.RoomCount = roomObj.RoomCount;
                     roomInDb.RoomStatus = roomObj.RoomStatus;
+
+                }
+                context.SaveChanges();
+            }
+        }
+
+        public void CreateRoomCategory(RoomCategory roomCategoryObj)
+        {
+            using (var context = new HMSDbContext())
+            {
+                if (roomCategoryObj.RoomCategoryId == 0)
+                {
+                    // Create
+                    context.RoomCategory.Add(roomCategoryObj);
+
+                }
+                else
+                {
+                    // Edit
+                    var roomCategoryInDb = context.RoomCategory.SingleOrDefault(p => p.RoomCategoryId == roomCategoryObj.RoomCategoryId);
+
+                    roomCategoryInDb.RoomCount = roomCategoryObj.RoomCount;
 
                 }
                 context.SaveChanges();

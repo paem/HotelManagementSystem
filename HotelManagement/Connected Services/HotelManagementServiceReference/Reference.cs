@@ -27,6 +27,12 @@ namespace HotelManagement.HotelManagementServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateRoom", ReplyAction="http://tempuri.org/IHMSService/CreateRoomResponse")]
         System.Threading.Tasks.Task CreateRoomAsync(HMS.Models.Room roomObject);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateRoomCategory", ReplyAction="http://tempuri.org/IHMSService/CreateRoomCategoryResponse")]
+        void CreateRoomCategory(HMS.Models.RoomCategory roomCategoryObject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateRoomCategory", ReplyAction="http://tempuri.org/IHMSService/CreateRoomCategoryResponse")]
+        System.Threading.Tasks.Task CreateRoomCategoryAsync(HMS.Models.RoomCategory roomCategoryObject);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetBookingStatus", ReplyAction="http://tempuri.org/IHMSService/GetBookingStatusResponse")]
         HMS.Models.Booking[] GetBookingStatus();
         
@@ -207,6 +213,14 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task CreateRoomAsync(HMS.Models.Room roomObject) {
             return base.Channel.CreateRoomAsync(roomObject);
+        }
+        
+        public void CreateRoomCategory(HMS.Models.RoomCategory roomCategoryObject) {
+            base.Channel.CreateRoomCategory(roomCategoryObject);
+        }
+        
+        public System.Threading.Tasks.Task CreateRoomCategoryAsync(HMS.Models.RoomCategory roomCategoryObject) {
+            return base.Channel.CreateRoomCategoryAsync(roomCategoryObject);
         }
         
         public HMS.Models.Booking[] GetBookingStatus() {
