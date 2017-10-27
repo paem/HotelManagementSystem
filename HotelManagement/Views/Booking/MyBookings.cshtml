@@ -7,6 +7,11 @@
 <h2>MyBookings</h2>
 
 <style>
+
+    body {
+        font-family: 'Oxygen', sans-serif !important;
+    }
+
     .invoice-box {
         max-width: 800px;
         margin: auto;
@@ -15,7 +20,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, .15);
         font-size: 16px;
         line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        
         color: #555;
     }
 
@@ -82,7 +87,7 @@
     /** RTL **/
     .rtl {
         direction: rtl;
-        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+       
     }
 
     .rtl table {
@@ -92,9 +97,21 @@
     .rtl table tr td:nth-child(2) {
         text-align: left;
     }
+
+    .roomPicture {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        float:left;
+        width: 18em;
+    }
+    p {
+       
+        text-align: center;   
+    }
 </style>
 
-@foreach(var item in Model.Bookings) {
+@foreach (var item in Model.Bookings.OrderByDescending(Model => Model.BookingDate)) {
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
@@ -102,11 +119,12 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">
+                                <img src="~/Content/Images/b-hotel.png" style="width:100%; max-width:300px;">
                             </td>
 
                             <td>                         
-                                Created: @item.BookingDate                           
+                                Booked on: @item.BookingDate     
+                                <p style="text-align:right;"> @Session["Email"].ToString() </p>
                             </td>
                         </tr>
                     </table>
@@ -118,12 +136,30 @@
                     <table>
                         <tr>
                             <td>
-                                HOTEL INFORMATION HERE
-                            </td>
+                            
+                                @foreach (var e in Model.RoomCategories)
+                                {
+                                    if (e.RoomCategoryId == item.RoomCategoryId)
+                                    {
+                                        
+                                        <img class="roomPicture" src="@e.RoomCategoryImage" />
+                                        <h3>Room information</h3>                                 
+                                        <p>  Category:  @e.RoomCategoryName</p>
+                                        <p>  Bedtype:  @e.RoomCategoryBeds</p>
+                                        <p>  Description:  @e.RoomCategoryDesc</p>
+                                    }
+                                }
 
-                            <td>
-                              USER INFORMATION HERE
-                            </td>
+                                @foreach (var e in Model.Rooms)
+                                {
+                                    if (e.RoomId == item.RoomId)
+                                    {
+                                        <p>  Doornumber:  @e.RoomDoorNumber</p>                                   
+                                    }
+                                }
+                              
+                             
+                            </td>                        
                         </tr>
                     </table>
                 </td>
@@ -151,7 +187,7 @@
 
             <tr class="heading">
                 <td>
-                    Item
+                    Room(s)
                 </td>
 
                 <td>
@@ -161,7 +197,7 @@
 
             <tr class="item">
                 <td>
-                    
+                   
                 </td>
 
                 <td>
@@ -170,7 +206,7 @@
             </tr>
               <tr class="item">
                 <td>
-                    Antal nätter: @item.BookingTotalNights
+                    Nights: @item.BookingTotalNights
                 </td>
 
                 <td>
@@ -186,7 +222,7 @@
 
             <tr class="item last">
                 <td>
-                    Antal rum: @item.BookingTotalRooms
+                    Rooms: @item.BookingTotalRooms
                 </td>
 
                 <td>
@@ -201,7 +237,7 @@
             </tr>
 
             <tr class="total">
-                <td>Totala priset är per rum per natt.</td>
+                <td>Total Cost: (per room per night)</td>
 
                 <td>
                     @item.BookingTotalCost Kr
@@ -209,6 +245,6 @@
             </tr>
         </table>
     </div>
+    <br />
 }
 
-<br />

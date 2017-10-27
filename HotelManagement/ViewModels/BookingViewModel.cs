@@ -12,6 +12,8 @@ namespace HotelManagement.ViewModels
 
         public ICollection<RoomCategory> RoomCategories { get; set; }
 
+        public ICollection<RoomCapacity> RoomCapacities { get; set; }
+
         public ICollection<Room> Rooms { get; set; }
 
         public RoomCategory RoomCategory { get; set; }

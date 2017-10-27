@@ -43,11 +43,15 @@ namespace HotelManagement.Controllers
                 
                 var bookings = _bookingWCFClient.BookingDetailInfoById(int.Parse(Session["UserId"].ToString()));  
                 var rooms = _bookingWCFClient.GetRooms();
+                var categories = _bookingWCFClient.GetRoomCategoryTypes();
+                var capacities = _bookingWCFClient.GetRoomCapacity();
 
                 var viewModel = new BookingViewModel
                 {
                     Bookings = bookings,
-                    Rooms = rooms
+                    Rooms = rooms,
+                    RoomCategories = categories,
+                    RoomCapacities = capacities
                 };
                 return View(viewModel);
             }
@@ -63,7 +67,7 @@ namespace HotelManagement.Controllers
              {
                 var room = _bookingWCFClient.GetRoomById(int.Parse(Session["RoomId"].ToString()));
                 var totalNights = (int)(viewModel.BookingDepartureDate - viewModel.BookingArrivalDate).TotalDays;
-                var totalCost = room.RoomPrice * viewModel.BookingTotalRooms * totalNights;
+                var totalCost = room.RoomPrice * 1 * totalNights;
                 var category = _bookingWCFClient.GetCategoryById(room.RoomCategoryId);
                
 
@@ -108,7 +112,7 @@ namespace HotelManagement.Controllers
                 };
                 _bookingWCFClient.CreateRoomCategory(roomCategoryObject);
 
-                return RedirectToAction("Index", "Room");
+                return RedirectToAction("MyBookings", "Booking");
             }
 
             return View("Index", viewModel);

@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
 }
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet" />
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.css" rel="stylesheet" />
 
 	<!-- Website CSS style -->
@@ -90,6 +90,10 @@
         margin-top: 5px;
     }
 
+    .input-group{
+        color: black!important;
+    }
+
     .login-register {
         font-size: 11px;
         text-align: center;
@@ -113,9 +117,9 @@
 
 
                 <div class="form-group has-feedback has-feedback-right">
-                    @Html.LabelFor(model => model.BookingArrivalDate, htmlAttributes: new { @class = "cols-sm-2 control-label" })
+                    @Html.LabelFor(model => model.BookingArrivalDate, "From", htmlAttributes: new { @class = "cols-sm-2 control-label" })
                     <div class="cols-sm-10">
-                        <div class="input-group date" id="startDate">
+                        <div class="input-group date" id="datetimepicker">
                             <span class="input-group-addon"><i  class="fa fa-calendar fa" aria-hidden="true"></i></span>
                             @Html.EditorFor(model => model.BookingArrivalDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })
                             <div class="error-holder">
@@ -126,9 +130,9 @@
                 </div>
 
                 <div class="form-group has-feedback has-feedback-right">
-                    @Html.LabelFor(model => model.BookingDepartureDate, new { @class = "cols-sm-2 control-label" })
+                    @Html.LabelFor(model => model.BookingDepartureDate, "To", new { @class = "cols-sm-2 control-label" })
                     <div class="cols-sm-10">
-                        <div class="input-group date" id="endDate">
+                        <div class="input-group date" id="datetimepicker2">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
                             @Html.EditorFor(model => model.BookingDepartureDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })
                             <div class="error-holder">
@@ -138,14 +142,37 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BookingTotalAdults, "Adults", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.BookingTotalAdults, new { @class = "form-control", placeholder = "How many adults?", type = "number" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.BookingTotalAdults, "", new { @class = "text-danger"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BookingTotalChilds, "Children", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.BookingTotalChilds, new { @class = "form-control", placeholder = "How many children?", type = "number" })
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.BookingTotalChilds, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     @Html.HiddenFor(model => model.BookingRoomId, new { id = @Session["RoomId"].ToString() })
                     @Html.HiddenFor(model => model.BookingStatus, new { id = true })
                     @Html.HiddenFor(model => model.BookingId, new { id = "hiddenId" })                
-                        <input type="submit" value="Create" class="btn btn-primary create-save-btn" />               
+                        <input type="submit" style="width: 100%;" value="Book" class="btn btn-primary create-save-btn" />               
                 </div>
 
             }
@@ -193,18 +220,17 @@
     /* DatetimePicker*/
     $('#datetimepicker')
         .datetimepicker({
-            locale: 'sv'
+            locale: 'sv',
+            format: 'YYYY-MM-DD HH:MM',
+            
         });
     $('#datetimepicker2')
         .datetimepicker({
-            locale: 'sv'
-        });
-    $('#datetimepicker3')
-        .datetimepicker({
-            locale: 'sv'
+            locale: 'sv',
+            format: 'YYYY-MM-DD HH:MM',       
         });
 
-    $(".btn-success").on("click", function () {
+    $(".btn-primary").on("click", function () {
         $(".alert").removeClass("in").show();
         $(".alert").delay(200).addClass("in").fadeOut(2000);
     });
@@ -218,7 +244,7 @@
 
 
 
-<script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
+
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

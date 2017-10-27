@@ -63,5 +63,13 @@ namespace HotelManagement.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+        public ActionResult SignOut()
+        {
+            Session.RemoveAll();
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Login", "Home");
+        }
     }
 }
