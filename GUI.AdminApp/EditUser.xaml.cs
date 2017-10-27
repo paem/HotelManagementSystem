@@ -20,25 +20,31 @@ namespace GUI.AdminApp
 {
     public sealed partial class EditUser : Page
     {
-        private readonly HMSServiceClient HMSClient = new HMSServiceClient(); 
+        private readonly HMSServiceClient HMSClient = new HMSServiceClient();
+        private Customer c = new Customer();
+       
+        private CheckBox checkBox = new CheckBox();
+
         public EditUser()
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            Customer customer = (Customer)e.Parameter;
+            c = (Customer)e.Parameter;
           
-            int CustomerId = customer.CustomerId;
-            string FName = customer.CustomerFName;
-            string LName = customer.CustomerLName;
-            string Email = customer.CustomerEmail;
-            string Gender = customer.CustomerGender;
-            string PhoneNumber = customer.CustomerPhoneNo;
-            string Country = customer.CustomerCountry;
-            string City = customer.CustomerCity;
-            string Adress = customer.CustomerAddress;
+            int CustomerId = c.CustomerId;
+            string FName = c.CustomerFName;
+            string LName = c.CustomerLName;
+            string Email = c.CustomerEmail;
+            string Gender = c.CustomerGender;
+            string PhoneNumber = c.CustomerPhoneNo;
+            string Country = c.CustomerCountry;
+            string City = c.CustomerCity;
+            string Adress = c.CustomerAddress;
 
             this.CustomerId.Text = "Id: "+CustomerId.ToString();
             this.FName.Text = "Name: "+FName;
@@ -50,19 +56,65 @@ namespace GUI.AdminApp
             this.City.Text = "City: "+City;
             this.Adress.Text = "Adress: "+Adress;
 
-            CustomerDetails cd = new CustomerDetails();
-            bool checkIn = cd.CheckedIn;
-            if (checkIn == true)
-            {
-                this.checkIn.Text = customer.CustomerFName+" is checked in (Status: "+checkIn+")";
-            }
-            else
-            {
-                this.checkIn.Text = customer.CustomerFName + " is not checked in (Status: " + checkIn + ")";
-            }
 
-            //userList.ItemsSource = e.Parameter.ToString();
+           // var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
+            //bool checker = cd.CheckedIn;
 
+
+            //if(cd.CheckedIn == true)
+            //{
+            //    this.checkIn.Text = "true";
+            //}
+            //else
+            //{
+            //    this.checkIn.Text = "false";
+            //}
+            //var cd = HMSClient.GetCustomerDetailsAsync().Result.Where(i => i.CustomerDetailsId == i.CustomerId);
+
+            //foreach(var a in cd)
+            //{
+            //    this.checkIn.Text = a.CheckedIn.ToString();
+            //}
+            //CustomerDetails cd = new CustomerDetails();
+            //c.CustomerId = cd.CustomerId;
+
+            //this.checkIn.Text = cd.CheckedIn.ToString();
+            //bool checkIn = cd.CheckedIn;
+
+
+        }
+
+
+        
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+       
+        
+       
+        private void CheckInStatus_Click(object sender, RoutedEventArgs e)
+        {
+            int id = c.CustomerId;
+
+
+            CustomerDetails cd = new CustomerDetails(); //Denna datan ska komma ifrån 
+            //var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);                                         
+           //bool checker = cd.CheckedIn;
+
+
+            if (checkBox.IsChecked != true)
+            {
+                if (cd.CheckedIn == false) { 
+                var i = HMSClient.SetCheckedInAsync(id);
+                checkBox.IsChecked = true;
+                }
+
+            }
+            if(checkBox.IsChecked != false)
+            {
+                checkBox.IsChecked = true;
+            }
         }
     }
     }

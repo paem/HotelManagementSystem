@@ -53,7 +53,7 @@ namespace GUI.AdminApp
             {
                 var customerList = await HMSClient.GetCustomersAsync();
                 var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
-
+               
                 userList.ItemsSource = searchResult;
             }
         }

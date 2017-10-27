@@ -10,6 +10,7 @@
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Margin="30 30 0 0">
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="checkIn"></TextBlock>
+            <CheckBox Content="Status" x:Name="CheckInStatus" Click="CheckInStatus_Click" />
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="CustomerId"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="FName"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="LName"></TextBlock>
@@ -19,7 +20,7 @@
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Country"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="City"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Adress"></TextBlock>
-            <Button FontSize="20"  Margin="0 10 0 10">Edit</Button>
+            <Button x:Name="Edit" FontSize="20" Margin="0 10 0 10" Click="Edit_Click">Edit</Button>
 
         </StackPanel>
     </StackPanel>
