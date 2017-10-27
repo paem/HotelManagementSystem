@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/content")
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -46,9 +49,32 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+   
+    <!-- JS -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>   <!-- Bootstrap v3.3.5 -->
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/Core.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+    jQuery(document).ready(function () {
+
+        jQuery('#startDate').datetimepicker();
+        jQuery('#endDate').datetimepicker();
+        jQuery("#startDate").on("dp.change", function (e) {
+            jQuery('#endDate').data("DateTimePicker").setMinDate(e.date);
+        });
+        jQuery("#endDate").on("dp.change", function (e) {
+            jQuery('#startDate').data("DateTimePicker").setMaxDate(e.date);
+        });
+
+    });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+   
 </body>
 </html>

@@ -151,6 +151,48 @@
             Starts the <paramref name="asyncMethod"/>, catches and logs any exceptions it may throw.
             </summary>
         </member>
+        <member name="T:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal">
+            <summary>
+            Runs a task after a certain delay and log any error.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.InfiniteTimeSpan">
+            <summary>
+            Represents an infinite time span.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.Delay">
+            <summary>
+            Gets or sets the delay before the task starts. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.IsStarted">
+            <summary>
+            Gets a value indicating whether value that indicates if a task has already started.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.Start(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Start the task.
+            </summary>
+            <param name="elapsed">The task to run.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.Cancel">
+            <summary>
+            Cancels the current task.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TaskTimerInternal.LogException(System.Exception)">
+            <summary>
+            Log exception thrown by outer code.
+            </summary>
+            <param name="exception">Exception to log.</param>
+        </member>
         <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.IApplicationFolderProvider.GetApplicationFolder">
             <summary>
             Returns a per-user/per-application folder.
@@ -215,6 +257,15 @@
             Gets or sets the maximum number of telemetry items that can be buffered before transmission.
             </summary>
             <exception cref="T:System.ArgumentOutOfRangeException">The value is zero or less.</exception>
+            <exception cref="T:System.ArgumentException">The value is greater than the MaximumBacklogSize.</exception>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TelemetryBuffer.BacklogSize">
+            <summary>
+            Gets or sets the maximum number of telemetry items that can be in the backlog to send. Items will be dropped
+            once this limit is hit.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is zero or less.</exception>
+            <exception cref="T:System.ArgumentException">The value is less than the Capacity.</exception>
         </member>
         <member name="M:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TelemetryBuffer.Dispose">
             <summary>
@@ -268,7 +319,7 @@
         </member>
         <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.Implementation.TransmissionSender.Capacity">
             <summary>
-            Gets or sets the the maximum number of <see cref="T:Microsoft.ApplicationInsights.Channel.Transmission"/> objects that can be sent simultaneously.
+            Gets or sets the maximum number of <see cref="T:Microsoft.ApplicationInsights.Channel.Transmission"/> objects that can be sent simultaneously.
             </summary>
             <remarks>
             Use this property to limit the number of concurrent HTTP connections. Once the maximum number of 
@@ -434,6 +485,14 @@
             <summary>
             Gets or sets the maximum number of telemetry items will accumulate in a memory before 
             the <see cref="N:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel"/> serializing them for transmission to Application Insights.
+            This is not a hard limit on how many unsent items can be in the buffer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel.MaxBacklogSize">
+            <summary>
+            Gets or sets the maximum number of telemetry items that can be in the backlog to send. This is a hard limit
+            and Items will be dropped by the <see cref="T:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel"/> once this limit is hit until items
+            are drained from the buffer.
             </summary>
         </member>
         <member name="P:Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel.MaxTransmissionBufferCapacity">

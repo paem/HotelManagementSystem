@@ -127,6 +127,12 @@
     <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.Room.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.RoomCapacity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.RoomCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\HMSServiceReference\HMSService.wsdl" />
     <None Include="Connected Services\HMSServiceReference\HMSService.xsd">
       <SubType>Designer</SubType>

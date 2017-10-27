@@ -98,8 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\bootstrap-theme.css.map" />
-    <None Include="Content\bootstrap.css.map" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
@@ -142,12 +140,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-datetimepicker.css" />
-    <Content Include="Content\bootstrap-datetimepicker.min.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
