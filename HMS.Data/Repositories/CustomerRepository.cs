@@ -93,12 +93,14 @@ namespace HMS.Data.Repositories
             }
         }
 
-        public CustomerDetails GetCustomerDetailsByCustomerId(int customerId)
+        public ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId)
         {
             using (HMSDbContext context = new HMSDbContext())
             {
 
-                return context.CustomerDetails.Where(a => a.CustomerId.Equals(customerId)).FirstOrDefault();
+                //   return context.CustomerDetails.Where(a => a.CustomerId.Equals(customerId)).FirstOrDefault();
+                //   return context.CustomerDetails.AsNoTracking().SingleOrDefault(p => p.CustomerId == customerId);
+                return context.CustomerDetails.Where(e => e.CustomerId == customerId).ToList();
 
             }
         }
@@ -108,6 +110,15 @@ namespace HMS.Data.Repositories
             using (HMSDbContext context = new HMSDbContext())
             {
                 context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;
+                context.SaveChanges();
+            }
+        }
+
+        public void SetCheckedOut(int userId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+                context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = false;
                 context.SaveChanges();
             }
         }

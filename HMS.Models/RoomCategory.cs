@@ -6,8 +6,8 @@ using System.Runtime.Serialization;
 
 namespace HMS.Models
 {
-    [DataContract]
-   public class RoomCategory
+    [DataContract(IsReference = true)]
+    public class RoomCategory
     {
         [Key]     
         [DataMember]

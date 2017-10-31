@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Roomlist>
+  <Room roomId="1">
+    <RoomDoorNumber>1</RoomDoorNumber>
+    <capacityId>1</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>350</roomPrice>
+    <roomCategoryId>1</roomCategoryId>
+  </Room>
+  <Room roomId="2">
+    <RoomDoorNumber>2</RoomDoorNumber>
+    <capacityId>1</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>350</roomPrice>
+    <roomCategoryId>1</roomCategoryId>
+  </Room>
+  <Room roomId="3">
+    <RoomDoorNumber>3</RoomDoorNumber>
+    <capacityId>1</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>350</roomPrice>
+    <roomCategoryId>1</roomCategoryId>
+  </Room>
+  <Room roomId="4">
+    <RoomDoorNumber>4</RoomDoorNumber>
+    <capacityId>1</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>350</roomPrice>
+    <roomCategoryId>1</roomCategoryId>
+  </Room>
+  <Room roomId="5">
+    <RoomDoorNumber>5</RoomDoorNumber>
+    <capacityId>2</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>600</roomPrice>
+    <roomCategoryId>2</roomCategoryId>
+  </Room>
+  <Room roomId="6">
+    <RoomDoorNumber>6</RoomDoorNumber>
+    <capacityId>2</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>600</roomPrice>
+    <roomCategoryId>2</roomCategoryId>
+  </Room>
+  <Room roomId="7">
+    <RoomDoorNumber>7</RoomDoorNumber>
+    <capacityId>2</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>600</roomPrice>
+    <roomCategoryId>2</roomCategoryId>
+  </Room>
+  <Room roomId="8">
+    <RoomDoorNumber>8</RoomDoorNumber>
+    <capacityId>2</capacityId>
+    <roomStatus>false</roomStatus>
+    <roomPrice>600</roomPrice>
+    <roomCategoryId>2</roomCategoryId>
+  </Room>
+</Roomlist>

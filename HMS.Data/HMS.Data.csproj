@@ -89,12 +89,17 @@
     <Compile Include="Migrations\201710261915125_roomcount changes.Designer.cs">
       <DependentUpon>201710261915125_roomcount changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710311526204_isReference.cs" />
+    <Compile Include="Migrations\201710311526204_isReference.Designer.cs">
+      <DependentUpon>201710311526204_isReference.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BookingRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\HotelRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
+    <Compile Include="Repositories\XmlRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -138,9 +143,13 @@
     <EmbeddedResource Include="Migrations\201710261915125_roomcount changes.resx">
       <DependentUpon>201710261915125_roomcount changes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710311526204_isReference.resx">
+      <DependentUpon>201710311526204_isReference.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Rooms.xml" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />

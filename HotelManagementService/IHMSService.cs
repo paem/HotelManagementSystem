@@ -75,7 +75,7 @@ namespace HotelManagementService
         Customer GetUserByEmail(string Email);
 
         [OperationContract]
-        ICollection<Booking> GetBookingsByUserId(int id);
+        List<Booking> GetBookingsByUserId(int id);
 
         [OperationContract]
         ICollection<Booking> BookingDetailInfoById(int id);
@@ -87,12 +87,18 @@ namespace HotelManagementService
         void SetCheckedIn(int userId);
 
         [OperationContract]
-        void DeleteBookingByCustomerId(int customerId);
+        void SetCheckedOut(int userId);
+
+        [OperationContract]
+        void DeleteBookingByBookingId(int customerId);
 
         [OperationContract]
         void CreateCustomerDetails(CustomerDetails customerDetailsObject);
 
         [OperationContract]
-        CustomerDetails GetCustomerDetailsByCustomerId(int customerId);
+        ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId);
+
+        [OperationContract]
+        void LoadRooms();
     }
 }

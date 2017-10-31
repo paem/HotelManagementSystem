@@ -56,9 +56,16 @@ namespace GUI.AdminApp
             this.City.Text = "City: "+City;
             this.Adress.Text = "Adress: "+Adress;
 
+            var booking = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
+            foreach(var a in booking)
+            {
+                var i = a.BookingTotalCost;
+            }
 
-           // var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
+
+         var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
             //bool checker = cd.CheckedIn;
+
 
 
             //if(cd.CheckedIn == true)

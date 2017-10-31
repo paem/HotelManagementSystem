@@ -159,17 +159,35 @@ namespace HotelManagement.HotelManagementServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/SetCheckedIn", ReplyAction="http://tempuri.org/IHMSService/SetCheckedInResponse")]
         System.Threading.Tasks.Task SetCheckedInAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByCustomerIdResponse")]
-        void DeleteBookingByCustomerId(int customerId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/SetCheckedOut", ReplyAction="http://tempuri.org/IHMSService/SetCheckedOutResponse")]
+        void SetCheckedOut(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByCustomerId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByCustomerIdResponse")]
-        System.Threading.Tasks.Task DeleteBookingByCustomerIdAsync(int customerId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/SetCheckedOut", ReplyAction="http://tempuri.org/IHMSService/SetCheckedOutResponse")]
+        System.Threading.Tasks.Task SetCheckedOutAsync(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByBookingId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByBookingIdResponse")]
+        void DeleteBookingByBookingId(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByBookingId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByBookingIdResponse")]
+        System.Threading.Tasks.Task DeleteBookingByBookingIdAsync(int customerId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
         void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
         System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerIdResponse")]
+        HMS.Models.CustomerDetails[] GetCustomerDetailsByCustomerId(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsByCustomerIdAsync(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadRooms", ReplyAction="http://tempuri.org/IHMSService/LoadRoomsResponse")]
+        void LoadRooms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadRooms", ReplyAction="http://tempuri.org/IHMSService/LoadRoomsResponse")]
+        System.Threading.Tasks.Task LoadRoomsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -391,12 +409,20 @@ namespace HotelManagement.HotelManagementServiceReference {
             return base.Channel.SetCheckedInAsync(userId);
         }
         
-        public void DeleteBookingByCustomerId(int customerId) {
-            base.Channel.DeleteBookingByCustomerId(customerId);
+        public void SetCheckedOut(int userId) {
+            base.Channel.SetCheckedOut(userId);
         }
         
-        public System.Threading.Tasks.Task DeleteBookingByCustomerIdAsync(int customerId) {
-            return base.Channel.DeleteBookingByCustomerIdAsync(customerId);
+        public System.Threading.Tasks.Task SetCheckedOutAsync(int userId) {
+            return base.Channel.SetCheckedOutAsync(userId);
+        }
+        
+        public void DeleteBookingByBookingId(int customerId) {
+            base.Channel.DeleteBookingByBookingId(customerId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBookingByBookingIdAsync(int customerId) {
+            return base.Channel.DeleteBookingByBookingIdAsync(customerId);
         }
         
         public void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject) {
@@ -405,6 +431,22 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject) {
             return base.Channel.CreateCustomerDetailsAsync(customerDetailsObject);
+        }
+        
+        public HMS.Models.CustomerDetails[] GetCustomerDetailsByCustomerId(int customerId) {
+            return base.Channel.GetCustomerDetailsByCustomerId(customerId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsByCustomerIdAsync(int customerId) {
+            return base.Channel.GetCustomerDetailsByCustomerIdAsync(customerId);
+        }
+        
+        public void LoadRooms() {
+            base.Channel.LoadRooms();
+        }
+        
+        public System.Threading.Tasks.Task LoadRoomsAsync() {
+            return base.Channel.LoadRoomsAsync();
         }
     }
 }

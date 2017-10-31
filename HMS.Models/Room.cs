@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace HMS.Models
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class Room
     {
         [Key]

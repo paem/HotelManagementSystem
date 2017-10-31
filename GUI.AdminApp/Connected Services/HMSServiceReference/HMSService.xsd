@@ -310,14 +310,26 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteBookingByCustomerId">
+  <xs:element name="SetCheckedOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCheckedOutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBookingByBookingId">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="customerId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteBookingByCustomerIdResponse">
+  <xs:element name="DeleteBookingByBookingIdResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -344,8 +356,18 @@
   <xs:element name="GetCustomerDetailsByCustomerIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerDetailsByCustomerIdResult" nillable="true" type="q24:CustomerDetails" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerDetailsByCustomerIdResult" nillable="true" type="q24:ArrayOfCustomerDetails" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadRooms">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadRoomsResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

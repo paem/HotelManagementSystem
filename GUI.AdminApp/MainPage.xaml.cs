@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
+using System.Data.SqlClient;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -63,5 +64,24 @@ namespace GUI.AdminApp
             
             Frame.Navigate(typeof(EditUser), userList.SelectedItem);
         }
+
+        //private void uploadRooms_Click(object sender, EventArgs e)
+        //{
+        //    var connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelManagementDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //    var sqlConnection = new SqlConnection(connString);
+        //    List<Room> values = File.ReadAllLines(@"C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml").Skip(1).Select(x => Room.FromCsv(x)).ToList();
+        //    sqlConnection.Open();
+        //    using (var scope = new TransactionScope())
+        //    {
+        //        string sqlIns = "INSERT INTO dbo.Rooms (roomId, categoryId, RoomDoorNumber, capacityId, roomPrice, roomStatus) VALUES(@roomId, @categoryId, @RoomDoorNumber, @capacityId, @RoomPrice, @RoomStatus)";
+        //        foreach (var value in values)
+        //        {
+        //            var cmdIns = new SqlCommand(sqlIns, sqlConnection);
+        //            cmdIns.Parameters.AddWithValue("@roomId", value.RoomId);
+        //            cmdIns.Parameters.AddWithValue("@categoryId", value.)
+        //        }
+        //    }
+        //}
+
     }
 }

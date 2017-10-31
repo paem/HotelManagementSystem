@@ -43,12 +43,13 @@ namespace HMS.Data.Repositories
             }
         }
 
-        public ICollection<Booking> GetBookingByUserId(int id)
+        public List<Booking> GetBookingByUserId(int id)
         {
             using (HMSDbContext context = new HMSDbContext())
             {
 
-                return context.Booking.Where(a => a.CustomerId.Equals(id)).ToList();
+                return context.Booking.AsNoTracking().Where(e => e.CustomerId == id).ToList();
+
 
             }
         }
@@ -71,11 +72,11 @@ namespace HMS.Data.Repositories
             }
         }
 
-        public void DeleteBookingByCustomerId(int customerId)
+        public void DeleteBookingByBookingId(int bookingId)
         {
             using (var context = new HMSDbContext())
             {
-                var bookingInDb = context.Booking.SingleOrDefault(e => e.CustomerId == customerId);
+                var bookingInDb = context.Booking.SingleOrDefault(e => e.BookingId == bookingId);
                 context.Booking.Remove(bookingInDb);
                 context.SaveChanges();
             }

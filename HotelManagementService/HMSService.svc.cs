@@ -19,6 +19,7 @@ namespace HotelManagementService
         private readonly BookingRepository _bookingRepository = new BookingRepository();
         private readonly CustomerRepository _customerRepository = new CustomerRepository();
         private readonly HotelRepository _hotelRepository = new HotelRepository();
+        private readonly XmlRepository _xmlRepository = new XmlRepository();
 
 
         public ICollection<Room> GetRooms()
@@ -131,7 +132,7 @@ namespace HotelManagementService
             return _customerRepository.GetUserByEmail(Email);
         }
 
-        public ICollection<Booking> GetBookingsByUserId(int id)
+        public List<Booking> GetBookingsByUserId(int id)
         {
             return _bookingRepository.GetBookingByUserId(id);
         }
@@ -151,9 +152,14 @@ namespace HotelManagementService
            _customerRepository.SetCheckedIn(userId);
         }
 
-        public void DeleteBookingByCustomerId(int customerId)
+        public void SetCheckedOut(int userId)
         {
-            _bookingRepository.DeleteBookingByCustomerId(customerId);
+            _customerRepository.SetCheckedOut(userId);
+        }
+
+        public void DeleteBookingByBookingId(int bookingId)
+        {
+            _bookingRepository.DeleteBookingByBookingId(bookingId);
         }
 
         public void CreateCustomerDetails(CustomerDetails customerDetailsObject)
@@ -161,9 +167,14 @@ namespace HotelManagementService
             _customerRepository.CreateCustomerDetails(customerDetailsObject);
         }
 
-        public CustomerDetails GetCustomerDetailsByCustomerId(int customerId)
+        public ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId)
         {
             return _customerRepository.GetCustomerDetailsByCustomerId(customerId);
+        }
+
+        public void LoadRooms()
+        {
+            _xmlRepository.LoadRooms();
         }
     }
 }

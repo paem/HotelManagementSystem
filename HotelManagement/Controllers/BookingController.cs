@@ -90,6 +90,7 @@ namespace HotelManagement.Controllers
                  };
                  _bookingWCFClient.CreateBooking(bookingObject);
 
+
                 var customerDetailsObject = new CustomerDetails
                 {
                     CustomerDetailsId = 0,

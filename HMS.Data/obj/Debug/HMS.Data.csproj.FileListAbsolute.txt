@@ -112,3 +112,5 @@ C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Da
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.csproj.CoreCompileInputs.cache
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.dll
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.pdb
+C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.roomcountchanges.resources
+C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.isReference.resources
