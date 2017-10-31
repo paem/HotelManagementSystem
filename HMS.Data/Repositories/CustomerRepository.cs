@@ -100,7 +100,8 @@ namespace HMS.Data.Repositories
 
                 //   return context.CustomerDetails.Where(a => a.CustomerId.Equals(customerId)).FirstOrDefault();
                 //   return context.CustomerDetails.AsNoTracking().SingleOrDefault(p => p.CustomerId == customerId);
-                return context.CustomerDetails.Where(e => e.CustomerId == customerId).ToList();
+                context.Configuration.ProxyCreationEnabled = false;
+                return context.CustomerDetails.AsNoTracking().Where(e => e.CustomerId == customerId).ToList();
 
             }
         }

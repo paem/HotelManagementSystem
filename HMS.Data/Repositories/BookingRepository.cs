@@ -47,7 +47,7 @@ namespace HMS.Data.Repositories
         {
             using (HMSDbContext context = new HMSDbContext())
             {
-
+                context.Configuration.ProxyCreationEnabled = false;
                 return context.Booking.AsNoTracking().Where(e => e.CustomerId == id).ToList();
 
 
