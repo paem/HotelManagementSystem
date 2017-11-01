@@ -37,7 +37,9 @@
 
         <SplitView.Content>
             <Frame Name="myFrame">
-
+                <Grid>
+                    <TextBlock FontSize="36" Text="Welcome"  HorizontalAlignment="Center"/>
+                </Grid>
             </Frame>
         </SplitView.Content>
     </SplitView>
