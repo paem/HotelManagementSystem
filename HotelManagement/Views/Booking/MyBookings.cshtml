@@ -247,6 +247,11 @@
                     @item.BookingTotalCost Kr
                 </td>
             </tr>
+            @using (Html.BeginForm("DeleteBookingById", "Booking", new { id = @item.BookingId }))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" style="float: right" class="btn btn-danger">Cancel Booking</button>
+            }
         </table>
     </div>
     <br />

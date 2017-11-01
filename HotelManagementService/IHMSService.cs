@@ -106,5 +106,8 @@ namespace HotelManagementService
 
         [OperationContract]
         void LoadCapacities();
+
+        [OperationContract]
+        Booking GetBookingById(int bookingId);
     }
 }

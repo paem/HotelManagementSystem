@@ -59,6 +59,33 @@ namespace HotelManagement.Controllers
         }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBookingById(int id)
+        {
+            var booking = _bookingWCFClient.GetBookingById(id);
+
+            var room = _bookingWCFClient.GetRoomById(booking.RoomId);
+            var category = _bookingWCFClient.GetCategoryById(room.RoomCategoryId);
+
+            var roomObject = new Room
+            {
+                RoomId = room.RoomId,
+                RoomStatus = false
+            };
+            _bookingWCFClient.CreateRoom(roomObject);
+
+            var roomCategoryObject = new RoomCategory
+            {
+                RoomCategoryId = room.RoomCategoryId,
+                RoomCount = category.RoomCount + 1,
+            };
+            _bookingWCFClient.CreateRoomCategory(roomCategoryObject);
+
+            _bookingWCFClient.DeleteBookingByBookingId(id);
+            return RedirectToAction("MyBookings", "Booking");
+        }
+
         [ValidateAntiForgeryToken]
         [HttpPost]
          public ActionResult CreateBooking(BookingViewModel viewModel)

@@ -188,6 +188,24 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadRooms", ReplyAction="http://tempuri.org/IHMSService/LoadRoomsResponse")]
         System.Threading.Tasks.Task LoadRoomsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCategories", ReplyAction="http://tempuri.org/IHMSService/LoadCategoriesResponse")]
+        void LoadCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCategories", ReplyAction="http://tempuri.org/IHMSService/LoadCategoriesResponse")]
+        System.Threading.Tasks.Task LoadCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCapacities", ReplyAction="http://tempuri.org/IHMSService/LoadCapacitiesResponse")]
+        void LoadCapacities();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCapacities", ReplyAction="http://tempuri.org/IHMSService/LoadCapacitiesResponse")]
+        System.Threading.Tasks.Task LoadCapacitiesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetBookingById", ReplyAction="http://tempuri.org/IHMSService/GetBookingByIdResponse")]
+        HMS.Models.Booking GetBookingById(int bookingId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetBookingById", ReplyAction="http://tempuri.org/IHMSService/GetBookingByIdResponse")]
+        System.Threading.Tasks.Task<HMS.Models.Booking> GetBookingByIdAsync(int bookingId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -447,6 +465,30 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task LoadRoomsAsync() {
             return base.Channel.LoadRoomsAsync();
+        }
+        
+        public void LoadCategories() {
+            base.Channel.LoadCategories();
+        }
+        
+        public System.Threading.Tasks.Task LoadCategoriesAsync() {
+            return base.Channel.LoadCategoriesAsync();
+        }
+        
+        public void LoadCapacities() {
+            base.Channel.LoadCapacities();
+        }
+        
+        public System.Threading.Tasks.Task LoadCapacitiesAsync() {
+            return base.Channel.LoadCapacitiesAsync();
+        }
+        
+        public HMS.Models.Booking GetBookingById(int bookingId) {
+            return base.Channel.GetBookingById(bookingId);
+        }
+        
+        public System.Threading.Tasks.Task<HMS.Models.Booking> GetBookingByIdAsync(int bookingId) {
+            return base.Channel.GetBookingByIdAsync(bookingId);
         }
     }
 }

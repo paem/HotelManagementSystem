@@ -186,5 +186,10 @@ namespace HotelManagementService
         {
             _xmlRepository.LoadCapacities();
         }
+
+        public Booking GetBookingById(int bookingId)
+        {
+            return _bookingRepository.GetBookingById(bookingId);
+        }
     }
 }

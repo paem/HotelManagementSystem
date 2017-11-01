@@ -43,6 +43,14 @@ namespace HMS.Data.Repositories
             }
         }
 
+        public Booking GetBookingById(int bookingId)
+        {
+            using (HMSDbContext context = new HMSDbContext())
+            {
+                return context.Booking.AsNoTracking().SingleOrDefault(p => p.BookingId == bookingId);
+            }
+        }
+
         public ICollection<Booking> GetBookingByUserId(int id)
         {
             using (HMSDbContext context = new HMSDbContext())
