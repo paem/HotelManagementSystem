@@ -75,7 +75,7 @@ namespace HotelManagementService
         Customer GetUserByEmail(string Email);
 
         [OperationContract]
-        List<Booking> GetBookingsByUserId(int id);
+        ICollection<Booking> GetBookingsByUserId(int id);
 
         [OperationContract]
         ICollection<Booking> BookingDetailInfoById(int id);

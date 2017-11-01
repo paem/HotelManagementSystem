@@ -43,7 +43,7 @@ namespace HMS.Data.Repositories
             }
         }
 
-        public List<Booking> GetBookingByUserId(int id)
+        public ICollection<Booking> GetBookingByUserId(int id)
         {
             using (HMSDbContext context = new HMSDbContext())
             {

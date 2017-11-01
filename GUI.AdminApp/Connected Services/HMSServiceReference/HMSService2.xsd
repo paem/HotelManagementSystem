@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HMS.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HMS.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/HMS.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HMS.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52028/HMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfRoom">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Room" nillable="true" type="tns:Room" />
@@ -8,18 +9,33 @@
   <xs:element name="ArrayOfRoom" nillable="true" type="tns:ArrayOfRoom" />
   <xs:complexType name="Room">
     <xs:sequence>
-      <xs:element minOccurs="0" name="RoomCapacities" nillable="true" type="tns:ArrayOfRoomCapacity" />
-      <xs:element minOccurs="0" name="RoomCapacity" nillable="true" type="tns:RoomCapacity" />
       <xs:element minOccurs="0" name="RoomCapacityId" type="xs:int" />
-      <xs:element minOccurs="0" name="RoomCategories" nillable="true" type="tns:ArrayOfRoomCategory" />
-      <xs:element minOccurs="0" name="RoomCategory" nillable="true" type="tns:RoomCategory" />
+      <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomDoorNumber" type="xs:int" />
       <xs:element minOccurs="0" name="RoomId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomPrice" type="xs:double" />
       <xs:element minOccurs="0" name="RoomStatus" type="xs:boolean" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Room" nillable="true" type="tns:Room" />
+  <xs:complexType name="RoomCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoomCapacities" nillable="true" type="tns:ArrayOfRoomCapacity" />
+      <xs:element minOccurs="0" name="RoomCapacityId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomCategoryBeds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomCategoryImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomCount" type="xs:double" />
+      <xs:element minOccurs="0" name="Rooms" nillable="true" type="tns:ArrayOfRoom" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RoomCategory" nillable="true" type="tns:RoomCategory" />
   <xs:complexType name="ArrayOfRoomCapacity">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomCapacity" nillable="true" type="tns:RoomCapacity" />
@@ -33,28 +49,10 @@
       <xs:element minOccurs="0" name="RoomCapacityId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomCapacityName" nillable="true" type="xs:string" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="RoomCapacity" nillable="true" type="tns:RoomCapacity" />
-  <xs:complexType name="ArrayOfRoomCategory">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomCategory" nillable="true" type="tns:RoomCategory" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfRoomCategory" nillable="true" type="tns:ArrayOfRoomCategory" />
-  <xs:complexType name="RoomCategory">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="RoomCapacities" nillable="true" type="tns:ArrayOfRoomCapacity" />
-      <xs:element minOccurs="0" name="RoomCapacityId" type="xs:int" />
-      <xs:element minOccurs="0" name="RoomCategoryBeds" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomCategoryDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
-      <xs:element minOccurs="0" name="RoomCategoryImage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomCategoryName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomCount" type="xs:double" />
-      <xs:element minOccurs="0" name="Rooms" nillable="true" type="tns:ArrayOfRoom" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="RoomCategory" nillable="true" type="tns:RoomCategory" />
   <xs:complexType name="ArrayOfBooking">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Booking" nillable="true" type="tns:Booking" />
@@ -74,12 +72,11 @@
       <xs:element minOccurs="0" name="BookingTotalNights" type="xs:int" />
       <xs:element minOccurs="0" name="BookingTotalRooms" type="xs:int" />
       <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
-      <xs:element minOccurs="0" name="RoomCapacities" nillable="true" type="tns:ArrayOfRoomCapacity" />
-      <xs:element minOccurs="0" name="RoomCategories" nillable="true" type="tns:ArrayOfRoomCategory" />
       <xs:element minOccurs="0" name="RoomCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="RoomId" type="xs:int" />
-      <xs:element minOccurs="0" name="Rooms" nillable="true" type="tns:ArrayOfRoom" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Booking" nillable="true" type="tns:Booking" />
   <xs:complexType name="ArrayOfCustomerDetails">
@@ -94,6 +91,8 @@
       <xs:element minOccurs="0" name="CustomerDetailsId" type="xs:int" />
       <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
   <xs:complexType name="ArrayOfHotel">
@@ -110,6 +109,8 @@
       <xs:element minOccurs="0" name="HotelTotalFloors" type="xs:int" />
       <xs:element minOccurs="0" name="HotelTotalRooms" type="xs:int" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Hotel" nillable="true" type="tns:Hotel" />
   <xs:complexType name="Customer">
@@ -125,6 +126,8 @@
       <xs:element minOccurs="0" name="CustomerPhoneNo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
   <xs:complexType name="ArrayOfCustomer">
@@ -133,4 +136,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="ArrayOfRoomCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomCategory" nillable="true" type="tns:RoomCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoomCategory" nillable="true" type="tns:ArrayOfRoomCategory" />
 </xs:schema>

@@ -181,6 +181,18 @@
   <wsdl:message name="IHMSService_LoadRooms_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadRoomsResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_LoadCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCategories" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_LoadCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_LoadCapacities_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCapacities" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_LoadCapacities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCapacitiesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHMSService">
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRooms" message="tns:IHMSService_GetRooms_InputMessage" />
@@ -297,6 +309,14 @@
     <wsdl:operation name="LoadRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoadRooms" message="tns:IHMSService_LoadRooms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/LoadRoomsResponse" message="tns:IHMSService_LoadRooms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoadCategories" message="tns:IHMSService_LoadCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/LoadCategoriesResponse" message="tns:IHMSService_LoadCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCapacities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoadCapacities" message="tns:IHMSService_LoadCapacities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/LoadCapacitiesResponse" message="tns:IHMSService_LoadCapacities_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHMSService" type="tns:IHMSService">
@@ -555,6 +575,24 @@
     </wsdl:operation>
     <wsdl:operation name="LoadRooms">
       <soap:operation soapAction="http://tempuri.org/IHMSService/LoadRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCategories">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/LoadCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCapacities">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/LoadCapacities" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

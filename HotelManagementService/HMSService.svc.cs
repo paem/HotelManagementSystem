@@ -132,7 +132,7 @@ namespace HotelManagementService
             return _customerRepository.GetUserByEmail(Email);
         }
 
-        public List<Booking> GetBookingsByUserId(int id)
+        public ICollection<Booking> GetBookingsByUserId(int id)
         {
             return _bookingRepository.GetBookingByUserId(id);
         }

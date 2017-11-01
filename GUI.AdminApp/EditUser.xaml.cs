@@ -62,34 +62,50 @@ namespace GUI.AdminApp
                 var i = a.BookingTotalCost;
             }
 
+            //checkBox.IsChecked = true;
+            var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
+            foreach (var c in cd)
+            {
+                if (c.CheckedIn == true)
+                {
+                    //checkBox.IsChecked = true;
 
-         var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
-            //bool checker = cd.CheckedIn;
+                    this.checkIn.Text = "Checked in";
+                }
+                else
+                {
+                    //checkBox.IsChecked = false;
+                    this.checkIn.Text = "Checked Out";
+                }
+            }
+              
 
-
-
-            //if(cd.CheckedIn == true)
-            //{
-            //    this.checkIn.Text = "true";
-            //}
-            //else
-            //{
-            //    this.checkIn.Text = "false";
-            //}
-            //var cd = HMSClient.GetCustomerDetailsAsync().Result.Where(i => i.CustomerDetailsId == i.CustomerId);
-
-            //foreach(var a in cd)
-            //{
-            //    this.checkIn.Text = a.CheckedIn.ToString();
-            //}
-            //CustomerDetails cd = new CustomerDetails();
-            //c.CustomerId = cd.CustomerId;
-
-            //this.checkIn.Text = cd.CheckedIn.ToString();
-            //bool checkIn = cd.CheckedIn;
+                //bool checker = cd.CheckedIn;
 
 
-        }
+
+                //if (cd.CheckedIn == true)
+                //{
+                //    this.checkIn.Text = "true";
+                //}
+                //else
+                //{
+                //    this.checkIn.Text = "false";
+                //}
+                //var cd = HMSClient.GetCustomerDetailsAsync().Result.Where(i => i.CustomerDetailsId == i.CustomerId);
+
+                //foreach(var a in cd)
+                //{
+                //    this.checkIn.Text = a.CheckedIn.ToString();
+                //}
+                //CustomerDetails cd = new CustomerDetails();
+                //c.CustomerId = cd.CustomerId;
+
+                //this.checkIn.Text = cd.CheckedIn.ToString();
+                //bool checkIn = cd.CheckedIn;
+
+
+            }
 
 
         
@@ -100,27 +116,30 @@ namespace GUI.AdminApp
        
         
        
-        private void CheckInStatus_Click(object sender, RoutedEventArgs e)
+        private async void CheckInStatus_Click(object sender, RoutedEventArgs e)
         {
             int id = c.CustomerId;
 
+            var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
+            foreach(var c in cd) { 
+                if (checkBox.IsChecked == false)
+                {  
+                    if (c.CheckedIn != true)
+                    {
+                        this.checkIn.Text = "Checked In";
+                        var i = HMSClient.SetCheckedInAsync(id);
+                    }
+                    if (c.CheckedIn != false)
+                    {
+                        this.checkIn.Text = "Checked Out";
+                        var i = HMSClient.SetCheckedOutAsync(id);
+                        checkBox.IsChecked = false;
 
-            CustomerDetails cd = new CustomerDetails(); //Denna datan ska komma ifrån 
-            //var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);                                         
-           //bool checker = cd.CheckedIn;
+                    }
 
-
-            if (checkBox.IsChecked != true)
-            {
-                if (cd.CheckedIn == false) { 
-                var i = HMSClient.SetCheckedInAsync(id);
-                checkBox.IsChecked = true;
+                    
                 }
 
-            }
-            if(checkBox.IsChecked != false)
-            {
-                checkBox.IsChecked = true;
             }
         }
     }

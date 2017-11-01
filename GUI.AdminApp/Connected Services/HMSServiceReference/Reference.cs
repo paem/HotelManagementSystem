@@ -17,18 +17,12 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Room", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Room", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class Room : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCapacity> RoomCapacitiesField;
-        
-        private GUI.AdminApp.HMSServiceReference.RoomCapacity RoomCapacityField;
         
         private int RoomCapacityIdField;
         
-        private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCategory> RoomCategoriesField;
-        
-        private GUI.AdminApp.HMSServiceReference.RoomCategory RoomCategoryField;
+        private int RoomCategoryIdField;
         
         private int RoomDoorNumberField;
         
@@ -37,32 +31,6 @@ namespace GUI.AdminApp.HMSServiceReference {
         private double RoomPriceField;
         
         private bool RoomStatusField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCapacity> RoomCapacities {
-            get {
-                return this.RoomCapacitiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCapacitiesField, value) != true)) {
-                    this.RoomCapacitiesField = value;
-                    this.RaisePropertyChanged("RoomCapacities");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUI.AdminApp.HMSServiceReference.RoomCapacity RoomCapacity {
-            get {
-                return this.RoomCapacityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCapacityField, value) != true)) {
-                    this.RoomCapacityField = value;
-                    this.RaisePropertyChanged("RoomCapacity");
-                }
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int RoomCapacityId {
@@ -78,27 +46,14 @@ namespace GUI.AdminApp.HMSServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCategory> RoomCategories {
+        public int RoomCategoryId {
             get {
-                return this.RoomCategoriesField;
+                return this.RoomCategoryIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.RoomCategoriesField, value) != true)) {
-                    this.RoomCategoriesField = value;
-                    this.RaisePropertyChanged("RoomCategories");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUI.AdminApp.HMSServiceReference.RoomCategory RoomCategory {
-            get {
-                return this.RoomCategoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCategoryField, value) != true)) {
-                    this.RoomCategoryField = value;
-                    this.RaisePropertyChanged("RoomCategory");
+                if ((this.RoomCategoryIdField.Equals(value) != true)) {
+                    this.RoomCategoryIdField = value;
+                    this.RaisePropertyChanged("RoomCategoryId");
                 }
             }
         }
@@ -167,82 +122,7 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RoomCapacity", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
-    public partial class RoomCapacity : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int RoomCapacityAdultsField;
-        
-        private int RoomCapacityChildrenField;
-        
-        private int RoomCapacityIdField;
-        
-        private string RoomCapacityNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RoomCapacityAdults {
-            get {
-                return this.RoomCapacityAdultsField;
-            }
-            set {
-                if ((this.RoomCapacityAdultsField.Equals(value) != true)) {
-                    this.RoomCapacityAdultsField = value;
-                    this.RaisePropertyChanged("RoomCapacityAdults");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RoomCapacityChildren {
-            get {
-                return this.RoomCapacityChildrenField;
-            }
-            set {
-                if ((this.RoomCapacityChildrenField.Equals(value) != true)) {
-                    this.RoomCapacityChildrenField = value;
-                    this.RaisePropertyChanged("RoomCapacityChildren");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RoomCapacityId {
-            get {
-                return this.RoomCapacityIdField;
-            }
-            set {
-                if ((this.RoomCapacityIdField.Equals(value) != true)) {
-                    this.RoomCapacityIdField = value;
-                    this.RaisePropertyChanged("RoomCapacityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RoomCapacityName {
-            get {
-                return this.RoomCapacityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCapacityNameField, value) != true)) {
-                    this.RoomCapacityNameField = value;
-                    this.RaisePropertyChanged("RoomCapacityName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RoomCategory", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RoomCategory", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class RoomCategory : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCapacity> RoomCapacitiesField;
@@ -392,7 +272,82 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RoomCapacity", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
+    public partial class RoomCapacity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int RoomCapacityAdultsField;
+        
+        private int RoomCapacityChildrenField;
+        
+        private int RoomCapacityIdField;
+        
+        private string RoomCapacityNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RoomCapacityAdults {
+            get {
+                return this.RoomCapacityAdultsField;
+            }
+            set {
+                if ((this.RoomCapacityAdultsField.Equals(value) != true)) {
+                    this.RoomCapacityAdultsField = value;
+                    this.RaisePropertyChanged("RoomCapacityAdults");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RoomCapacityChildren {
+            get {
+                return this.RoomCapacityChildrenField;
+            }
+            set {
+                if ((this.RoomCapacityChildrenField.Equals(value) != true)) {
+                    this.RoomCapacityChildrenField = value;
+                    this.RaisePropertyChanged("RoomCapacityChildren");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RoomCapacityId {
+            get {
+                return this.RoomCapacityIdField;
+            }
+            set {
+                if ((this.RoomCapacityIdField.Equals(value) != true)) {
+                    this.RoomCapacityIdField = value;
+                    this.RaisePropertyChanged("RoomCapacityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RoomCapacityName {
+            get {
+                return this.RoomCapacityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoomCapacityNameField, value) != true)) {
+                    this.RoomCapacityNameField = value;
+                    this.RaisePropertyChanged("RoomCapacityName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class Booking : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.DateTime BookingArrivalDateField;
@@ -417,15 +372,9 @@ namespace GUI.AdminApp.HMSServiceReference {
         
         private int CustomerIdField;
         
-        private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCapacity> RoomCapacitiesField;
-        
-        private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCategory> RoomCategoriesField;
-        
         private int RoomCategoryIdField;
         
         private int RoomIdField;
-        
-        private System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.Room> RoomsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime BookingArrivalDate {
@@ -571,32 +520,6 @@ namespace GUI.AdminApp.HMSServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCapacity> RoomCapacities {
-            get {
-                return this.RoomCapacitiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCapacitiesField, value) != true)) {
-                    this.RoomCapacitiesField = value;
-                    this.RaisePropertyChanged("RoomCapacities");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.RoomCategory> RoomCategories {
-            get {
-                return this.RoomCategoriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomCategoriesField, value) != true)) {
-                    this.RoomCategoriesField = value;
-                    this.RaisePropertyChanged("RoomCategories");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int RoomCategoryId {
             get {
                 return this.RoomCategoryIdField;
@@ -622,19 +545,6 @@ namespace GUI.AdminApp.HMSServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<GUI.AdminApp.HMSServiceReference.Room> Rooms {
-            get {
-                return this.RoomsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoomsField, value) != true)) {
-                    this.RoomsField = value;
-                    this.RaisePropertyChanged("Rooms");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -647,7 +557,7 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDetails", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDetails", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class CustomerDetails : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool CheckedInField;
@@ -707,7 +617,7 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Hotel", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Hotel", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class Hotel : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string HotelDescriptionField;
@@ -797,7 +707,7 @@ namespace GUI.AdminApp.HMSServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/HMS.Models", IsReference=true)]
     public partial class Customer : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string CustomerAddressField;
@@ -1050,6 +960,12 @@ namespace GUI.AdminApp.HMSServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadRooms", ReplyAction="http://tempuri.org/IHMSService/LoadRoomsResponse")]
         System.Threading.Tasks.Task LoadRoomsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCategories", ReplyAction="http://tempuri.org/IHMSService/LoadCategoriesResponse")]
+        System.Threading.Tasks.Task LoadCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadCapacities", ReplyAction="http://tempuri.org/IHMSService/LoadCapacitiesResponse")]
+        System.Threading.Tasks.Task LoadCapacitiesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1209,6 +1125,14 @@ namespace GUI.AdminApp.HMSServiceReference {
         
         public System.Threading.Tasks.Task LoadRoomsAsync() {
             return base.Channel.LoadRoomsAsync();
+        }
+        
+        public System.Threading.Tasks.Task LoadCategoriesAsync() {
+            return base.Channel.LoadCategoriesAsync();
+        }
+        
+        public System.Threading.Tasks.Task LoadCapacitiesAsync() {
+            return base.Channel.LoadCapacitiesAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {
