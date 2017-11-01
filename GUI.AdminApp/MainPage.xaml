@@ -8,27 +8,83 @@
     x:Class="GUI.AdminApp.MainPage"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Pink">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
 
-        <ListView x:Name="userList" Margin="0,65,0,-65" SelectionChanged="userList_SelectionChanged" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Height = "35" Width = "400">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Home" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="50" Height="50" Background="Transparent" Click="Home_Click"/>
+                    <TextBlock Text="Home" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="searchCustomer" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;"
+                    Width="50" Height="50" Background="Transparent" Click="searchCustomer_Click"/>
+                    <TextBlock Text="Search" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="xmlUpload" FontFamily="Segoe MDL2 Assets" Content="&#xE158;"
+                        Width="50" Height="50" Background="Transparent" Click="xml_Click"/>
+                    <TextBlock Text="Rooms" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+
+        <SplitView.Content>
+            <Frame Name="myFrame">
+
+            </Frame>
+        </SplitView.Content>
+    </SplitView>
+
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" />
+        </RelativePanel>
+        <SplitView Name="MySplitView" 
+                   Grid.Row="1" 
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="200" 
+                   CompactPaneLength="56" 
+                   HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
+                         Name="IconsListBox" 
+                         SelectionChanged="IconsListBox_SelectionChanged">
+                    <ListBoxItem Name="ShareListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Margin="0 0 5 0" x:Name="txbName" Text="{Binding CustomerFName}" />
-                            <TextBlock x:Name="txbLName" Text="{Binding CustomerLName}"  />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72D;" />
+                            <TextBlock Text="Share" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            
-        </ListView>
+                    </ListBoxItem>
 
-        <AutoSuggestBox x:Name="AutoSuggBox" Margin="10 10 10 0" Header="Customer Search" PlaceholderText="Search for customer" 
-                        QuerySubmitted="AutoSuggBox_QuerySubmitted" 
-                        SuggestionChosen="AutoSuggBox_SuggestionChosen" 
-                        TextChanged="AutoSuggBox_TextChanged"
-                        TextMemberPath="name" 
-                        DisplayMemberPath="id" />
-    </Grid>
+                    <ListBoxItem Name="FavoritesListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock Text="Favorites" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <TextBlock Name="ResultTextBlock" />
+            </SplitView.Content>
+        </SplitView>
+
+    </Grid>-->
+
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+       
+    </Grid>-->
 </Page>

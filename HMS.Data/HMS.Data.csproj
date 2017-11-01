@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201710312301391_update.Designer.cs">
       <DependentUpon>201710312301391_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711010123573_new.cs" />
+    <Compile Include="Migrations\201711010123573_new.Designer.cs">
+      <DependentUpon>201711010123573_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BookingRepository.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710312301391_update.resx">
       <DependentUpon>201710312301391_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711010123573_new.resx">
+      <DependentUpon>201711010123573_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

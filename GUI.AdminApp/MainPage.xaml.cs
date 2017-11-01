@@ -13,8 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using GUI.AdminApp.HMSServiceReference;
-//using System.Data.SqlClient;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,63 +24,32 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private readonly HMSServiceClient HMSClient = new HMSServiceClient();
-      
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        private void AutoSuggBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
-        {
-            if (args.ChosenSuggestion != null)
-            {
-                AutoSuggBox.Text = args.ChosenSuggestion.ToString();
 
-            }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(typeof(Home));
         }
 
-        private void AutoSuggBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        private void searchCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = args.SelectedItem.ToString();
-            sender.Text = selectedItem;
-           
+           myFrame.Navigate(typeof(SearchCustomer));
+
         }
 
-        private async void AutoSuggBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        private void xml_Click(object sender, RoutedEventArgs e)
         {
-            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
-            {
-                var customerList = await HMSClient.GetCustomersAsync();
-                var searchResult = customerList.Where(name => (name.CustomerFName ?? "").ToLower().Contains(sender.Text.ToLower()));
-               
-                userList.ItemsSource = searchResult;
-            }
+            myFrame.Navigate(typeof(Rooms));
         }
-
-        private void userList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-            Frame.Navigate(typeof(EditUser), userList.SelectedItem);
-        }
-
-        //private void uploadRooms_Click(object sender, EventArgs e)
-        //{
-        //    var connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelManagementDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        //    var sqlConnection = new SqlConnection(connString);
-        //    List<Room> values = File.ReadAllLines(@"C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml").Skip(1).Select(x => Room.FromCsv(x)).ToList();
-        //    sqlConnection.Open();
-        //    using (var scope = new TransactionScope())
-        //    {
-        //        string sqlIns = "INSERT INTO dbo.Rooms (roomId, categoryId, RoomDoorNumber, capacityId, roomPrice, roomStatus) VALUES(@roomId, @categoryId, @RoomDoorNumber, @capacityId, @RoomPrice, @RoomStatus)";
-        //        foreach (var value in values)
-        //        {
-        //            var cmdIns = new SqlCommand(sqlIns, sqlConnection);
-        //            cmdIns.Parameters.AddWithValue("@roomId", value.RoomId);
-        //            cmdIns.Parameters.AddWithValue("@categoryId", value.)
-        //        }
-        //    }
-        //}
-
     }
 }
