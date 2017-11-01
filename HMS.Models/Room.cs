@@ -22,30 +22,30 @@ namespace HMS.Models
         public bool RoomStatus { get; set; }
     
         [DataMember]
-        [ForeignKey("RoomCategoryId")]
-        public virtual RoomCategory RoomCategory { get; set; }
         public int RoomCategoryId { get; set; }
-
+        [ForeignKey("RoomCategoryId")]    
+        public virtual RoomCategory RoomCategory { get; set; }
+          
         [DataMember]
         public double RoomPrice { get; set; }
 
         [DataMember]
         public int RoomCapacityId { get; set; }
 
-        [DataMember]
-        public virtual RoomCapacity RoomCapacity { get; set; }
+        //[DataMember]
+        //public virtual RoomCapacity RoomCapacity { get; set; }
 
-        /* Navigation Properties*/
-        [DataMember]
-        public ICollection<RoomCapacity> RoomCapacities { get; set; }
+        //* Navigation Properties*/
+        //[DataMember]
+        //public ICollection<RoomCapacity> RoomCapacities { get; set; }
 
-        [DataMember]
-        public ICollection<RoomCategory> RoomCategories { get; set; }
+        //[DataMember]
+        //public ICollection<RoomCategory> RoomCategories { get; set; }
    
-        public Room()
-        {
-            RoomCategories = new Collection<RoomCategory>();
-            RoomCapacities = new Collection<RoomCapacity>();         
-        }
+        //public Room()
+        //{
+        //    RoomCategories = new Collection<RoomCategory>();
+        //    RoomCapacities = new Collection<RoomCapacity>();         
+        //}
     }
 }

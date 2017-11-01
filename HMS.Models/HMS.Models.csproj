@@ -50,7 +50,6 @@
     <Compile Include="Room.cs" />
     <Compile Include="RoomCapacity.cs" />
     <Compile Include="RoomCategory.cs" />
-    <Compile Include="RoomInput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -55,21 +55,21 @@ namespace HMS.Models
         [DataMember]
         public double BookingTotalCost { get; set; }
 
-        /* Navigation Properties*/
-        [DataMember]
-        public ICollection<RoomCapacity> RoomCapacities { get; set; }
+        //* Navigation Properties*/
+        //[DataMember]
+        //public ICollection<RoomCapacity> RoomCapacities { get; set; }
 
-        [DataMember]
-        public ICollection<Room> Rooms { get; set; }
+        //[DataMember]
+        //public ICollection<Room> Rooms { get; set; }
 
-        [DataMember]
-        public ICollection<RoomCategory> RoomCategories { get; set; }
+        //[DataMember]
+        //public ICollection<RoomCategory> RoomCategories { get; set; }
 
-        public Booking()
-        {
-            RoomCategories = new Collection<RoomCategory>();
-            RoomCapacities = new Collection<RoomCapacity>();
-            Rooms = new Collection<Room>();
-        }
+        //public Booking()
+        //{
+        //    RoomCategories = new Collection<RoomCategory>();
+        //    RoomCapacities = new Collection<RoomCapacity>();
+        //    Rooms = new Collection<Room>();
+        //}
     }
 }

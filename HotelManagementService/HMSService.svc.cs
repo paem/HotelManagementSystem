@@ -176,5 +176,15 @@ namespace HotelManagementService
         {
             _xmlRepository.LoadRooms();
         }
+
+        public void LoadCategories()
+        {
+            _xmlRepository.LoadCategories();
+        }
+
+        public void LoadCapacities()
+        {
+            _xmlRepository.LoadCapacities();
+        }
     }
 }

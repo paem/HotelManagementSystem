@@ -17,86 +17,127 @@ namespace HMS.Data.Repositories
     public class XmlRepository
     {
       public void LoadRooms()
+        {                
+                string connetionString = null;
+                SqlConnection connection;
+                SqlCommand command;
+                SqlDataAdapter adpter = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                XmlReader xmlFile;
+                string sql = null;
+
+                int roomId = 0;
+                int roomCategoryId = 0;
+                int capacityId = 0;
+                int RoomDoorNumber = 0;
+                double RoomPrice = 0;
+                bool RoomStatus = false;
+
+                connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+
+                connection = new SqlConnection(connetionString);
+
+                xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml", new XmlReaderSettings());
+                ds.ReadXml(xmlFile);
+                int i = 0;
+                connection.Open();
+                for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                {
+                    roomId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0]);
+                    RoomDoorNumber = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[1]);                
+                    RoomStatus = Convert.ToBoolean(ds.Tables[0].Rows[i].ItemArray[2]);
+                    roomCategoryId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[3]);
+                    RoomPrice = Convert.ToDouble(ds.Tables[0].Rows[i].ItemArray[4]);            
+                    capacityId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[5]);
+                    sql = "SET IDENTITY_INSERT Rooms ON; INSERT INTO Rooms (RoomId, RoomDoorNumber, RoomStatus, RoomCategoryId, RoomPrice, RoomCapacityId) " +
+                    "VALUES (" + "'" + roomId + "','" + RoomDoorNumber + "','" + RoomStatus + "','" + roomCategoryId + "','" + RoomPrice + "','" + capacityId + "'" + "); SET IDENTITY_INSERT Rooms OFF;";          
+                    command = new SqlCommand(sql, connection);
+                    adpter.InsertCommand = command;
+                    adpter.InsertCommand.ExecuteNonQuery();
+                }
+                connection.Close();                      
+        }
+        public void LoadCategories()
         {
-            using (var context = new HMSDbContext())
+            string connetionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adpter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            XmlReader xmlFile;
+            string sql = null;
+
+            string RoomCategoryName = null;
+            string RoomCategoryDesc = null;
+            string RoomCategoryBeds = null;
+            int RoomCapacityId = 0;
+            string RoomCategoryImage = null;
+            float RoomCount = 0;
+            int RoomCategoryId = 0;
+          
+
+            connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+
+            connection = new SqlConnection(connetionString);
+
+            xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Categories.xml", new XmlReaderSettings());
+            ds.ReadXml(xmlFile);
+            int i = 0;
+            connection.Open();
+            for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
             {
-                XDocument doc = XDocument.Load(@"C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml");
-
-
-                var room = from c in doc.Descendants("Roomlist")
-                           select new Room
-                           {
-                               RoomId = int.Parse(c.Element("roomId").Value),
-                               RoomCapacityId = int.Parse(c.Element("capacityId").Value),
-                               RoomCategoryId = int.Parse(c.Element("categoryId").Value),
-                               RoomDoorNumber = int.Parse(c.Element("RoomDoorNumber").Value),
-                               RoomPrice = double.Parse(c.Element("roomPrice").Value),
-                               RoomStatus = bool.Parse(c.Element("roomStatus").Value)
-                           };
-
-                //context.Rooms.Add(room);
-
-
-                //    using (XmlReader reader = XmlReader.Create(@"C: \Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml"))
-                //{
-                //    while (reader.Read())
-                //    {
-                //        if (reader.HasAttributes)
-                //        {
-                //            for ()
-                //            {
-
-
-                //            }
-                //        }
-
-
-
-                //    }
-                //}
-
-
-
-                //var room = doc.Descendants("Roomlist").Select(el => new Room()
-                //{
-                //    RoomId = int.Parse(el.Element("RoomId").Value),
-                //    RoomCapacityId = int.Parse(el.Element("capacityId").Value),
-                //    RoomCategoryId = int.Parse(el.Element("categoryId").Value),
-                //    RoomDoorNumber = int.Parse(el.Element("RoomDoorNumber").Value),
-                //    RoomPrice = double.Parse(el.Element("roomPrice").Value),
-                //    RoomStatus = bool.Parse(el.Element("roomStatus").Value),
-
-                //});
-                //  context.Rooms.Add(room);
-                // Debug.WriteLine(room);
-                //context.Rooms.Add(room);
-                //foreach (var rooms in room)
-                //{
-                //    context.Rooms.Add(rooms);
-                //    Debug.WriteLine(rooms);
-                //Room newRoom = new Room
-                //{
-                //    //RoomDoorNumber = rooms,
-                //    //RoomCapacityId = rooms,
-                //    //RoomPrice = rooms,
-
-                //};
-
-                //}
-
-                //Debug.WriteLine(room);
-
-
-
-                //context.SaveChanges();
+                RoomCategoryId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0]);
+                RoomCategoryName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                RoomCategoryDesc = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                RoomCategoryBeds = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                RoomCapacityId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[4]);
+                RoomCategoryImage = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                RoomCount = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[6]);            
+                sql = "SET IDENTITY_INSERT RoomCategories ON; INSERT INTO RoomCategories (RoomCategoryId, RoomCategoryName, RoomCategoryDesc, RoomCategoryBeds, RoomCapacityId, RoomCategoryImage, RoomCount) " +
+                    "VALUES (" + "'" + RoomCategoryId + "','" + RoomCategoryName + "','" + RoomCategoryDesc + "','" + RoomCategoryBeds + "','" + RoomCapacityId + "','" + RoomCategoryImage + "','" + RoomCount + "'" + "); SET IDENTITY_INSERT RoomCategories OFF;";
+                command = new SqlCommand(sql, connection);
+                adpter.InsertCommand = command;
+                adpter.InsertCommand.ExecuteNonQuery();
             }
-
-
-
+            connection.Close();
         }
 
-       
+        public void LoadCapacities()
+        {
+            string connetionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adpter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            XmlReader xmlFile;
+            string sql = null;
 
+            int RoomCapacityId = 0;
+            string RoomCapacityName = null;
+            int RoomCapacityAdults = 0;
+            int RoomCapacityChildren = 0;
+ 
+            connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+
+            connection = new SqlConnection(connetionString);
+
+            xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Capacities.xml", new XmlReaderSettings());
+            ds.ReadXml(xmlFile);
+            int i = 0;
+            connection.Open();
+            for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                RoomCapacityId = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0]);  
+                RoomCapacityName = ds.Tables[0].Rows[i].ItemArray[1].ToString();             
+                RoomCapacityAdults = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[2]);        
+                RoomCapacityChildren = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[3]);                    
+                sql = "SET IDENTITY_INSERT RoomCapacities ON; INSERT INTO RoomCapacities (RoomCapacityId, RoomCapacityName, RoomCapacityAdults, RoomCapacityChildren) VALUES (" + "'" + RoomCapacityId + "','" + RoomCapacityName + "','" + RoomCapacityAdults + "','" + RoomCapacityChildren + "'" + "); SET IDENTITY_INSERT RoomCapacities OFF;";           
+                command = new SqlCommand(sql, connection);
+                adpter.InsertCommand = command;
+                adpter.InsertCommand.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
 
     }
 }

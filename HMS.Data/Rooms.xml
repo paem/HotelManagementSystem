@@ -1,60 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<Roomlist>
-  <Room roomId="1">
+<RoomList>
+  <Room>
+    <roomId>1</roomId>
     <RoomDoorNumber>1</RoomDoorNumber>
-    <capacityId>1</capacityId>
     <roomStatus>false</roomStatus>
-    <roomPrice>350</roomPrice>
     <roomCategoryId>1</roomCategoryId>
-  </Room>
-  <Room roomId="2">
-    <RoomDoorNumber>2</RoomDoorNumber>
+    <roomPrice>350</roomPrice>
     <capacityId>1</capacityId>
-    <roomStatus>false</roomStatus>
-    <roomPrice>350</roomPrice>
-    <roomCategoryId>1</roomCategoryId>
   </Room>
-  <Room roomId="3">
+  <Room>
+    <roomId>2</roomId>
+    <RoomDoorNumber>2</RoomDoorNumber>   
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>1</roomCategoryId>
+    <roomPrice>350</roomPrice>
+    <capacityId>1</capacityId>
+  </Room>
+  <Room>
+    <roomId>3</roomId>
     <RoomDoorNumber>3</RoomDoorNumber>
-    <capacityId>1</capacityId>
     <roomStatus>false</roomStatus>
-    <roomPrice>350</roomPrice>
     <roomCategoryId>1</roomCategoryId>
+    <roomPrice>350</roomPrice>
+    <capacityId>1</capacityId>
   </Room>
-  <Room roomId="4">
+  <Room>
+    <roomId>4</roomId>
     <RoomDoorNumber>4</RoomDoorNumber>
-    <capacityId>1</capacityId>
     <roomStatus>false</roomStatus>
-    <roomPrice>350</roomPrice>
     <roomCategoryId>1</roomCategoryId>
+    <roomPrice>350</roomPrice>
+    <capacityId>1</capacityId>
   </Room>
-  <Room roomId="5">
+  <Room>
+    <roomId>5</roomId>
     <RoomDoorNumber>5</RoomDoorNumber>
-    <capacityId>2</capacityId>
     <roomStatus>false</roomStatus>
-    <roomPrice>600</roomPrice>
-    <roomCategoryId>2</roomCategoryId>
+    <roomCategoryId>1</roomCategoryId> 
+    <roomPrice>350</roomPrice>
+    <capacityId>1</capacityId>
   </Room>
-  <Room roomId="6">
+  <Room>
+    <roomId>6</roomId>
     <RoomDoorNumber>6</RoomDoorNumber>
-    <capacityId>2</capacityId>
     <roomStatus>false</roomStatus>
+    <roomCategoryId>2</roomCategoryId>    
     <roomPrice>600</roomPrice>
-    <roomCategoryId>2</roomCategoryId>
+    <capacityId>2</capacityId>
   </Room>
-  <Room roomId="7">
+  <Room>
+    <roomId>7</roomId>
     <RoomDoorNumber>7</RoomDoorNumber>
-    <capacityId>2</capacityId>
     <roomStatus>false</roomStatus>
+    <roomCategoryId>2</roomCategoryId>  
     <roomPrice>600</roomPrice>
-    <roomCategoryId>2</roomCategoryId>
-  </Room>
-  <Room roomId="8">
-    <RoomDoorNumber>8</RoomDoorNumber>
     <capacityId>2</capacityId>
-    <roomStatus>false</roomStatus>
-    <roomPrice>600</roomPrice>
-    <roomCategoryId>2</roomCategoryId>
   </Room>
-</Roomlist>
+  <Room>
+    <roomId>8</roomId>
+    <RoomDoorNumber>8</RoomDoorNumber>  
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>2</roomCategoryId>
+    <roomPrice>600</roomPrice>  
+    <capacityId>2</capacityId>
+  </Room>
+  <Room>
+    <roomId>9</roomId>
+    <RoomDoorNumber>9</RoomDoorNumber> 
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>2</roomCategoryId>
+    <roomPrice>600</roomPrice>
+    <capacityId>2</capacityId>
+  </Room>
+  <Room>
+    <roomId>10</roomId>
+    <RoomDoorNumber>10</RoomDoorNumber>
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>2</roomCategoryId>
+    <roomPrice>600</roomPrice>
+    <capacityId>2</capacityId>
+  </Room>
+  <Room>
+    <roomId>11</roomId>
+    <RoomDoorNumber>11</RoomDoorNumber>
+    <roomStatus>false</roomStatus>  
+    <roomCategoryId>3</roomCategoryId>
+    <roomPrice>1000</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>12</roomId>
+    <RoomDoorNumber>12</RoomDoorNumber>
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>3</roomCategoryId>
+    <roomPrice>1000</roomPrice> 
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>13</roomId>
+    <RoomDoorNumber>13</RoomDoorNumber>
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>3</roomCategoryId>
+    <roomPrice>1000</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>14</roomId>
+    <RoomDoorNumber>14</RoomDoorNumber>  
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>3</roomCategoryId>
+    <roomPrice>1000</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>15</roomId>
+    <RoomDoorNumber>15</RoomDoorNumber> 
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>3</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>16</roomId>
+    <RoomDoorNumber>16</RoomDoorNumber>
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>4</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>17</roomId>
+    <RoomDoorNumber>17</RoomDoorNumber> 
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>4</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>18</roomId>
+    <RoomDoorNumber>18</RoomDoorNumber>  
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>4</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>19</roomId>
+    <RoomDoorNumber>19</RoomDoorNumber> 
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>4</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+  <Room>
+    <roomId>20</roomId>
+    <RoomDoorNumber>20</RoomDoorNumber>   
+    <roomStatus>false</roomStatus>
+    <roomCategoryId>4</roomCategoryId>
+    <roomPrice>1500</roomPrice>
+    <capacityId>3</capacityId>
+  </Room>
+</RoomList>

@@ -61,13 +61,7 @@ namespace HMS.Data.Repositories
             {
                 context.Configuration.LazyLoadingEnabled = false;
 
-                var query = context.Booking.AsNoTracking().Where(p => p.CustomerId == id)
-                                                             .Include(m => m.RoomCategories)
-                                                             .Include(r => r.RoomCapacities)
-                                                             .Include(a => a.Rooms)
-                                                             .ToList();
-
-
+                var query = context.Booking.AsNoTracking().Where(p => p.CustomerId == id).ToList();
                 return query;
             }
         }

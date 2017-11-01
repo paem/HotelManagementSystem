@@ -100,5 +100,11 @@ namespace HotelManagementService
 
         [OperationContract]
         void LoadRooms();
+
+        [OperationContract]
+        void LoadCategories();
+
+        [OperationContract]
+        void LoadCapacities();
     }
 }

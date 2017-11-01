@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CapacityList>
+  <Capacity>
+    <CapacityId>1</CapacityId>
+    <RoomCapacityName>Single</RoomCapacityName>
+    <RoomCapacityAdults>1</RoomCapacityAdults>
+    <RoomCapacityChildren>1</RoomCapacityChildren>
+  </Capacity>
+  <Capacity>
+    <CapacityId>2</CapacityId>
+    <RoomCapacityName>Double</RoomCapacityName>
+    <RoomCapacityAdults>2</RoomCapacityAdults>
+    <RoomCapacityChildren>2</RoomCapacityChildren>
+  </Capacity>
+  <Capacity>
+    <CapacityId>3</CapacityId>
+    <RoomCapacityName>Moderate</RoomCapacityName>
+    <RoomCapacityAdults>2</RoomCapacityAdults>
+    <RoomCapacityChildren>3</RoomCapacityChildren>
+  </Capacity>
+</CapacityList>
