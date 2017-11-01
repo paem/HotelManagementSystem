@@ -25,7 +25,7 @@
                     <DataTemplate>
                         <StackPanel Height = "35" Width = "400">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock>Booking Id: </TextBlock>
+                                <TextBlock>Booking Id:</TextBlock>
                                 <TextBlock Margin="5 0 5 0" x:Name="bookingId" Text="{Binding BookingId}"/>
                                 <TextBlock>Total price:</TextBlock>
                                 <TextBlock Margin="5 0 5 0" x:Name="bookingCost" Text="{Binding BookingTotalCost}"/>
@@ -33,8 +33,8 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+            <Button x:Name="goBack" Click="goBack_Click">Back</Button>
         </StackPanel>
     </StackPanel>
 </Page>

@@ -22,6 +22,7 @@
                 <TextBlock Margin="0 0 5 0" x:Name="bookingTotalAdults"/>
                 <TextBlock Margin="0 0 5 0" x:Name="bookingTotalChilds"/>
                 <TextBlock Margin="0 0 5 0" x:Name="bookingTotalCost"/>
+            <Button x:Name="goBack" Click="goBack_Click">Back</Button>
             </StackPanel>
     </Grid>
 </Page>

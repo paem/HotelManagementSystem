@@ -129,5 +129,10 @@ namespace GUI.AdminApp
         {
             Frame.Navigate(typeof(userbookings), bookingList.SelectedItem);
         }
+
+        private void goBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
     }

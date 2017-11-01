@@ -49,5 +49,10 @@ namespace GUI.AdminApp
             this.roomCategoryId.Text = "Room-Category Id: " + b.RoomCategoryId.ToString();
 
         }
+
+        private void goBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }
