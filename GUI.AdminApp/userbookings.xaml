@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="GUI.AdminApp.userbookings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GUI.AdminApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center">
+                <TextBlock Margin="0 0 5 0" x:Name="ubookings"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingId"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingDate"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingArrivalDate"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingDepatureDate"/>
+                <TextBlock Margin="0 0 5 0" x:Name="roomCategoryId"/>
+                <TextBlock Margin="0 0 5 0" x:Name="roomId"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingStatus"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalNights"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalRooms"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalAdults"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalChilds"/>
+                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalCost"/>
+            </StackPanel>
+    </Grid>
+</Page>

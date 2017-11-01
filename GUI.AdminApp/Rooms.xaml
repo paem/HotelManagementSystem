@@ -9,10 +9,17 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="SteelBlue">
-            <TextBlock FontSize="36" Text="Room Page"  HorizontalAlignment="Center"/>
-            <ListView >
-                
-            </ListView>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock FontSize="36" Text="Load Xml"  HorizontalAlignment="Center"/>
+                <TextBlock x:Name="Loaded" />
+                <TextBlock x:Name="order">Load Order</TextBlock>
+                <TextBlock x:Name="first">1. Load Capacities</TextBlock>
+                <Button x:Name="loadCapacities" FontSize="20" Margin="0 10 0 10" Click="loadCapacities_Click" Content="Capacities" />
+                <TextBlock x:Name="second">2. Load Categories</TextBlock>
+                <Button x:Name="loadCategories" FontSize="20" Margin="0 10 0 10" Click="loadCategories_Click" Content="Categories" />
+                <TextBlock x:Name="third">3. Load Rooms</TextBlock>
+                <Button x:Name="loadRooms" FontSize="20" Margin="0 10 0 10" Click="loadRooms_Click" Content="Rooms"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

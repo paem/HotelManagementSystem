@@ -116,6 +116,9 @@
     <Compile Include="SearchCustomer.xaml.cs">
       <DependentUpon>SearchCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userbookings.xaml.cs">
+      <DependentUpon>userbookings.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -195,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userbookings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

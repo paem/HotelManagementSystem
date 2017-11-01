@@ -20,8 +20,21 @@
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Country"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="City"></TextBlock>
             <TextBlock FontSize="20"  Margin="0 0 0 10" x:Name="Adress"></TextBlock>
-            <Button x:Name="Edit" FontSize="20" Margin="0 10 0 10" Click="Edit_Click">Edit</Button>
+            <ListView x:Name="bookingList" HorizontalAlignment="Center" Width="346" SelectionChanged="bookingList_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height = "35" Width = "400">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock>Booking Id: </TextBlock>
+                                <TextBlock Margin="5 0 5 0" x:Name="bookingId" Text="{Binding BookingId}"/>
+                                <TextBlock>Total price:</TextBlock>
+                                <TextBlock Margin="5 0 5 0" x:Name="bookingCost" Text="{Binding BookingTotalCost}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
+            </ListView>
         </StackPanel>
     </StackPanel>
 </Page>

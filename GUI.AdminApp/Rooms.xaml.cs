@@ -23,13 +23,30 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class Rooms : Page
     {
-        private readonly HMSServiceClient HMSClient = new HMSServiceClient();
+        private HMSServiceClient HMSClient = new HMSServiceClient();
 
         public Rooms()
         {
-           var rooms = HMSClient.LoadRoomsAsync();
-           
             this.InitializeComponent();
+        }
+
+        private void loadCapacities_Click(object sender, RoutedEventArgs e)
+        {
+            HMSClient.LoadCapacitiesAsync();
+            this.Loaded.Text = "Capacities Loaded";
+        }
+
+        private void loadCategories_Click(object sender, RoutedEventArgs e)
+        {
+            HMSClient.LoadCategoriesAsync();
+            
+            this.Loaded.Text = "Categories Loaded";
+        }
+
+        private void loadRooms_Click(object sender, RoutedEventArgs e)
+        {
+            HMSClient.LoadRoomsAsync();
+            this.Loaded.Text = "Rooms Loaded";
         }
     }
 }

@@ -390,4 +390,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetBookingById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bookingId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookingByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetBookingByIdResult" nillable="true" type="q25:Booking" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

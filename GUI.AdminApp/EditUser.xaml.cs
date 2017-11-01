@@ -56,53 +56,35 @@ namespace GUI.AdminApp
             this.City.Text = "City: "+City;
             this.Adress.Text = "Adress: "+Adress;
 
-            var booking = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
-            foreach(var a in booking)
-            {
-                var i = a.BookingTotalCost;
-            }
+            var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
+            bookingList.ItemsSource = bookings;
+
+
 
             //checkBox.IsChecked = true;
             var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
-            foreach (var c in cd)
-            {
-                if (c.CheckedIn == true)
+           
+       
+                foreach (var c in cd)
                 {
-                    //checkBox.IsChecked = true;
+                    if (c.CheckedIn == true)
+                    {
+                        //checkBox.IsChecked = true;
 
-                    this.checkIn.Text = "Checked in";
+                        this.checkIn.Text = "Checked in";
+                    }
+                    else if (c.CheckedIn == false)
+                    {
+                        //checkBox.IsChecked = false;
+                        this.checkIn.Text = "Checked Out";
+                    }
                 }
-                else
-                {
-                    //checkBox.IsChecked = false;
-                    this.checkIn.Text = "Checked Out";
-                }
-            }
-              
-
-                //bool checker = cd.CheckedIn;
-
-
-
-                //if (cd.CheckedIn == true)
-                //{
-                //    this.checkIn.Text = "true";
-                //}
-                //else
-                //{
-                //    this.checkIn.Text = "false";
-                //}
-                //var cd = HMSClient.GetCustomerDetailsAsync().Result.Where(i => i.CustomerDetailsId == i.CustomerId);
-
-                //foreach(var a in cd)
-                //{
-                //    this.checkIn.Text = a.CheckedIn.ToString();
-                //}
-                //CustomerDetails cd = new CustomerDetails();
-                //c.CustomerId = cd.CustomerId;
-
-                //this.checkIn.Text = cd.CheckedIn.ToString();
-                //bool checkIn = cd.CheckedIn;
+            
+            //else
+            //{
+            //    this.checkIn.Text = "No bookings to check in/ out to";
+            //}
+           
 
 
             }
@@ -133,7 +115,7 @@ namespace GUI.AdminApp
                     {
                         this.checkIn.Text = "Checked Out";
                         var i = HMSClient.SetCheckedOutAsync(id);
-                        checkBox.IsChecked = false;
+      
 
                     }
 
@@ -141,6 +123,11 @@ namespace GUI.AdminApp
                 }
 
             }
+        }
+
+        private void bookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Frame.Navigate(typeof(userbookings), bookingList.SelectedItem);
         }
     }
     }

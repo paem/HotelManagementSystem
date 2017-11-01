@@ -193,6 +193,12 @@
   <wsdl:message name="IHMSService_LoadCapacities_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadCapacitiesResponse" />
   </wsdl:message>
+  <wsdl:message name="IHMSService_GetBookingById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingById" />
+  </wsdl:message>
+  <wsdl:message name="IHMSService_GetBookingById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHMSService">
     <wsdl:operation name="GetRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRooms" message="tns:IHMSService_GetRooms_InputMessage" />
@@ -317,6 +323,10 @@
     <wsdl:operation name="LoadCapacities">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoadCapacities" message="tns:IHMSService_LoadCapacities_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/LoadCapacitiesResponse" message="tns:IHMSService_LoadCapacities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetBookingById" message="tns:IHMSService_GetBookingById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetBookingByIdResponse" message="tns:IHMSService_GetBookingById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IHMSService" type="tns:IHMSService">
@@ -593,6 +603,15 @@
     </wsdl:operation>
     <wsdl:operation name="LoadCapacities">
       <soap:operation soapAction="http://tempuri.org/IHMSService/LoadCapacities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingById">
+      <soap:operation soapAction="http://tempuri.org/IHMSService/GetBookingById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
