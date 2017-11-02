@@ -8,20 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Center">
-                <TextBlock Margin="0 0 5 0" x:Name="ubookings"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingId"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingDate"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingArrivalDate"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingDepatureDate"/>
-                <TextBlock Margin="0 0 5 0" x:Name="roomCategoryId"/>
-                <TextBlock Margin="0 0 5 0" x:Name="roomId"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingStatus"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalNights"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalRooms"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalAdults"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalChilds"/>
-                <TextBlock Margin="0 0 5 0" x:Name="bookingTotalCost"/>
+        <StackPanel Margin="30 30 0 0" HorizontalAlignment="Center">
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="ubookings"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingId"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingArrivalDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDepatureDate"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="roomCategoryId"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="roomId"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingStatus"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalNights"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalRooms"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalAdults"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalChilds"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalCost"/>
             <Button x:Name="goBack" Click="goBack_Click">Back</Button>
             </StackPanel>
     </Grid>

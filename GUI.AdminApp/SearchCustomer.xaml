@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
+        <StackPanel Margin="0 20 0 0">
             <AutoSuggestBox x:Name="AutoSuggBox" Header="Customer Search" PlaceholderText="Search for customer" 
                         QuerySubmitted="AutoSuggBox_QuerySubmitted" 
                         SuggestionChosen="AutoSuggBox_SuggestionChosen" 
