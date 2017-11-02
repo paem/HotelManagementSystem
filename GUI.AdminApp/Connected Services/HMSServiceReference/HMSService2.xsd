@@ -79,22 +79,6 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="Booking" nillable="true" type="tns:Booking" />
-  <xs:complexType name="ArrayOfCustomerDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCustomerDetails" nillable="true" type="tns:ArrayOfCustomerDetails" />
-  <xs:complexType name="CustomerDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CheckedIn" type="xs:boolean" />
-      <xs:element minOccurs="0" name="CustomerDetailsId" type="xs:int" />
-      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
-    </xs:sequence>
-    <xs:attribute ref="ser:Id" />
-    <xs:attribute ref="ser:Ref" />
-  </xs:complexType>
-  <xs:element name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
   <xs:complexType name="ArrayOfHotel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="tns:Hotel" />
@@ -115,6 +99,7 @@
   <xs:element name="Hotel" nillable="true" type="tns:Hotel" />
   <xs:complexType name="Customer">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CheckedIn" type="xs:boolean" />
       <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerCity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerCountry" nillable="true" type="xs:string" />

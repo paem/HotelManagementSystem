@@ -37,12 +37,6 @@
   <wsdl:message name="IHMSService_CreateBooking_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateBookingResponse" />
   </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerDetails_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerDetails_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
-  </wsdl:message>
   <wsdl:message name="IHMSService_GetHotels_InputMessage">
     <wsdl:part name="parameters" element="tns:GetHotels" />
   </wsdl:message>
@@ -90,12 +84,6 @@
   </wsdl:message>
   <wsdl:message name="IHMSService_GetRoomCapacity_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRoomCapacityResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerByCustomerDetailsId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerByCustomerDetailsId" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerByCustomerDetailsId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerByCustomerDetailsIdResponse" />
   </wsdl:message>
   <wsdl:message name="IHMSService_GetRoomById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRoomById" />
@@ -163,18 +151,6 @@
   <wsdl:message name="IHMSService_DeleteBookingByBookingId_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteBookingByBookingIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IHMSService_CreateCustomerDetails_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateCustomerDetails" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_CreateCustomerDetails_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateCustomerDetailsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerDetailsByCustomerId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerDetailsByCustomerId" />
-  </wsdl:message>
-  <wsdl:message name="IHMSService_GetCustomerDetailsByCustomerId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerDetailsByCustomerIdResponse" />
-  </wsdl:message>
   <wsdl:message name="IHMSService_LoadRooms_InputMessage">
     <wsdl:part name="parameters" element="tns:LoadRooms" />
   </wsdl:message>
@@ -220,10 +196,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/CreateBooking" message="tns:IHMSService_CreateBooking_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/CreateBookingResponse" message="tns:IHMSService_CreateBooking_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetCustomerDetails">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCustomerDetails" message="tns:IHMSService_GetCustomerDetails_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCustomerDetailsResponse" message="tns:IHMSService_GetCustomerDetails_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetHotels">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetHotels" message="tns:IHMSService_GetHotels_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetHotelsResponse" message="tns:IHMSService_GetHotels_OutputMessage" />
@@ -255,10 +227,6 @@
     <wsdl:operation name="GetRoomCapacity">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRoomCapacity" message="tns:IHMSService_GetRoomCapacity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetRoomCapacityResponse" message="tns:IHMSService_GetRoomCapacity_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCustomerByCustomerDetailsId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId" message="tns:IHMSService_GetCustomerByCustomerDetailsId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse" message="tns:IHMSService_GetCustomerByCustomerDetailsId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetRoomById">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetRoomById" message="tns:IHMSService_GetRoomById_InputMessage" />
@@ -303,14 +271,6 @@
     <wsdl:operation name="DeleteBookingByBookingId">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/DeleteBookingByBookingId" message="tns:IHMSService_DeleteBookingByBookingId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/DeleteBookingByBookingIdResponse" message="tns:IHMSService_DeleteBookingByBookingId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateCustomerDetails">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/CreateCustomerDetails" message="tns:IHMSService_CreateCustomerDetails_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse" message="tns:IHMSService_CreateCustomerDetails_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCustomerDetailsByCustomerId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId" message="tns:IHMSService_GetCustomerDetailsByCustomerId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerIdResponse" message="tns:IHMSService_GetCustomerDetailsByCustomerId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="LoadRooms">
       <wsdl:input wsaw:Action="http://tempuri.org/IHMSService/LoadRooms" message="tns:IHMSService_LoadRooms_InputMessage" />
@@ -369,15 +329,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateBooking">
       <soap:operation soapAction="http://tempuri.org/IHMSService/CreateBooking" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCustomerDetails">
-      <soap:operation soapAction="http://tempuri.org/IHMSService/GetCustomerDetails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -450,15 +401,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetRoomCapacity">
       <soap:operation soapAction="http://tempuri.org/IHMSService/GetRoomCapacity" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCustomerByCustomerDetailsId">
-      <soap:operation soapAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -558,24 +500,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteBookingByBookingId">
       <soap:operation soapAction="http://tempuri.org/IHMSService/DeleteBookingByBookingId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateCustomerDetails">
-      <soap:operation soapAction="http://tempuri.org/IHMSService/CreateCustomerDetails" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCustomerDetailsByCustomerId">
-      <soap:operation soapAction="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

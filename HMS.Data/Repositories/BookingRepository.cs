@@ -24,7 +24,7 @@ namespace HMS.Data.Repositories
                     // Edit
                     var bookInDb = context.Booking.SingleOrDefault(p => p.BookingId == bookObj.BookingId);
 
-                    bookInDb.BookingArrivalDate = bookObj.BookingArrivalDate;
+                    bookInDb.BookingStatus = bookObj.BookingStatus;
                    
                    // bookInDb. = bookObj.;
                   //  bookInDb. = bookObj.;

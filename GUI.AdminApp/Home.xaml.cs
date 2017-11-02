@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using GUI.AdminApp.HMSServiceReference;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +23,8 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class Home : Page
     {
+        private readonly HMSServiceClient HMSClient = new HMSServiceClient();
+
         public Home()
         {
             this.InitializeComponent();

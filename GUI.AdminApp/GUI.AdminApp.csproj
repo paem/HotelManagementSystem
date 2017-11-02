@@ -130,9 +130,6 @@
     <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.Customer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.CustomerDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\HMSServiceReference\GUI.AdminApp.HMSServiceReference.Hotel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

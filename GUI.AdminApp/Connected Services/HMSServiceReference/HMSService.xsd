@@ -61,18 +61,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetCustomerDetails">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCustomerDetailsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerDetailsResult" nillable="true" type="q6:ArrayOfCustomerDetails" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetHotels">
     <xs:complexType>
       <xs:sequence />
@@ -81,14 +69,14 @@
   <xs:element name="GetHotelsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetHotelsResult" nillable="true" type="q7:ArrayOfHotel" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetHotelsResult" nillable="true" type="q6:ArrayOfHotel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateHotel">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="hotelObject" nillable="true" type="q8:Hotel" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="hotelObject" nillable="true" type="q7:Hotel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -100,7 +88,7 @@
   <xs:element name="CreateUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="customerObject" nillable="true" type="q9:Customer" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="customerObject" nillable="true" type="q8:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +117,7 @@
   <xs:element name="GetCustomersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomersResult" nillable="true" type="q10:ArrayOfCustomer" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomersResult" nillable="true" type="q9:ArrayOfCustomer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -143,7 +131,7 @@
   <xs:element name="GetRoomsByCategoryIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomsByCategoryIdResult" nillable="true" type="q11:ArrayOfRoom" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomsByCategoryIdResult" nillable="true" type="q10:ArrayOfRoom" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -155,7 +143,7 @@
   <xs:element name="GetRoomCategoryTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCategoryTypesResult" nillable="true" type="q12:ArrayOfRoomCategory" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCategoryTypesResult" nillable="true" type="q11:ArrayOfRoomCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -167,21 +155,7 @@
   <xs:element name="GetRoomCapacityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCapacityResult" nillable="true" type="q13:ArrayOfRoomCapacity" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCustomerByCustomerDetailsId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="customerDetailsId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCustomerByCustomerDetailsIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerByCustomerDetailsIdResult" nillable="true" type="q14:ArrayOfCustomerDetails" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomCapacityResult" nillable="true" type="q12:ArrayOfRoomCapacity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,7 +169,7 @@
   <xs:element name="GetRoomByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomByIdResult" nillable="true" type="q15:Room" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetRoomByIdResult" nillable="true" type="q13:Room" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -209,7 +183,7 @@
   <xs:element name="GetCategoryByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCategoryByIdResult" nillable="true" type="q16:RoomCategory" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCategoryByIdResult" nillable="true" type="q14:RoomCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -223,7 +197,7 @@
   <xs:element name="RoomDetailInfoByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="RoomDetailInfoByIdResult" nillable="true" type="q17:ArrayOfRoom" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="RoomDetailInfoByIdResult" nillable="true" type="q15:ArrayOfRoom" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -238,7 +212,7 @@
   <xs:element name="LoginUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="LoginUserResult" nillable="true" type="q18:Customer" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="LoginUserResult" nillable="true" type="q16:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -252,7 +226,7 @@
   <xs:element name="GetUserByEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetUserByEmailResult" nillable="true" type="q19:Customer" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetUserByEmailResult" nillable="true" type="q17:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -266,7 +240,7 @@
   <xs:element name="GetBookingsByUserIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetBookingsByUserIdResult" nillable="true" type="q20:ArrayOfBooking" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetBookingsByUserIdResult" nillable="true" type="q18:ArrayOfBooking" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -280,7 +254,7 @@
   <xs:element name="BookingDetailInfoByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="BookingDetailInfoByIdResult" nillable="true" type="q21:ArrayOfBooking" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="BookingDetailInfoByIdResult" nillable="true" type="q19:ArrayOfBooking" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -294,7 +268,7 @@
   <xs:element name="GetCapacityByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCapacityByIdResult" nillable="true" type="q22:RoomCapacity" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCapacityByIdResult" nillable="true" type="q20:RoomCapacity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -332,32 +306,6 @@
   <xs:element name="DeleteBookingByBookingIdResponse">
     <xs:complexType>
       <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateCustomerDetails">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="customerDetailsObject" nillable="true" type="q23:CustomerDetails" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateCustomerDetailsResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCustomerDetailsByCustomerId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="customerId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCustomerDetailsByCustomerIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetCustomerDetailsByCustomerIdResult" nillable="true" type="q24:ArrayOfCustomerDetails" />
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="LoadRooms">
@@ -400,7 +348,7 @@
   <xs:element name="GetBookingByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetBookingByIdResult" nillable="true" type="q25:Booking" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/HMS.Models" minOccurs="0" name="GetBookingByIdResult" nillable="true" type="q21:Booking" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

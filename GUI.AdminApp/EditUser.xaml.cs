@@ -45,6 +45,7 @@ namespace GUI.AdminApp
             string Country = c.CustomerCountry;
             string City = c.CustomerCity;
             string Adress = c.CustomerAddress;
+            bool CheckedIn = c.CheckedIn;
 
             this.CustomerId.Text = "Id: "+CustomerId.ToString();
             this.FName.Text = "Name: "+FName;
@@ -59,15 +60,11 @@ namespace GUI.AdminApp
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
             bookingList.ItemsSource = bookings;
 
-
-
-            //checkBox.IsChecked = true;
-            var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
            
-       
-                foreach (var c in cd)
-                {
-                    if (c.CheckedIn == true)
+
+            //checkBox.IsChecked = true;           
+
+            if (c.CheckedIn == true)
                     {
                         //checkBox.IsChecked = true;
 
@@ -78,7 +75,7 @@ namespace GUI.AdminApp
                         //checkBox.IsChecked = false;
                         this.checkIn.Text = "Checked Out";
                     }
-                }
+             
             
             //else
             //{
@@ -100,29 +97,62 @@ namespace GUI.AdminApp
        
         private async void CheckInStatus_Click(object sender, RoutedEventArgs e)
         {
-            int id = c.CustomerId;
+            var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
 
-            var cd = await HMSClient.GetCustomerDetailsByCustomerIdAsync(c.CustomerId);
-            foreach(var c in cd) { 
-                if (checkBox.IsChecked == false)
+         
+
+           
+            int id = c.CustomerId;
+         
+
+            if (checkBox.IsChecked == false)
                 {  
                     if (c.CheckedIn != true)
                     {
                         this.checkIn.Text = "Checked In";
                         var i = HMSClient.SetCheckedInAsync(id);
+                    foreach (var item in bookings)
+                    {
+                        var bookingObject = new Booking
+                        {
+                            BookingId = item.BookingId,
+                            BookingStatus = true,
+                        };
+                        await HMSClient.CreateBookingAsync(bookingObject);
                     }
+                }
                     if (c.CheckedIn != false)
                     {
                         this.checkIn.Text = "Checked Out";
                         var i = HMSClient.SetCheckedOutAsync(id);
-      
 
+                    foreach (var item in bookings)
+                    {                      
+                        var category = await HMSClient.GetCategoryByIdAsync(item.RoomCategoryId);
+
+                        var roomObject = new Room
+                        {
+                            RoomId = item.RoomId,
+                            RoomStatus = false
+                        };
+                        await HMSClient.CreateRoomAsync(roomObject);
+
+                        var roomCategoryObject = new RoomCategory
+                        {
+                            RoomCategoryId = item.RoomCategoryId,
+                            RoomCount = category.RoomCount + 1,
+                        };
+                        await HMSClient.CreateRoomCategoryAsync(roomCategoryObject);
+
+                        await HMSClient.DeleteBookingByBookingIdAsync(item.BookingId);
                     }
+
+                }
 
                     
                 }
 
-            }
+           
         }
 
         private void bookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
