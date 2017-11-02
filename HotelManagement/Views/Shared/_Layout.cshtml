@@ -34,7 +34,7 @@
                     {
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Rooms", "Index", "Room")</li>
-                    <li>@Html.ActionLink("Bookings", "MyBookings")</li>
+                    <li>@Html.ActionLink("Bookings", "MyBookings", "Booking")</li>
                     <li>@Html.ActionLink("Logout", "SignOut", "Home")</li>
                     }
                     @if (Session["UserID"] == null)
