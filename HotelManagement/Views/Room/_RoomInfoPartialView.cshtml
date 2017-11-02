@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "About Page";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     /* Left side Card Item (Info) */
@@ -10,7 +10,7 @@
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        height: 550px;
+        height: 600px;
         margin: 15px;
         padding: 15px;
     }
@@ -20,11 +20,11 @@
         }
       
 
-    .item-left img {
-        margin-top: 14px;
-    }
 
-    .item-left h3 {
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+
+    .item-left h3, h4 {
         margin: 0;
     }
 
@@ -76,11 +76,11 @@
 
 
     .left-task-expand {
-        height: 550px;
+        height: 450px;
     }
 
     .left-task-expanded {
-        height: 750px;
+        height: 700px;
     }
 
     .center {
@@ -114,7 +114,7 @@
     <div class="row">
 
 
-        <h1 style="color: black;">Rooms</h1>
+        <h1 style="color: black;">Available Rooms</h1>
         <hr />
         @foreach (var item in Model.Rooms)
         {
@@ -123,33 +123,64 @@
             {
 
                 <div class="col-md-4 item-left left-task-items moreinfo-holder">
-                    <img class="img-responsive" src="@Model.RoomCategory.RoomCategoryImage" style="width:auto" alt="roompicture" />
-                    <h3>@Model.RoomCategory.RoomCategoryName</h3>
+                    <div style="">
+                        <img class="img-responsive" src="@Model.RoomCategory.RoomCategoryImage" style="width:100%; border: 3px solid;" alt="roompicture" />
+                    </div>
+                    @if (Model.RoomCategory.RoomCategoryName == "Single")
+                    {
+                        <p style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i></p>
+                    }
+                    else if (Model.RoomCategory.RoomCategoryName == "Double")
+                    {
+                        <p  style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i></p>
+                    }
+                    else if (Model.RoomCategory.RoomCategoryName == "Queen")
+                    {
+                        <p style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i> <i class="fa fa-glass fa" aria-hidden="true"></i> <i class="fa fa-cutlery fa" aria-hidden="true"></i></p>
+                    }
+                    else
+                    {
+                        <p  style="float:right; margin-top: 5px;"><i class="fa fa-bath fa" aria-hidden="true"></i> <i class="fa fa-phone fa" aria-hidden="true"></i> <i class="fa fa-wifi fa" aria-hidden="true"></i> <i class="fa fa-tv fa" aria-hidden="true"></i> <i class="fa fa-glass fa" aria-hidden="true"></i> <i class="fa fa-cutlery fa" aria-hidden="true"></i></p>
+                    }
+                    <h3 style="margin-top: 5px;">@Model.RoomCategory.RoomCategoryName Room</h3>
+                    <hr />
                     <div class="left-main-content">
                         <ul class="left-ul-item">
                             <li>
-                                Price: @item.RoomPrice
-                                <br />
-                                Number of rooms available: @Model.RoomCategory.RoomCount
-                                <br />
-                                Description: @Model.RoomCategory.RoomCategoryDesc
-                                <br />
-                                Bedtype: @Model.RoomCategory.RoomCategoryBeds
-                                <br />
-                                Size: @Model.RoomCapacity.RoomCapacityName
-                                Adult spots: @Model.RoomCapacity.RoomCapacityAdults
-                                Children spots: @Model.RoomCapacity.RoomCapacityChildren
+                                <h4 style="opacity: 0.9"> From: @item.RoomPrice kr </h4>                                   
+                                <p style="margin-top: 5px;">  @Model.RoomCategory.RoomCategoryBeds </p>                                                   
+                                <p>  @Model.RoomCategory.RoomCategoryDesc</p>                                                     
+                                <p> Number of rooms available: @Model.RoomCategory.RoomCount</p>                                                   
+                                @if (Model.RoomCapacity.RoomCapacityName == "Single")
+                                {
+                                    <p>Size: 15m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                else if (Model.RoomCapacity.RoomCapacityName == "Double")
+                                {
+                                    <p>Size: 25m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                else
+                                {
+                                    <p>Size: 40m<sup>2</sup></p>
+                                    <p>Space for adults: @Model.RoomCapacity.RoomCapacityAdults</p>
+                                    <p>Space for children: @Model.RoomCapacity.RoomCapacityChildren</p>
+                                }
+                                                         
                             </li>
                         </ul>
-                        <div class="row" style="margin-right: 10px">
+                        <div class="row" style="">
                             @using (Html.BeginForm("Index", "Booking", new { id = @item.RoomId }))
                             {
                                 @Html.AntiForgeryToken()
-                                <button type="submit" style="float: right" class="btn btn-warning">Book</button>
+                                <button type="submit"  style="text-align:center; margin-left: 10%; margin-right: 10%; width: 80%;" class="btn btn-warning text-center">Book this room</button>
                             }
                         </div>
                     </div>
-                    <a class="btn-more-info moreButtonLeft text-center" name="moreButton" id="moreButton">More Info</a>
+                   
                 </div>
 
             }

@@ -5,75 +5,56 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
 
+<style>
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .outer {
+       width:100%;
+    }
+    .inner {
+       
+        margin: 0 auto;
+    }
 
-<!--Card-->
-<div class="card card-cascade wider reverse my-4">
+</style>
 
-    <!--Card image-->
-    <div class="view overlay hm-white-slight">
-        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" class="img-fluid">
-        <a href="#!">
-            <div class="mask"></div>
-        </a>
+<div class="outer">
+
+    <!--Card-->
+    <div class="card card-cascade wider reverse my-4 inner" style="margin-top:70px!important; max-width: 1000px; border:5px solid;">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+            <img src="http://www.casascondor.com.br/wp-content/uploads/2017/09/rooms-hotel-kazbegi-indoor-pool-mountain-view-M-01-r.jpg" class="img-responsive" style="width: auto; height:auto;">
+            <h4 class="centered" style="color:white; font-size: 28px; text-shadow:  -1px -1px 0 #000,  1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;"><strong>Book a room</strong></h4>
+            <a href="@Url.Action("Index", "Room")">
+                <div class="mask"></div>
+            </a>
+        </div>
+        <!--/Card image-->
+
+
     </div>
-    <!--/Card image-->
-    <!--Card content-->
-    <div class="card-body text-center">
-        <!--Title-->
-        <h4 class="card-title"><strong>Book a room</strong></h4>
-        <h5 class="indigo-text"><strong>Booking</strong></h5>
+    <!--/.Card-->
+    <!--Card-->
+    <div class="card card-cascade wider reverse my-4 inner" style=" max-height:600px; max-width: 1000px; border:5px solid;">
 
-        <p class="card-text">
-            Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-        </p>
-
-        <!--Linkedin-->
-        <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-        <!--Twitter-->
-        <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
-        <!--Dribbble-->
-        <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
-
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+            <img src="https://www.gooddayitaly.eu/index_htm_files/503.jpg" class="img-responsive" style="width: auto;">
+            <h4 class="centered" style="color:white; font-size: 28px;  text-shadow:  -1px -1px 0 #000,  1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000; "><strong>About us</strong></h4>
+            <a href="@Url.Action("About", "Home")">
+                <div class="mask"></div>
+            </a>
+        </div>
+        <!--/Card image-->
     </div>
-    <!--/.Card content-->
-
+    <!--/.Card-->
 </div>
-<!--/.Card-->
-
-<!--Card-->
-<div class="card card-cascade wider reverse my-4">
-
-    <!--Card image-->
-    <div class="view overlay hm-white-slight">
-        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" class="img-fluid">
-        <a href="#!">
-            <div class="mask"></div>
-        </a>
-    </div>
-    <!--/Card image-->
-    <!--Card content-->
-    <div class="card-body text-center">
-        <!--Title-->
-        <h4 class="card-title"><strong>About us</strong></h4>
-        <h5 class="indigo-text"><strong>Information</strong></h5>
-
-        <p class="card-text">
-            Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-        </p>
-
-        <!--Linkedin-->
-        <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-        <!--Twitter-->
-        <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
-        <!--Dribbble-->
-        <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
-
-    </div>
-    <!--/.Card content-->
-
-</div>
-<!--/.Card-->
-
 
 @section Scripts { 
 

@@ -4,6 +4,7 @@ using HMS.Data.Repositories;
 using HMS.Models;
 using System.Web.Mvc;
 using HotelManagement.HotelManagementServiceReference;
+using System.Linq;
 
 namespace HotelManagement.Controllers
 {
@@ -30,7 +31,7 @@ namespace HotelManagement.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]     
         public ActionResult Login(CustomerViewModel viewModel)
         {
             if (Session["UserID"] == null)
@@ -43,7 +44,7 @@ namespace HotelManagement.Controllers
                     {
                         Session["UserID"] = customerId.CustomerId;
                         Session["Email"] = viewModel.CustomerEmail.ToString();
-                        return RedirectToAction("UserDashBoard");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
 
@@ -52,7 +53,7 @@ namespace HotelManagement.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult UserDashBoard()
+        public ActionResult About()
         {
             if (Session["UserID"] != null)
             {
@@ -72,4 +73,5 @@ namespace HotelManagement.Controllers
             return RedirectToAction("Login", "Home");
         }
     }
+
 }
