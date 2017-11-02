@@ -22,7 +22,6 @@ namespace HMS.Data
 
         public DbSet<Booking> Booking { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerDetails> CustomerDetails { get; set; }
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Room> Rooms { get; set; }   
         public DbSet<RoomCategory> RoomCategory { get; set; }

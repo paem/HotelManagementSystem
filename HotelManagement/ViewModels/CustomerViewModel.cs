@@ -9,9 +9,7 @@ namespace HotelManagement.ViewModels
 {
     public class CustomerViewModel
     {
-
-
-        public ICollection<CustomerDetails> CustomerDetails {get; set;}
+    
         public ICollection<Customer> Customers { get; set; }
 
         public int CustomerDetailsId { get; set; }

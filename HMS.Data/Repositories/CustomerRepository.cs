@@ -9,41 +9,12 @@ namespace HMS.Data.Repositories
 {
     public class CustomerRepository
     {
-        public ICollection<CustomerDetails> GetCustomerDetails()
-        {
-            using (var context = new HMSDbContext())
-            {
-                return context.CustomerDetails.AsNoTracking().ToList();
-            }
-        }
-
+    
         public ICollection<Customer> GetCustomers()
         {
             using (var context = new HMSDbContext())
             {
                 return context.Customers.AsNoTracking().ToList();
-            }
-        }
-        
-        public ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int CustomerDetailsId)
-		{
-			using (var context = new HMSDbContext())
-			{
-                return context.CustomerDetails.Where(e => e.CustomerId == CustomerDetailsId).ToList();
-			}
-		}
-
-        public void CreateCustomerDetails(CustomerDetails customerDetailsObj)
-        {
-            using (var context = new HMSDbContext())
-            {
-                if (customerDetailsObj.CustomerDetailsId == 0)
-                {
-                    // Create
-                    context.CustomerDetails.Add(customerDetailsObj);
-
-                }        
-                context.SaveChanges();
             }
         }
 
@@ -60,13 +31,8 @@ namespace HMS.Data.Repositories
                 else
                 {
                     // Edit
-                    var customerInDb = context.Customers.SingleOrDefault(p => p.CustomerId == customerObj.CustomerId);
-
-                    customerInDb.CustomerEmail = customerObj.CustomerEmail;
-                    customerInDb.CustomerPhoneNo = customerObj.CustomerPhoneNo;
-                    customerInDb.CustomerAddress = customerObj.CustomerAddress;
-                    customerInDb.CustomerCity = customerObj.CustomerCity;
-                    customerInDb.Password = customerObj.Password;
+                    var customerInDb = context.Customers.SingleOrDefault(p => p.CustomerId == customerObj.CustomerId);                
+                    customerInDb.CheckedIn = customerObj.CheckedIn;
 
                 }
                 context.SaveChanges();
@@ -93,24 +59,13 @@ namespace HMS.Data.Repositories
             }
         }
 
-        public ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId)
-        {
-            using (HMSDbContext context = new HMSDbContext())
-            {
-
-                //   return context.CustomerDetails.Where(a => a.CustomerId.Equals(customerId)).FirstOrDefault();
-                //   return context.CustomerDetails.AsNoTracking().SingleOrDefault(p => p.CustomerId == customerId);
-                context.Configuration.ProxyCreationEnabled = false;
-                return context.CustomerDetails.AsNoTracking().Where(e => e.CustomerId == customerId).ToList();
-
-            }
-        }
+  
 
         public void SetCheckedIn(int userId)
         {
             using (HMSDbContext context = new HMSDbContext())
             {
-                context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;
+                context.Customers.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = true;
                 context.SaveChanges();
             }
         }
@@ -119,7 +74,7 @@ namespace HMS.Data.Repositories
         {
             using (HMSDbContext context = new HMSDbContext())
             {
-                context.CustomerDetails.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = false;
+                context.Customers.SingleOrDefault(e => e.CustomerId == userId).CheckedIn = false;
                 context.SaveChanges();
             }
         }

@@ -45,12 +45,6 @@ namespace HotelManagement.HotelManagementServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateBooking", ReplyAction="http://tempuri.org/IHMSService/CreateBookingResponse")]
         System.Threading.Tasks.Task CreateBookingAsync(HMS.Models.Booking bookingObject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsResponse")]
-        HMS.Models.CustomerDetails[] GetCustomerDetails();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsResponse")]
-        System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetHotels", ReplyAction="http://tempuri.org/IHMSService/GetHotelsResponse")]
         HMS.Models.Hotel[] GetHotels();
         
@@ -98,12 +92,6 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomCapacity", ReplyAction="http://tempuri.org/IHMSService/GetRoomCapacityResponse")]
         System.Threading.Tasks.Task<HMS.Models.RoomCapacity[]> GetRoomCapacityAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse")]
-        HMS.Models.CustomerDetails[] GetCustomerByCustomerDetailsId(int customerDetailsId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerByCustomerDetailsIdResponse")]
-        System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetRoomById", ReplyAction="http://tempuri.org/IHMSService/GetRoomByIdResponse")]
         HMS.Models.Room GetRoomById(int roomId);
@@ -170,18 +158,6 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/DeleteBookingByBookingId", ReplyAction="http://tempuri.org/IHMSService/DeleteBookingByBookingIdResponse")]
         System.Threading.Tasks.Task DeleteBookingByBookingIdAsync(int customerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
-        void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/CreateCustomerDetails", ReplyAction="http://tempuri.org/IHMSService/CreateCustomerDetailsResponse")]
-        System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerIdResponse")]
-        HMS.Models.CustomerDetails[] GetCustomerDetailsByCustomerId(int customerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerId", ReplyAction="http://tempuri.org/IHMSService/GetCustomerDetailsByCustomerIdResponse")]
-        System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsByCustomerIdAsync(int customerId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHMSService/LoadRooms", ReplyAction="http://tempuri.org/IHMSService/LoadRoomsResponse")]
         void LoadRooms();
@@ -275,14 +251,6 @@ namespace HotelManagement.HotelManagementServiceReference {
             return base.Channel.CreateBookingAsync(bookingObject);
         }
         
-        public HMS.Models.CustomerDetails[] GetCustomerDetails() {
-            return base.Channel.GetCustomerDetails();
-        }
-        
-        public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsAsync() {
-            return base.Channel.GetCustomerDetailsAsync();
-        }
-        
         public HMS.Models.Hotel[] GetHotels() {
             return base.Channel.GetHotels();
         }
@@ -345,14 +313,6 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task<HMS.Models.RoomCapacity[]> GetRoomCapacityAsync() {
             return base.Channel.GetRoomCapacityAsync();
-        }
-        
-        public HMS.Models.CustomerDetails[] GetCustomerByCustomerDetailsId(int customerDetailsId) {
-            return base.Channel.GetCustomerByCustomerDetailsId(customerDetailsId);
-        }
-        
-        public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerByCustomerDetailsIdAsync(int customerDetailsId) {
-            return base.Channel.GetCustomerByCustomerDetailsIdAsync(customerDetailsId);
         }
         
         public HMS.Models.Room GetRoomById(int roomId) {
@@ -441,22 +401,6 @@ namespace HotelManagement.HotelManagementServiceReference {
         
         public System.Threading.Tasks.Task DeleteBookingByBookingIdAsync(int customerId) {
             return base.Channel.DeleteBookingByBookingIdAsync(customerId);
-        }
-        
-        public void CreateCustomerDetails(HMS.Models.CustomerDetails customerDetailsObject) {
-            base.Channel.CreateCustomerDetails(customerDetailsObject);
-        }
-        
-        public System.Threading.Tasks.Task CreateCustomerDetailsAsync(HMS.Models.CustomerDetails customerDetailsObject) {
-            return base.Channel.CreateCustomerDetailsAsync(customerDetailsObject);
-        }
-        
-        public HMS.Models.CustomerDetails[] GetCustomerDetailsByCustomerId(int customerId) {
-            return base.Channel.GetCustomerDetailsByCustomerId(customerId);
-        }
-        
-        public System.Threading.Tasks.Task<HMS.Models.CustomerDetails[]> GetCustomerDetailsByCustomerIdAsync(int customerId) {
-            return base.Channel.GetCustomerDetailsByCustomerIdAsync(customerId);
         }
         
         public void LoadRooms() {

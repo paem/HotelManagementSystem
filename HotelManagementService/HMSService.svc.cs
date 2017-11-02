@@ -38,14 +38,7 @@ namespace HotelManagementService
         {
             _roomRepository.CreateRoomCategory(roomCategoryObject);
         }
-
-        public ICollection<CustomerDetails> GetCustomerDetails()
-        {
-            var customerDetails = _customerRepository.GetCustomerDetails();
-            return customerDetails;
-        }
-
-        //Kanske borde ha detta i en form för att mer välja vilka object som ska skapas.
+     
         public void CreateBooking(Booking bookingObject)
         {
             _bookingRepository.CreateBooking(bookingObject);
@@ -102,11 +95,6 @@ namespace HotelManagementService
             return _roomRepository.GetRoomByCategoryId(roomCategoryId);
         }
         
-        public ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int customerDetailsId)
-		{
-            return _customerRepository.GetCustomerByCustomerDetailsId(customerDetailsId);
-		}
-
         public Room GetRoomById(int roomId)
         {
             return _roomRepository.FindRoomById(roomId);
@@ -160,16 +148,6 @@ namespace HotelManagementService
         public void DeleteBookingByBookingId(int bookingId)
         {
             _bookingRepository.DeleteBookingByBookingId(bookingId);
-        }
-
-        public void CreateCustomerDetails(CustomerDetails customerDetailsObject)
-        {
-            _customerRepository.CreateCustomerDetails(customerDetailsObject);
-        }
-
-        public ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId)
-        {
-            return _customerRepository.GetCustomerDetailsByCustomerId(customerId);
         }
 
         public void LoadRooms()

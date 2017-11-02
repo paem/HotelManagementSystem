@@ -17,13 +17,8 @@ namespace HotelManagement.Controllers
         {
             if (Session["UserID"] != null)
             {
-                var customerDetails = _customerWCFClient.GetCustomerDetails();
-                var viewModel = new CustomerViewModel
-                {
-                    CustomerDetails = customerDetails
-                };
-
-                return View(viewModel);
+               
+                return View();
             }
             return RedirectToAction("Index", "Home");
         }

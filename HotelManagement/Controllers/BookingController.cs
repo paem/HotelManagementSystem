@@ -108,7 +108,7 @@ namespace HotelManagement.Controllers
                     RoomId = int.Parse(Session["RoomId"].ToString()),
                     BookingArrivalDate = viewModel.BookingArrivalDate,
                     BookingDepartureDate = viewModel.BookingDepartureDate,
-                    BookingStatus = true,
+                    BookingStatus = false,
                     BookingTotalAdults = viewModel.BookingTotalAdults,
                     BookingTotalChilds = viewModel.BookingTotalChilds,
                     BookingTotalCost = totalCost,
@@ -118,15 +118,6 @@ namespace HotelManagement.Controllers
                     
                  };
                  _bookingWCFClient.CreateBooking(bookingObject);
-
-
-                var customerDetailsObject = new CustomerDetails
-                {
-                    CustomerDetailsId = 0,
-                    CustomerId = int.Parse(Session["UserID"].ToString()),
-                    CheckedIn = false
-                };
-                _bookingWCFClient.CreateCustomerDetails(customerDetailsObject);
 
                 var roomObject = new Room
                 {

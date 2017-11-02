@@ -49,5 +49,8 @@ namespace HMS.Models
         [MaxLength(25)]
         public string Password { get; set; }
 
+        [DataMember]
+        public bool CheckedIn { get; set; }
+
     }
 }

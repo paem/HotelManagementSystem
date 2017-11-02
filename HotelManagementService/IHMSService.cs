@@ -28,10 +28,7 @@ namespace HotelManagementService
 
         [OperationContract]
         void CreateBooking(Booking bookingObject);
-
-        [OperationContract]
-        ICollection<CustomerDetails> GetCustomerDetails();
-
+      
         [OperationContract]
         ICollection<Hotel> GetHotels();
 
@@ -56,9 +53,6 @@ namespace HotelManagementService
         [OperationContract]
         ICollection<RoomCapacity> GetRoomCapacity();
         
-        [OperationContract]
-        ICollection<CustomerDetails> GetCustomerByCustomerDetailsId(int customerDetailsId);
-
         [OperationContract]
         Room GetRoomById(int roomId);
 
@@ -91,12 +85,6 @@ namespace HotelManagementService
 
         [OperationContract]
         void DeleteBookingByBookingId(int customerId);
-
-        [OperationContract]
-        void CreateCustomerDetails(CustomerDetails customerDetailsObject);
-
-        [OperationContract]
-        ICollection<CustomerDetails> GetCustomerDetailsByCustomerId(int customerId);
 
         [OperationContract]
         void LoadRooms();

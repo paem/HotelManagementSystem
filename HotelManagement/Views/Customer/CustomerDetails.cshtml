@@ -6,32 +6,3 @@
 
 <h2>Index</h2>
 
-@foreach (var item in Model.CustomerDetails.OrderByDescending(Model => Model.CustomerId))
-{
-    <div class="row" id="myTable">
-        <div class="col-md-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-            <div class="thumbnail">
-                <div class="caption">
-
-                    @item.CustomerId
-                    @item.CustomerDetailsId
-                    @item.CheckedIn
-
-                    @if (@item.CheckedIn == true)
-                    {
-                        <h4>Customer is checked in</h4>
-                    }
-                    else if (@item.CheckedIn == false)
-                    {
-                        <h4>Customer is'nt checked in</h4>
-                    }
-                    else
-                    {
-                        <h4>Room is unavailable</h4>
-                    }-->
-                </div>
-
-            </div>
-        </div>
-    </div>
-}
