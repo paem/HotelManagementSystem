@@ -1,6 +1,7 @@
 ﻿using HMS.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -24,8 +25,12 @@ namespace HotelManagement.ViewModels
 
         public DateTime BookingDate { get; set; }
 
+        [Required(ErrorMessage = "Arrival date is required")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime BookingArrivalDate { get; set; }
 
+        [Required(ErrorMessage = "Departure date is required")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime BookingDepartureDate { get; set; }
 
         public int BookingRoomId { get; set; }
@@ -36,10 +41,13 @@ namespace HotelManagement.ViewModels
 
         public int BookingTotalNights { get; set; }
 
+        [Required(ErrorMessage = "How many rooms?")]
         public int BookingTotalRooms { get; set; }
 
+        [Required(ErrorMessage = "How many Adults?")]
         public int BookingTotalAdults { get; set; }
 
+        [Required(ErrorMessage = "How many children?")]
         public int BookingTotalChilds { get; set; }
 
         public double BookingTotalCost { get; set; }
