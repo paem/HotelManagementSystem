@@ -26,5 +26,30 @@ namespace GUI.AdminApp
         {
             this.InitializeComponent();
         }
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void adminHome_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Home));
+        }
+
+        private void searchCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(typeof(SearchCustomer));
+
+        }
+
+        private void xml_Click(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(typeof(Rooms));
+        }
+
+        private void logout_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }

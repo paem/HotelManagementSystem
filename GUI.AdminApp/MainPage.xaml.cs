@@ -24,32 +24,34 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
-
 
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-
-        private void Home_Click(object sender, RoutedEventArgs e)
+        public static bool ValidateAccountCredentials(string username, string password)
         {
-            myFrame.Navigate(typeof(Home));
+            if (username == "Admin" && password == "Admin")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        private void searchCustomer_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
-           myFrame.Navigate(typeof(SearchCustomer));
-
-        }
-
-        private void xml_Click(object sender, RoutedEventArgs e)
-        {
-            myFrame.Navigate(typeof(Rooms));
+            if (ValidateAccountCredentials(UsernameTextBox.Text, PasswordTextBox.Password) == true)
+            {
+                Frame.Navigate(typeof(Home));
+            }
+            if (ValidateAccountCredentials(UsernameTextBox.Text, PasswordTextBox.Password) == false)
+            {
+                Frame.Navigate(typeof(MainPage));
+            }
         }
     }
 }

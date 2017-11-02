@@ -7,9 +7,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="SteelBlue">
-            <TextBlock FontSize="36" Text="Home Page"  HorizontalAlignment="Center"/>
-        </Grid>
-    </Grid>
+     <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Pink">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="adminHome" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                        Width="50" Height="50" Background="Transparent" Click="adminHome_Click"/>
+                    <TextBlock Text="Home" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="searchCustomer" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;"
+                    Width="50" Height="50" Background="Transparent" Click="searchCustomer_Click"/>
+                    <TextBlock Text="Search" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="xmlUpload" FontFamily="Segoe MDL2 Assets" Content="&#xE158;"
+                        Width="50" Height="50" Background="Transparent" Click="xml_Click"/>
+                    <TextBlock Text="Rooms" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="logout" FontFamily="Segoe MDL2 Assets" Content="&#xE830;"
+                        Width="50" Height="50" Background="Transparent" Click="logout_Click"/>
+                    <TextBlock Text="Logout" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+
+        <SplitView.Content>
+            <Frame Name="myFrame">
+                <Grid>
+                    <TextBlock FontSize="36" Text="Welcome"  HorizontalAlignment="Center"/>
+                </Grid>
+            </Frame>
+        </SplitView.Content>
+    </SplitView>
 </Page>
