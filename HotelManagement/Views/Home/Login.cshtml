@@ -147,16 +147,17 @@
                 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.CustomerEmail, "Email", new { @class = "cols-sm-2 control-label" })
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })
-                                <div class="error-holder">
-                                    @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
-                                </div>
+                                @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })                           
+                            </div>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -166,10 +167,10 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
-                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter your Password" })
-                                <div class="error-holder">
-                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                </div>
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter your Password" })                             
+                            </div>
+                            <div class="error-holder">
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>

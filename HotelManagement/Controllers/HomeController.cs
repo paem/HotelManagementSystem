@@ -32,7 +32,7 @@ namespace HotelManagement.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]     
-        public ActionResult Login(CustomerViewModel viewModel)
+        public ActionResult Login(LoginViewModel viewModel)
         {
             if (Session["UserID"] == null)
             {

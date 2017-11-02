@@ -114,7 +114,7 @@
             @using (Html.BeginForm("CreateBooking", "Booking", "POST"))
             {
                 @Html.AntiForgeryToken()
-
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
                 <div class="form-group has-feedback has-feedback-right">
@@ -122,10 +122,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group date" id="datetimepicker">
                             <span class="input-group-addon"><i  class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            @Html.EditorFor(model => model.BookingArrivalDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.BookingArrivalDate, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.EditorFor(model => model.BookingArrivalDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.BookingArrivalDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -135,10 +135,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group date" id="datetimepicker2">
                             <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                            @Html.EditorFor(model => model.BookingDepartureDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.BookingDepartureDate, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.EditorFor(model => model.BookingDepartureDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Please select a date" } })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.BookingDepartureDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -148,10 +148,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.BookingTotalAdults, new { @class = "form-control", placeholder = "How many adults?", type = "number" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.BookingTotalAdults, "", new { @class = "text-danger"})
-                            </div>
+                            @Html.TextBoxFor(model => model.BookingTotalAdults, new { @class = "form-control", placeholder = "How many adults?", type = "number" })                         
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.BookingTotalAdults, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -161,10 +161,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.BookingTotalChilds, new { @class = "form-control", placeholder = "How many children?", type = "number" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.BookingTotalChilds, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.BookingTotalChilds, new { @class = "form-control", placeholder = "How many children?", type = "number" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.BookingTotalChilds, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>

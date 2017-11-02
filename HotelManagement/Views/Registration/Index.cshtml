@@ -118,16 +118,16 @@
             @using (Html.BeginForm("CreateUser", "Registration", "POST"))
             {
                 @Html.AntiForgeryToken()
-
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.CustomerFName, "First Name", new { @class = "cols-sm-2 control-label" })
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerFName, new { @class = "form-control", placeholder = "Enter your First name" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerFName, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerFName, new { @class = "form-control", placeholder = "Enter your First name" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerFName, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -137,10 +137,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                           @Html.TextBoxFor(model => model.CustomerLName, new { @class = "form-control", placeholder = "Enter your Last name" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerLName, "", new { @class = "text-danger" })
-                            </div>
+                           @Html.TextBoxFor(model => model.CustomerLName, new { @class = "form-control", placeholder = "Enter your Last name" })                         
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerLName, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -151,10 +151,23 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-neuter fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerGender, new { @class = "form-control", placeholder = "Enter your Gender (yes...)" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerGender, new { @class = "form-control", placeholder = "Enter your Gender (yes...)" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerGender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerCountry, "Country", new { @class = "cols-sm-2 control-label" })
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-globe fa fa" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(model => model.CustomerCountry, new { @class = "form-control", placeholder = "Enter your Country" })
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCountry, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -164,10 +177,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerCity, new { @class = "form-control", placeholder = "Enter your City" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerCity, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerCity, new { @class = "form-control", placeholder = "Enter your City" })                         
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerCity, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -177,10 +190,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerAddress, new { @class = "form-control", placeholder = "Enter your Address" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerAddress, new { @class = "form-control", placeholder = "Enter your Address" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -190,10 +203,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerPhoneNo, new { @class = "form-control", placeholder = "Enter your Phone No." })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerPhoneNo, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerPhoneNo, new { @class = "form-control", placeholder = "Enter your Phone No." })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerPhoneNo, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -203,10 +216,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "form-control", placeholder = "Enter your Email" })                           
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -216,10 +229,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
-                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", Type = "Password", placeholder = "Enter your Password" })
-                            <div class="error-holder">
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                            </div>
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", Type = "Password", placeholder = "Enter your Password" })                          
+                        </div>
+                        <div class="error-holder">
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>

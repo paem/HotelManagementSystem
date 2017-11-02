@@ -22,11 +22,17 @@ namespace HotelManagement.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
+
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult CreateUser(CustomerViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            // primary key duplicity or any other database update issues
+            try
+            {
+                if (ModelState.IsValid)
             {
                 var customerObject = new Customer
                 {
@@ -46,7 +52,12 @@ namespace HotelManagement.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-           
+            }
+            catch(Exception ex)
+            {
+                return View("Error", new HandleErrorInfo(ex, "CustomerViewModel", "CreateUser"));
+            }
+
             return View("Index", viewModel);
         }
 

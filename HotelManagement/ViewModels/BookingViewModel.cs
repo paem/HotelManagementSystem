@@ -25,11 +25,11 @@ namespace HotelManagement.ViewModels
 
         public DateTime BookingDate { get; set; }
 
-        [Required(ErrorMessage = "Arrival date is required")]
+        [Required(ErrorMessage = "Check In date is required")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime BookingArrivalDate { get; set; }
 
-        [Required(ErrorMessage = "Departure date is required")]
+        [Required(ErrorMessage = "Check Out date is required")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime BookingDepartureDate { get; set; }
 
@@ -44,10 +44,12 @@ namespace HotelManagement.ViewModels
         [Required(ErrorMessage = "How many rooms?")]
         public int BookingTotalRooms { get; set; }
 
-        [Required(ErrorMessage = "How many Adults?")]
+        [Required]
+        [RegularExpression("([0-9]+)", ErrorMessage = "Please enter valid Number")]
         public int BookingTotalAdults { get; set; }
 
-        [Required(ErrorMessage = "How many children?")]
+        [Required]
+        [RegularExpression("([0-9]+)", ErrorMessage = "Please enter valid Number")]
         public int BookingTotalChilds { get; set; }
 
         public double BookingTotalCost { get; set; }

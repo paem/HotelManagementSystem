@@ -18,9 +18,11 @@ namespace HMS.Models
         [DataMember]
         public DateTime BookingDate { get; set; }
 
+        [Required]
         [DataMember]
         public DateTime BookingArrivalDate { get; set; }
 
+        [Required]
         [DataMember]
         public DateTime BookingDepartureDate { get; set; }
 
@@ -46,9 +48,11 @@ namespace HMS.Models
         [DataMember]
         public int BookingTotalRooms { get; set; }
 
+        [Required]
         [DataMember]
         public int BookingTotalAdults { get; set; }
 
+        [Required]
         [DataMember]
         public int BookingTotalChilds { get; set; }
 

@@ -169,6 +169,7 @@
     <Compile Include="ViewModels\BookingViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\HotelViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RoomAndCategoryViewModel.cs" />
     <Compile Include="ViewModels\RoomViewModel.cs" />
   </ItemGroup>

@@ -90,7 +90,9 @@ namespace HotelManagement.Controllers
         [HttpPost]
          public ActionResult CreateBooking(BookingViewModel viewModel)
          {
-             if (ModelState.IsValid)
+            try
+            {
+                if (ModelState.IsValid)
              {
                 var room = _bookingWCFClient.GetRoomById(int.Parse(Session["RoomId"].ToString()));
                 var totalNights = (int)(viewModel.BookingDepartureDate - viewModel.BookingArrivalDate).TotalDays;
@@ -142,7 +144,11 @@ namespace HotelManagement.Controllers
 
                 return RedirectToAction("MyBookings", "Booking");
             }
-
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new HandleErrorInfo(ex, "BookingViewModel", "CreateBooking"));
+            }
             return View("Index", viewModel);
         }
      

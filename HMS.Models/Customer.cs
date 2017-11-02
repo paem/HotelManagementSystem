@@ -13,30 +13,38 @@ namespace HMS.Models
         [DataMember]
         public int CustomerId { get; set; }
 
+        [Required]
         [DataMember]
         public string CustomerFName { get; set; }
 
+        [Required]
         [DataMember]
         public string CustomerLName { get; set; }
 
         [DataMember]
         public string  CustomerGender { get; set; }
 
+        [Required]
         [DataMember]
         public string CustomerAddress { get; set; }
 
+        [Required]
         [DataMember]
         public string CustomerCity { get; set; }
 
+        [Required]
         [DataMember]
         public string CustomerCountry { get; set; }
 
+        [Required]
         [DataMember]
         public string  CustomerPhoneNo { get; set; }
 
+        [Required]
         [DataMember]
-        public string CustomerEmail { get; set; } 
+        public string CustomerEmail { get; set; }
 
+        [Required]
         [DataMember]
         [MaxLength(25)]
         public string Password { get; set; }

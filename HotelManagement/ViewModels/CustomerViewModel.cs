@@ -45,8 +45,11 @@ namespace HotelManagement.ViewModels
         [StringLength(15, ErrorMessage = "Can't be over 15 characters")]
         public string CustomerPhoneNo { get; set; }
 
-        [Required(ErrorMessage = "Last name is required")]
-        [StringLength(30, ErrorMessage = "Can't be over 30 characters")]
+        [Required(ErrorMessage = "Please enter your email address")]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email address")]
+        [MaxLength(50)]
+        [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Please enter correct email")]
         public string CustomerEmail { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
