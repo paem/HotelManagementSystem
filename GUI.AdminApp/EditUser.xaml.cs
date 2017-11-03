@@ -16,11 +16,13 @@ using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
+using System.Threading;
 
 namespace GUI.AdminApp
 {
     public sealed partial class EditUser : Page
     {
+        //Timer _timer;
         private readonly HMSServiceClient HMSClient = new HMSServiceClient();
         private Customer c = new Customer();
        
@@ -28,9 +30,22 @@ namespace GUI.AdminApp
 
         public EditUser()
         {
+           
             this.InitializeComponent();
-        }
+            
+            //_timer = new Timer(new TimerCallback((obj) => Refresh()), null, 0, 5000);
 
+        }
+        //Start on auto refresh
+        //private async void Refresh()
+        //{
+        //    await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+        //        () =>
+        //        {
+
+        //        });
+
+        //}
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -69,6 +84,7 @@ namespace GUI.AdminApp
                         //checkBox.IsChecked = true;
 
                         this.checkIn.Text = "Checked in";
+               
                     }
                     else if (c.CheckedIn == false)
                     {
@@ -98,10 +114,7 @@ namespace GUI.AdminApp
         private async void CheckInStatus_Click(object sender, RoutedEventArgs e)
         {
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
-
-         
-
-           
+ 
             int id = c.CustomerId;
          
 

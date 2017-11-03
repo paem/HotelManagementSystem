@@ -62,5 +62,10 @@ namespace GUI.AdminApp
         {
             Frame.Navigate(typeof(MainPage));
         }
+
+        private void roomList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            myFrame.Navigate(typeof(roomInfo), roomList.SelectedItem);
+        }
     }
 }

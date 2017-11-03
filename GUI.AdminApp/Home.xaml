@@ -10,7 +10,7 @@
      <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
-            <StackPanel Background="Pink">
+            <StackPanel Background="DarkGray">
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
 
@@ -43,15 +43,15 @@
         <SplitView.Content>
             <Frame Name="myFrame">
                 <Grid>
-                    <TextBlock FontSize="36" Text="Welcome"  HorizontalAlignment="Center"/>
-                    <ListView x:Name="roomList" HorizontalAlignment="Center" Width="346">
+                    <ListView x:Name="roomList" HorizontalAlignment="Center" Width="346" SelectionChanged="roomList_SelectionChanged">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Height = "35" Width = "400">
                                     <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock Margin="0 0 5 0" x:Name="txbLName" Text="Room Door Number"  />
                                         <TextBlock x:Name="txbName" Text="{Binding RoomDoorNumber}" />
-                                        <TextBlock Margin="5 0 0 0" x:Name="txbLName" Text="{Binding RoomStatus}"  />
-                                       
+
                                     </StackPanel>
                                 </StackPanel>
                             </DataTemplate>
