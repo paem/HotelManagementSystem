@@ -9,13 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Margin="30 30 0 0" HorizontalAlignment="Center">
+            <Image Margin="0 0 0 10" Width="350" x:Name="bookingImage" Source=""/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="ubookings"/>
+            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingBeds"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingId"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDate"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingArrivalDate"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingDepatureDate"/>
-            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="roomCategoryId"/>
-            <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="roomId"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingStatus"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalNights"/>
             <TextBlock FontSize="20" Margin="0 0 0 10" x:Name="bookingTotalRooms"/>

@@ -102,6 +102,7 @@ namespace HMS.Data.Repositories
         {
             using (HMSDbContext context = new HMSDbContext())
             {
+                context.Configuration.ProxyCreationEnabled = false;
                 return context.Rooms.AsNoTracking().SingleOrDefault(p => p.RoomId == roomId);
             }
         }

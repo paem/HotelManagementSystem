@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,6 +24,8 @@ namespace GUI.AdminApp
     /// </summary>
     public sealed partial class userbookings : Page
     {
+        private readonly HMSServiceClient HMSClient = new HMSServiceClient();
+
         public userbookings()
         {
             this.InitializeComponent();
@@ -31,22 +34,36 @@ namespace GUI.AdminApp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Booking b = (Booking)e.Parameter;
-           
-            this.ubookings.Text = "User bookings, User Id: "+ b.CustomerId.ToString();
 
-            this.bookingId.Text = "Booking Id: " + b.BookingId.ToString();
-            this.bookingDate.Text = "Booking Date: " + b.BookingDate.ToString();
-            this.bookingArrivalDate.Text = "Arrival Date: " + b.BookingArrivalDate.ToString();
-            this.bookingDepatureDate.Text = "Depature Date: " + b.BookingDepartureDate.ToString();
-            this.bookingStatus.Text = "Booking Status: " + b.BookingStatus.ToString();
+           var room = HMSClient.GetRoomByIdAsync(b.RoomId);
+           var category = HMSClient.GetCategoryByIdAsync(b.RoomCategoryId);
+
+            
+
+            String stringPath = category.Result.RoomCategoryImage;
+            Uri imageUri = new Uri(stringPath, UriKind.Absolute);
+            BitmapImage imageBitmap = new BitmapImage(imageUri);
+         
+            this.bookingImage.Source = imageBitmap;
+            this.ubookings.Text = "Room type: " + category.Result.RoomCategoryName;
+            this.bookingBeds.Text = "Beds: " + category.Result.RoomCategoryBeds + "sized bed";
+            this.bookingId.Text = "Doornumber: " + room.Result.RoomDoorNumber;          
+            this.bookingDate.Text = "Was booked on: " + b.BookingDate.ToString();
+            this.bookingArrivalDate.Text = "Check in Date: " + b.BookingArrivalDate.ToString();
+            this.bookingDepatureDate.Text = "Check out Date: " + b.BookingDepartureDate.ToString();
+            if (b.BookingStatus == true)
+            {
+                this.bookingStatus.Text = "Customer has paid";
+            }else
+            {
+                this.bookingStatus.Text = "Customer has not paid";
+            }
+            
             this.bookingTotalAdults.Text = "Total Adults: " + b.BookingTotalAdults.ToString();
             this.bookingTotalChilds.Text = "Total Childs: " + b.BookingTotalChilds.ToString();
             this.bookingTotalNights.Text = "Total Nights: " + b.BookingTotalNights.ToString();
             this.bookingTotalRooms.Text = "Total Rooms: " + b.BookingTotalRooms.ToString();
-            this.bookingTotalCost.Text = "Total price: " + b.BookingTotalCost.ToString();
-
-            this.roomId.Text = "Room Id: " + b.RoomId.ToString();
-            this.roomCategoryId.Text = "Room-Category Id: " + b.RoomCategoryId.ToString();
+            this.bookingTotalCost.Text = "Total price: " + b.BookingTotalCost.ToString();  
 
         }
 

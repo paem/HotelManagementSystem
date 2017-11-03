@@ -14,7 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
-
+using Windows.Data.Xml.Dom;
+using Windows.UI.Notifications;
 
 namespace GUI.AdminApp
 {
@@ -46,8 +47,7 @@ namespace GUI.AdminApp
             string City = c.CustomerCity;
             string Adress = c.CustomerAddress;
             bool CheckedIn = c.CheckedIn;
-
-            this.CustomerId.Text = "Id: "+CustomerId.ToString();
+        
             this.FName.Text = "Name: "+FName;
             this.LName.Text = "Lastname: "+LName;
             this.Email.Text = "Email: "+Email;
@@ -120,6 +120,7 @@ namespace GUI.AdminApp
                         };
                         await HMSClient.CreateBookingAsync(bookingObject);
                     }
+                    displayToastNotification("Checked In", "Bookingstatus is now set to: paid");
                 }
                     if (c.CheckedIn != false)
                     {
@@ -146,7 +147,7 @@ namespace GUI.AdminApp
 
                         await HMSClient.DeleteBookingByBookingIdAsync(item.BookingId);
                     }
-
+                    displayToastNotification("Checked Out", "Booking removed and room added back to list");
                 }
 
                     
@@ -154,6 +155,43 @@ namespace GUI.AdminApp
 
            
         }
+
+        //Display a toast message
+        private void displayToastNotification(String caption, String message)
+        {
+            var toastTemplate = "<toast launch=\"app-defined-string\">" +
+                                "<visual>" +
+                                  "<binding template =\"ToastGeneric\">" +
+                                    "<text>" + caption + "</text>" +
+                                    "<text>" + message + "</text>" +
+                                  "</binding>" +
+                                "</visual>" +
+                                "</toast>";
+
+            var xmlDocument = new XmlDocument();
+
+            xmlDocument.LoadXml(toastTemplate);
+
+            var toastNotification = new ToastNotification(xmlDocument);
+
+            var notification = ToastNotificationManager.CreateToastNotifier();
+
+            notification.Show(toastNotification);
+        }
+
+        //Button Close
+        private void btnCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            removeToastHistory();
+            Application.Current.Exit();
+        }
+        //Remove toast history
+        private void removeToastHistory()
+        {
+            var toastHistory = ToastNotificationManager.History;
+            toastHistory.Clear();
+        }
+
 
         private void bookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
