@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using GUI.AdminApp.HMSServiceReference;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
+using System.Threading.Tasks;
 
 namespace GUI.AdminApp
 {
@@ -58,6 +59,7 @@ namespace GUI.AdminApp
             this.Adress.Text = "Adress: "+Adress;
 
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
+
             bookingList.ItemsSource = bookings;
 
            
@@ -109,6 +111,7 @@ namespace GUI.AdminApp
                 {  
                     if (c.CheckedIn != true)
                     {
+                   
                         this.checkIn.Text = "Checked In";
                         var i = HMSClient.SetCheckedInAsync(id);
                     foreach (var item in bookings)
@@ -120,7 +123,8 @@ namespace GUI.AdminApp
                         };
                         await HMSClient.CreateBookingAsync(bookingObject);
                     }
-                    displayToastNotification("Checked In", "Bookingstatus is now set to: paid");
+                   
+                    DisplayCheckInDialog();
                 }
                     if (c.CheckedIn != false)
                     {
@@ -147,7 +151,8 @@ namespace GUI.AdminApp
 
                         await HMSClient.DeleteBookingByBookingIdAsync(item.BookingId);
                     }
-                    displayToastNotification("Checked Out", "Booking removed and room added back to list");
+                  
+                    DisplayCheckOutDialog();
                 }
 
                     
@@ -156,42 +161,33 @@ namespace GUI.AdminApp
            
         }
 
-        //Display a toast message
-        private void displayToastNotification(String caption, String message)
+        private async void DisplayCheckInDialog()
         {
-            var toastTemplate = "<toast launch=\"app-defined-string\">" +
-                                "<visual>" +
-                                  "<binding template =\"ToastGeneric\">" +
-                                    "<text>" + caption + "</text>" +
-                                    "<text>" + message + "</text>" +
-                                  "</binding>" +
-                                "</visual>" +
-                                "</toast>";
-
-            var xmlDocument = new XmlDocument();
-
-            xmlDocument.LoadXml(toastTemplate);
-
-            var toastNotification = new ToastNotification(xmlDocument);
-
-            var notification = ToastNotificationManager.CreateToastNotifier();
-
-            notification.Show(toastNotification);
+            ContentDialog checkInDialog = new ContentDialog
+            {
+                Title = "Checked In Customer",
+                Content = "Bookingstatus is now set to: PAID",
+                CloseButtonText = "Ok"
+            };
+            await Task.Delay(1000);
+            Frame.GoBack();
+            ContentDialogResult result = await checkInDialog.ShowAsync();
         }
 
-        //Button Close
-        private void btnCloseApp_Click(object sender, RoutedEventArgs e)
+        private async void DisplayCheckOutDialog()
         {
-            removeToastHistory();
-            Application.Current.Exit();
-        }
-        //Remove toast history
-        private void removeToastHistory()
-        {
-            var toastHistory = ToastNotificationManager.History;
-            toastHistory.Clear();
+            ContentDialog checkOutDialog = new ContentDialog
+            {
+                Title = "Checked Out Customer",
+                Content = "Bookings removed and the room(s) has been set to: AVAILABLE",
+                CloseButtonText = "Ok"
+            };          
+            await Task.Delay(1000);     
+            Frame.GoBack();
+            ContentDialogResult result = await checkOutDialog.ShowAsync();
         }
 
+      
 
         private void bookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

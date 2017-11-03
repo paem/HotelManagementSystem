@@ -28,7 +28,11 @@ namespace GUI.AdminApp
         private async void rooms()
         {
             var roomList = await HMSClient.GetRoomsAsync();
+     
             this.roomList.ItemsSource = roomList;
+
+           
+
 
         }
 
