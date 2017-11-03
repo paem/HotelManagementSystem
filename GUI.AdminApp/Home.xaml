@@ -44,6 +44,20 @@
             <Frame Name="myFrame">
                 <Grid>
                     <TextBlock FontSize="36" Text="Welcome"  HorizontalAlignment="Center"/>
+                    <ListView x:Name="roomList" HorizontalAlignment="Center" Width="346">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Height = "35" Width = "400">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="txbName" Text="{Binding RoomDoorNumber}" />
+                                        <TextBlock Margin="5 0 0 0" x:Name="txbLName" Text="{Binding RoomStatus}"  />
+                                       
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
                 </Grid>
             </Frame>
         </SplitView.Content>

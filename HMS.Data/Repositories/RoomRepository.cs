@@ -84,6 +84,7 @@ namespace HMS.Data.Repositories
         {
             using (var context = new HMSDbContext())
             {
+                context.Configuration.ProxyCreationEnabled = false;
                 return context.Rooms.AsNoTracking().ToList();
             }
         } 

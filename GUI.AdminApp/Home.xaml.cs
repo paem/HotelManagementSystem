@@ -25,8 +25,16 @@ namespace GUI.AdminApp
     {
         private readonly HMSServiceClient HMSClient = new HMSServiceClient();
 
+        private async void rooms()
+        {
+            var roomList = await HMSClient.GetRoomsAsync();
+            this.roomList.ItemsSource = roomList;
+
+        }
+
         public Home()
         {
+            this.rooms();
             this.InitializeComponent();
         }
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)

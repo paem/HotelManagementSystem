@@ -103,3 +103,5 @@ C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations._new.resources
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.requireddataannotations.resources
 C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.removedcustomerDetails.resources
+C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.requireddataannotations.resources
+C:\Users\Vidar\OneDrive\Dokument\GitHub\HotelManagementSystem\HMS.Data\obj\Debug\HMS.Data.Migrations.removedcustomerDetails.resources
