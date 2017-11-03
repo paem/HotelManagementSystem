@@ -16,7 +16,7 @@ namespace HMS.Data
 
         //Patriks Dator = Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True
         public HMSDbContext()
-            : base(@"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True")
+            : base(@"Data Source=VIDARAJ\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True")
         {
         }
 

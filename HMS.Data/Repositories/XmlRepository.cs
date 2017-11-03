@@ -16,16 +16,16 @@ namespace HMS.Data.Repositories
 {
     public class XmlRepository
     {
-      public void LoadRooms()
-        {                
-                string connetionString = null;
-                SqlConnection connection;
-                SqlCommand command;
-                SqlDataAdapter adpter = new SqlDataAdapter();
-                DataSet ds = new DataSet();
-                XmlReader xmlFile;
-                string sql = null;
+        string connetionString = null;
+        SqlConnection connection;
+        SqlCommand command;
+        SqlDataAdapter adpter = new SqlDataAdapter();
+        DataSet ds = new DataSet();
+        XmlReader xmlFile;
+        string sql = null;
 
+        public void LoadRooms()
+        {                             
                 int roomId = 0;
                 int roomCategoryId = 0;
                 int capacityId = 0;
@@ -33,11 +33,11 @@ namespace HMS.Data.Repositories
                 double RoomPrice = 0;
                 bool RoomStatus = false;
 
-                connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+            connetionString = @"Data Source=VIDARAJ\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
 
                 connection = new SqlConnection(connetionString);
 
-                xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Rooms.xml", new XmlReaderSettings());
+                xmlFile = XmlReader.Create(@"C:\Users\Vidar\OneDrive\Dokument\HotelXml\moved\Rooms.xml", new XmlReaderSettings());
                 ds.ReadXml(xmlFile);
                 int i = 0;
                 connection.Open();
@@ -59,14 +59,6 @@ namespace HMS.Data.Repositories
         }
         public void LoadCategories()
         {
-            string connetionString = null;
-            SqlConnection connection;
-            SqlCommand command;
-            SqlDataAdapter adpter = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            XmlReader xmlFile;
-            string sql = null;
-
             string RoomCategoryName = null;
             string RoomCategoryDesc = null;
             string RoomCategoryBeds = null;
@@ -76,11 +68,11 @@ namespace HMS.Data.Repositories
             int RoomCategoryId = 0;
           
 
-            connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+            connetionString = @"Data Source=VIDARAJ\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
 
             connection = new SqlConnection(connetionString);
 
-            xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Categories.xml", new XmlReaderSettings());
+            xmlFile = XmlReader.Create(@"C:\Users\Vidar\OneDrive\Dokument\HotelXml\moved\Categories.xml", new XmlReaderSettings());
             ds.ReadXml(xmlFile);
             int i = 0;
             connection.Open();
@@ -104,24 +96,16 @@ namespace HMS.Data.Repositories
 
         public void LoadCapacities()
         {
-            string connetionString = null;
-            SqlConnection connection;
-            SqlCommand command;
-            SqlDataAdapter adpter = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            XmlReader xmlFile;
-            string sql = null;
-
             int RoomCapacityId = 0;
             string RoomCapacityName = null;
             int RoomCapacityAdults = 0;
             int RoomCapacityChildren = 0;
  
-            connetionString = @"Data Source=PATRIKDATA\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
+            connetionString = @"Data Source=VIDARAJ\SQLEXPRESS;Initial Catalog=HotelManagementDb;Integrated Security=True";
 
             connection = new SqlConnection(connetionString);
 
-            xmlFile = XmlReader.Create(@"C:\Users\Patrik\Documents\GitHub\HotelManagementSystem\HMS.Data\Capacities.xml", new XmlReaderSettings());
+            xmlFile = XmlReader.Create(@"C:\Users\Vidar\OneDrive\Dokument\HotelXml\moved\Capacities.xml", new XmlReaderSettings());
             ds.ReadXml(xmlFile);
             int i = 0;
             connection.Open();

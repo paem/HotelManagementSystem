@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="SteelBlue">
+        <Grid Background="White">
             <StackPanel HorizontalAlignment="Center">
                 <TextBlock FontSize="36" Text="Load Xml"  HorizontalAlignment="Center"/>
                 <TextBlock x:Name="Loaded" />
