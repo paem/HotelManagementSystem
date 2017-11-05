@@ -31,6 +31,8 @@ namespace GUI.AdminApp
             this.InitializeComponent();
         }
 
+        // Displaying the object that was chosen, but also information from rooms and roomscategory
+        // It shows the information in text and image.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Booking b = (Booking)e.Parameter;
