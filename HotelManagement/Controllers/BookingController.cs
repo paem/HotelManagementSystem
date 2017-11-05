@@ -90,17 +90,19 @@ namespace HotelManagement.Controllers
         [HttpPost]
          public ActionResult CreateBooking(BookingViewModel viewModel)
          {
+            // try catch for errors with the database (primary key duplicity or any other database update issues)
             try
             {
+                // check if the DataAnnotations (validation) is valid if it is continue with the update
                 if (ModelState.IsValid)
              {
                 var room = _bookingWCFClient.GetRoomById(int.Parse(Session["RoomId"].ToString()));
                 var totalNights = (int)(viewModel.BookingDepartureDate - viewModel.BookingArrivalDate).TotalDays;
                 var totalCost = room.RoomPrice * 1 * totalNights;
                 var category = _bookingWCFClient.GetCategoryById(room.RoomCategoryId);
-               
 
-                var bookingObject = new Booking
+                    // create a new booking object with the users input and the required data
+                    var bookingObject = new Booking
                 {
                     BookingId = viewModel.BookingId,
                     CustomerId = int.Parse(Session["UserID"].ToString()),
@@ -117,8 +119,10 @@ namespace HotelManagement.Controllers
                     RoomCategoryId = room.RoomCategoryId,
                     
                  };
+                    // create the booking using the WCF service
                  _bookingWCFClient.CreateBooking(bookingObject);
 
+                    // change the room status to true (Booked)
                 var roomObject = new Room
                 {
                     RoomId = int.Parse(Session["RoomId"].ToString()),
@@ -126,6 +130,7 @@ namespace HotelManagement.Controllers
                 };
                 _bookingWCFClient.CreateRoom(roomObject);
 
+                    // remove one room from the number of rooms available in the category
                 var roomCategoryObject = new RoomCategory
                 {
                     RoomCategoryId = room.RoomCategoryId,
