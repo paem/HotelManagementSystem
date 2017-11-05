@@ -29,6 +29,7 @@ namespace GUI.AdminApp
         {
             this.InitializeComponent();
         }
+
         //Autosuggestbox that querys through text
         private void AutoSuggBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
@@ -59,7 +60,7 @@ namespace GUI.AdminApp
             }
 
         }
-
+        //Sends the choosen object to a new page, to display more info about it.
         private void userList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

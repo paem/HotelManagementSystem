@@ -78,19 +78,16 @@ namespace GUI.AdminApp
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
             //Puts the result in a list.
             bookingList.ItemsSource = bookings;
-             
 
             //Sets the check in text in or out depending on the state that it is in.
             if (c.CheckedIn == true)
                     {
-                       
                         this.checkIn.Text = "Checked in";
                     }
                     else if (c.CheckedIn == false)
                     {
                         this.checkIn.Text = "Checked Out";
                     }
-
             }
 
 
