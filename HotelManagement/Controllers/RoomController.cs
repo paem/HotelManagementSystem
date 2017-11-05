@@ -35,6 +35,7 @@ namespace HotelManagement.Controllers
         // Partialview with all room information
         public ActionResult RoomInformation(int id)
         {
+            // get all information the rooms have
             var room = _roomWCFClient.RoomDetailInfoById(id);
             var categories = _roomWCFClient.GetCategoryById(id);
             var capacites = _roomWCFClient.GetCapacityById(categories.RoomCapacityId);

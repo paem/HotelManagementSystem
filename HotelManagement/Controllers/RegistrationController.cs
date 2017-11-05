@@ -29,11 +29,12 @@ namespace HotelManagement.Controllers
         [HttpPost]
         public ActionResult CreateUser(CustomerViewModel viewModel)
         {
-            // primary key duplicity or any other database update issues
+            // try catch for errors with the database (primary key duplicity or any other database update issues)
             try
-            {
+            {   // check if the DataAnnotations (validation) is valid if it is continue with the update
                 if (ModelState.IsValid)
             {
+                    // create a new customer object with the users input
                 var customerObject = new Customer
                 {
                     CustomerId = viewModel.CustomerId,
@@ -49,11 +50,13 @@ namespace HotelManagement.Controllers
                     CheckedIn = viewModel.CheckedIn
                
                 };
+                    // create the new user with the WCF service
                 _customerWCFClient.CreateUser(customerObject);
 
                 return RedirectToAction("Index", "Home");
             }
             }
+            // creates a error page if there were to be any errors, it uses the default error page that comes with MVC it is located under /views/shared/Error.cshtml
             catch(Exception ex)
             {
                 return View("Error", new HandleErrorInfo(ex, "CustomerViewModel", "CreateUser"));

@@ -34,11 +34,15 @@ namespace HotelManagement.Controllers
         [ValidateAntiForgeryToken]     
         public ActionResult Login(LoginViewModel viewModel)
         {
+            // check if there is no session, if there is none the user has to login
             if (Session["UserID"] == null)
             {
+                // get the customers ID by email
                 var customerId = _customerWCFClient.GetUserByEmail(viewModel.CustomerEmail);
+                // check if the validation is valid (in the LoginViewModel)
                 if (ModelState.IsValid)
                 {
+                    // log the user in if both the email and password match in the database, this is a very simple login with no security measures as of yet
                     var obj = _customerWCFClient.LoginUser(viewModel.CustomerEmail, viewModel.Password);
                     if (obj != null)
                     {

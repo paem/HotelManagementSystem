@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace HotelManagement.Controllers
 {
+    // is not being used at the moment!
     public class CustomerController : Controller
     {
 
