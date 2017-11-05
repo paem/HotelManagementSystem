@@ -27,25 +27,27 @@ namespace GUI.AdminApp
 
         private async void rooms()
         {
+            //Gets all the rooms from the service method GetRooms.
             var roomList = await HMSClient.GetRoomsAsync();
      
+            //Displays the rooms in a list that is connected to XAML
             this.roomList.ItemsSource = roomList;
-
-           
-
-
         }
 
         public Home()
         {
+            //Runs the room method when the page is initializing
             this.rooms();
             this.InitializeComponent();
         }
+        
+        //The "Hamburger" button that slides out the side menu
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
+        //These are navigations to different pages
         private void adminHome_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Home));
@@ -67,6 +69,7 @@ namespace GUI.AdminApp
             Frame.Navigate(typeof(MainPage));
         }
 
+        //When clicked on a room you get sent to a page that displays more info about that specific room.
         private void roomList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Frame.Navigate(typeof(roomInfo), roomList.SelectedItem);

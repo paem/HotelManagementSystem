@@ -30,6 +30,8 @@ namespace GUI.AdminApp
             this.InitializeComponent();
         }
 
+        //Loads the xml files by getting the sertvice methods.
+        //Also changes text to what you loaded.
         private void loadCapacities_Click(object sender, RoutedEventArgs e)
         {
             HMSClient.LoadCapacitiesAsync();

@@ -29,6 +29,7 @@ namespace GUI.AdminApp
         {
             this.InitializeComponent();
         }
+        //Autosuggestbox that querys through text
         private void AutoSuggBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             if (args.ChosenSuggestion != null)
@@ -38,6 +39,7 @@ namespace GUI.AdminApp
             }
         }
 
+        //Handle then choosen item in the list
         private void AutoSuggBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
             var selectedItem = args.SelectedItem.ToString();
@@ -45,6 +47,7 @@ namespace GUI.AdminApp
 
         }
 
+        //Changes the text depending on what you are searching for and displaying it to a list.
         private async void AutoSuggBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)

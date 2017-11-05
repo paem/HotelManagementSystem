@@ -50,7 +50,7 @@ namespace GUI.AdminApp
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            //Receives one customer object, that has been click on.
             c = (Customer)e.Parameter;
           
             int CustomerId = c.CustomerId;
@@ -63,7 +63,8 @@ namespace GUI.AdminApp
             string City = c.CustomerCity;
             string Adress = c.CustomerAddress;
             bool CheckedIn = c.CheckedIn;
-        
+
+            //Displays the values in xaml
             this.FName.Text = "Name: "+FName;
             this.LName.Text = "Lastname: "+LName;
             this.Email.Text = "Email: "+Email;
@@ -73,34 +74,22 @@ namespace GUI.AdminApp
             this.City.Text = "City: "+City;
             this.Adress.Text = "Adress: "+Adress;
 
+            //Finds the selected users booking by checking the id of the user.
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
-
+            //Puts the result in a list.
             bookingList.ItemsSource = bookings;
+             
 
-           
-
-            //checkBox.IsChecked = true;           
-
+            //Sets the check in text in or out depending on the state that it is in.
             if (c.CheckedIn == true)
                     {
-                        //checkBox.IsChecked = true;
-
+                       
                         this.checkIn.Text = "Checked in";
-               
                     }
                     else if (c.CheckedIn == false)
                     {
-                        //checkBox.IsChecked = false;
                         this.checkIn.Text = "Checked Out";
                     }
-             
-            
-            //else
-            //{
-            //    this.checkIn.Text = "No bookings to check in/ out to";
-            //}
-           
-
 
             }
 
@@ -112,7 +101,6 @@ namespace GUI.AdminApp
         }
        
         
-       
         private async void CheckInStatus_Click(object sender, RoutedEventArgs e)
         {
             var bookings = await HMSClient.GetBookingsByUserIdAsync(c.CustomerId);
@@ -121,10 +109,11 @@ namespace GUI.AdminApp
          
 
             if (checkBox.IsChecked == false)
-                {  
-                    if (c.CheckedIn != true)
+                {
+                //If user is not checked in, when pressed the text will change and a new booking object will be created
+                //Giving feedback in a dialog
+                if (c.CheckedIn != true)
                     {
-                   
                         this.checkIn.Text = "Checked In";
                         var i = HMSClient.SetCheckedInAsync(id);
                     foreach (var item in bookings)
@@ -139,6 +128,9 @@ namespace GUI.AdminApp
                    
                     DisplayCheckInDialog();
                 }
+                    //If the checkin is already true, when pressed the text will change to checkout
+                    // The room that is booked will be added back to the room list and removed from the user
+                    //Giving feedback in a dialog
                     if (c.CheckedIn != false)
                     {
                         this.checkIn.Text = "Checked Out";
@@ -174,6 +166,7 @@ namespace GUI.AdminApp
            
         }
 
+        //These are the dialog that the Admin receives after one secound. When checking in and out.
         private async void DisplayCheckInDialog()
         {
             ContentDialog checkInDialog = new ContentDialog
@@ -201,7 +194,7 @@ namespace GUI.AdminApp
         }
 
       
-
+        //When selected a booking from the list it sends the object selected to another page for display.
         private void bookingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Frame.Navigate(typeof(userbookings), bookingList.SelectedItem);

@@ -30,6 +30,7 @@ namespace GUI.AdminApp
             this.InitializeComponent();
         }
 
+        //Simple login where the input need to be equal to Admin, then it returns different boolean values.
         public static bool ValidateAccountCredentials(string username, string password)
         {
             if (username == "Admin" && password == "Admin")
@@ -42,6 +43,7 @@ namespace GUI.AdminApp
             }
         }
 
+        //Depending on the bool value it sends you to a different page. MainPage is the login page.
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateAccountCredentials(UsernameTextBox.Text, PasswordTextBox.Password) == true)

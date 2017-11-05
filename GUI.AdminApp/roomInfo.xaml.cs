@@ -27,6 +27,7 @@ namespace GUI.AdminApp
         {
             this.InitializeComponent();
         }
+        //Displaying the information from the chosen object in the room list.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Room room = (Room)e.Parameter;
