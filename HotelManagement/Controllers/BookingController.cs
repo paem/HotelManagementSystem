@@ -141,6 +141,7 @@ namespace HotelManagement.Controllers
                 return RedirectToAction("MyBookings", "Booking");
             }
             }
+            // creates a error page if there were to be any errors, it uses the default error page that comes with MVC it is located under /views/shared/Error.cshtml
             catch (Exception ex)
             {
                 return View("Error", new HandleErrorInfo(ex, "BookingViewModel", "CreateBooking"));
